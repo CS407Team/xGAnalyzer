@@ -25,30 +25,26 @@ standing_result = json.loads(response.text)
 standing_dictionary = standing_result["response"]
 teams = standing_dictionary[0]["league"]["standings"][0]
 
-file = open("team_standings","a")
-team_str = json.dumps(teams)
-file.write(team_str)
-file.close()
 
-#team_ids=[]
-#for team in teams:
-#
- #        team_ids.append({ "id":team["team"]["id"]})
+team_ids=[]
+for team in teams:
 
-#file = open("teams", "a")
+         team_ids.append({ "id":team["team"]["id"]})
 
-#for team in teams:
+file = open("teams", "a")
 
-#	url = "https://api-football-v1.p.rapidapi.com/v3/teams"
+for team in teams:
 
-#	querystring = {"id":"33"}
+	url = "https://api-football-v1.p.rapidapi.com/v3/teams"
 
+	querystring = team
+	print(querystring)
 #	headers = {
 #	    'x-rapidapi-host': "api-football-v1.p.rapidapi.com",
 #	    'x-rapidapi-key': "f6a74521femsh3da9a6c760ad94dp1ff3e9jsn7e739e41cf69"
 #	}
-
+#
 #	response = requests.request("GET", url, headers=headers, params=querystring)
 #	file.write(response.text)
 
-#file.close()
+file.close()

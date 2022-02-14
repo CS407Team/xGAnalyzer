@@ -1,0 +1,47 @@
+import requests
+import json
+
+#def get_teams():
+#f = open('team_data', 'r')
+#data = json.load(f)
+#print(data)
+
+
+url = "https://api-football-v1.p.rapidapi.com/v3/standings"
+premier_league = {"season":"2021","league":"39"}
+laliga = {"season":"2021","league":"140"}
+bundesliga = {"season":"2021","league":"78"}
+ligue1 = {"season":"2021","league":"61"}
+seriea = {"season":"2021","league":"135"}
+
+headers = {
+      'x-rapidapi-host': "api-football-v1.p.rapidapi.com",
+      'x-rapidapi-key': "f6a74521femsh3da9a6c760ad94dp1ff3e9jsn7e739e41cf69"
+}
+        # leagues = [premier_league, laliga,bundesliga, ligue1, seriea]
+        # for querystring in leagues:
+response = requests.request("GET", url, headers=headers, params=premier_league)
+standing_result = json.loads(response.text)
+standing_dictionary = standing_result["response"]
+teams = standing_dictionary[0]["league"]["standings"][0]
+#print(teams)
+team_ids=[]
+for team in teams:
+         team_ids.append({ "id":team["team"]["id"]})
+
+file = open("teams", "a")
+
+#get_teams(premier_league,39)
+for team in teams:
+
+	url = "https://api-football-v1.p.rapidapi.com/v3/teams"
+
+	querystring = {"id":"33"}
+
+	headers = {
+	    'x-rapidapi-host': "api-football-v1.p.rapidapi.com",
+	    'x-rapidapi-key': "f6a74521femsh3da9a6c760ad94dp1ff3e9jsn7e739e41cf69"
+	}
+
+	response = requests.request("GET", url, headers=headers, params=querystring)
+	file.write(response.text)

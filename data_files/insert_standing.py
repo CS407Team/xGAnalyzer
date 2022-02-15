@@ -36,7 +36,7 @@ for object in jsonObject:
     try:
         db_connection = mariadb.connect(user = 'newuser', password='test', host='localhost', database = 'analyzer', port='3306')
         db_cursor = db_connection.cursor()
-        insert_stmt = ("INSERT INTO season_table(season_table_id, team_id, tournament_id, team_position, team_points, goals_for, goals_against, season_year, games_played, won, lost)" "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)")
+        insert_stmt = ("INSERT INTO season_table(season_table_id, team_id, tournament_id, team_position, team_points, goals_for, goals_against, season_year, games_played, won, lost)" "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)")
         data = (index, team_id, tournament, team_position, team_points,goals_for, goals_against, season, played, won, lost)
         db_cursor.execute(insert_stmt, data)
 

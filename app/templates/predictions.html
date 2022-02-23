@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table border = 1>
+    <tr>
+        <th>Table Prediction ID</th>
+        <th>Tournament Name</th>
+        <th>Team Position</th>
+        <th>Team Points</th>
+        <th>Goals For</th>
+        <th>Team Name</th>
+        <th>Season Year</th>
+        <th>Userid</th>
+        <th>Visibility</th>
+    </tr>
+    {% for prediction in predictions %}
+    <tr>
+        <td> {{prediction[0]}} </td>
+        <td> {{prediction[1]}} </td>
+        <td> {{prediction[2]}} </td>
+        <td> {{prediction[3]}} </td>
+        <td> {{prediction[4]}} </td>
+        <td> {{prediction[5]}} </td>
+        <td> {{prediction[6]}} </td>
+        <td> {{prediction[7]}} </td>
+        <td> {{prediction[8]}} </td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>

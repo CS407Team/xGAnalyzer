@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table border = 1>
+    <tr>
+        <th>Team Name</th>
+        <th>Tournament Name</th>
+        <th>Team Position</th>
+        <th>Team Points</th>
+        <th>Goals For</th>
+        <th>Season Year</th>
+    </tr>
+    <tr>
+        {% for item in prediction %}
+        <td> {{item}} </td>
+            {% endfor %}
+    </tr>
+</table>
+
+<a href="/profile/{{username}}/table_predictions/{{prediction_name}}/download">
+    <button type="button">Download</button>
+</a>
+<a href="/profile/{{username}}/table_predictions">
+    <button type="button">Back</button>
+</a>
+</body>
+</html>

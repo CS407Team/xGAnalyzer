@@ -21,6 +21,15 @@ except mariadb.Error as err:
         print(err)
 """
 app = Flask(__name__)
+app.url_map.strict_slashes = False
+
+
+@app.before_request
+def clear_trailing():
+    from flask import redirect, request
+    rp = request.path
+    if rp != '/' and rp.endswith('/'):
+        return redirect(rp[:-1])
 
 
 @app.route('/')

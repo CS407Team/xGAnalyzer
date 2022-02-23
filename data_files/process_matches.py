@@ -74,13 +74,16 @@ for index in jsonObject:
     away_score = (index['AwayTeamScore'])
     winner = "0"
     status = "not_played"
-    if(home_score > away_score):
-        winner = home_team_id        
-    elif away_score > home_score:
-        winner = away_team_id
-    if home_score != None:
+    if(home_score != None):
+        if(home_score > away_score):
+            winner = home_team_id       
+        elif away_score > home_score:
+            winner = away_team_id
         status = "played"
-        
+    else:
+        home_score = -1
+        away_score = -1 
+    
     round_number = (index['RoundNumber'])
     match_number = (index['MatchNumber'])
     print(home, " ", away, " ", location, " ", home_score ," ", away_score ," ", round_number)

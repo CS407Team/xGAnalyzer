@@ -6,7 +6,7 @@ from mysql.connector import errorcode
 from user import user_utils
 from data_files import database
 
-from predictions import table_predictions, booking_predictions
+from predictions import table_predictions, booking_predictions, match_predictions, stats_predictions
 """
 try:
     db_connection = mariadb.connect(user='root', password='V3z?RnzC', host='localhost', database='analyzer')
@@ -30,7 +30,7 @@ def home():
 
 # User Profile Page
 @app.route('/profile/<username>')
-def user(username):
+def profile(username):
     # Maybe optimize user checking with extra time
     db_connection = database.connect()
     db_cursor = db_connection.cursor()
@@ -57,9 +57,8 @@ def user_table_predictions(username):
     else:
         # Need to implement error checks
         db_cursor.execute(f'select * from table_predictions')
-
-        predictions = table_predictions.find_public_predictions(1)
-        print(predictions)
+        user = user_utils.find_by_username(username)
+        predictions = table_predictions.find_public_predictions(user[0])
 
         return render_template('table_predictions.html', username=username, predictions=predictions)
 
@@ -75,55 +74,73 @@ def user_selected_table_prediction(username, prediction_name):
         return "User not found"
     else:
         prediction = table_predictions.find_prediction_by_username_and_name(username, prediction_name)
+        if prediction is None:
+            return "Prediction does not exist"
         return render_template('show_table_pred.html', username=username, prediction_name=prediction_name, prediction=prediction)
 
 
 @app.route('/profile/<username>/table_predictions/<prediction_name>/download')
 def download_table(username, prediction_name):
     path = table_predictions.export(username, prediction_name)
+    if path is None:
+        return 'Prediction does not exist'
     return send_file(path, as_attachment=True)
 
 
 @app.route('/profile/<username>/booking_predictions')
 def user_booking_predictions(username):
-    db_connection = database.connect()
-    db_cursor = db_connection.cursor()
-    db_cursor.execute(f'select * from users where username="{username}"')
-    db_cursor.fetchone()
+    user = user_utils.find_by_username(username)
+    if user is None:
+        return 'User not found'
+    predictions = booking_predictions.find_public_predictions_by_username(username)
+    if predictions is None:
+        return "Prediction does not exist"
+    return render_template('booking_predictions.html', predictions=predictions, username=username)
 
-    if db_cursor.rowcount == 0:
-        return "User not found"
-    else:
-        db_cursor.execute(f'select * from booking_predictions')
-        return render_template('booking_predictions.html', username=username)
+
+@app.route('/profile/<username>/booking_predictions/download')
+def download_bookings(username):
+    path = booking_predictions.export(username)
+    if path is None:
+        return "Prediction does not exist"
+    return send_file(path, as_attachment=True)
 
 
 @app.route('/profile/<username>/match_predictions')
 def user_match_predictions(username):
-    db_connection = database.connect()
-    db_cursor = db_connection.cursor()
-    db_cursor.execute(f'select * from users where username="{username}"')
-    db_cursor.fetchone()
+    user = user_utils.find_by_username(username)
+    if user is None:
+        return 'User not found'
 
-    if db_cursor.rowcount == 0:
-        return "User not found"
-    else:
-        db_cursor.execute(f'select * from match_predictions')
-
-        return render_template('match_predictions.html', username=username)
+    predictions = match_predictions.find_public_predictions(user[0])
+    return render_template('match_predictions.html', username=username, predictions=predictions)
 
 
 @app.route('/profile/<username>/match_predictions/<prediction_name>')
 def user_selected_match_prediction(username, prediction_name):
-    db_connection = database.connect()
-    db_cursor = db_connection.cursor()
-    db_cursor.execute(f'select * from users where username="{username}"')
-    db_cursor.fetchone()
+    user = user_utils.find_by_username(username)
+    if user is None:
+        return 'User not found'
 
-    if db_cursor.rowcount == 0:
-        return "User not found"
-    else:
-        return f'{username},{prediction_name}'
+    prediction = match_predictions.find_prediction_by_username_and_name(username, prediction_name)
+    if prediction is None:
+        return "Prediction does not exist"
+    stats = stats_predictions.find_stats(prediction[4])
+
+    return render_template('show_match_pred.html', prediction_name=prediction_name, stats=stats, prediction=prediction, username=username)
+
+
+@app.route('/profile/<username>/match_predictions/<prediction_name>/download')
+def download_match_pred(username, prediction_name):
+    path = match_predictions.export(username, prediction_name)
+    if path is None:
+        return "Prediction does not exist"
+    return send_file(path, as_attachment=True)
+
+
+@app.route('/add_table_prediction')
+def add_match_prediction():
+    return f'nothing'
 
 
 @app.route('/php')

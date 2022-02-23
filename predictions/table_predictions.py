@@ -58,16 +58,16 @@ def find_prediction_by_username_and_name(username, prediction_name):
                       f'tp.goals_against from table_predictions tp join teams on teams.team_id = tp.team_id join '
                       f'tournaments on tp.tournament_id = tournaments.tournament_id '
                       f'join users on users.username = "{username}"'
-                      f'where tp.name = "{prediction_name}"')
+                      f'where tp.name = "{prediction_name}"'
+                      f'AND visibility=1')
     prediction = db_cursor.fetchone()
-    print(prediction)
     return prediction
 
 
 def export(username, prediction_name):
-    db_connection = database.connect()
-    db_cursor = db_connection.cursor()
     prediction = find_prediction_by_username_and_name(username, prediction_name)
+    if prediction is None:
+        return None
 
     # lol
     predictionary = {
@@ -78,6 +78,7 @@ def export(username, prediction_name):
         "Team Goals For": prediction[4],
         "Team Goals Against": prediction[5]
     }
+    print(type(predictionary))
     filepath = f'exports/table/{username}_{prediction_name}.json'
     with open(filepath, 'w') as outfile:
         json.dump(predictionary, outfile, indent=2)

@@ -2,9 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>{{username}}'s Booking Predictions</title>
 </head>
 <body>
-
+<table border = 1>
+    <tr>
+        <!-- <th>Game</th> -->
+        <th>Player Name</th>
+        <th>Yellow Cards</th>
+        <th>Red Cards</th>
+    </tr>
+    {% for prediction in predictions %}
+    <tr>
+        {% for item in prediction %}
+        <td> {{item}} </td>
+            {% endfor %}
+    </tr>
+    {% endfor %}
+</table>
+<a href="/profile/{{username}}/booking_predictions/download">
+    <button type="button">Download</button>
+</a>
+<a href="/profile/{{username}}">
+    <button type="button">Back</button>
+</a>
 </body>
 </html>

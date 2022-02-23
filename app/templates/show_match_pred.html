@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{{prediction[0]}}: {{prediction[1]}} (Home) vs {{prediction[2]}} (Away)
+<table border = 1>
+    <tr>
+        <th>Team</th>
+        <th>Possessions</th>
+        <th>Shots</th>
+        <th>Shots on Target</th>
+        <th>Yellow Cards</th>
+        <th>Red Cards</th>
+        <th>Subs</th>
+        <th>Corners</th>
+        <th>Goals</th>
+        <th>Pens</th>
+        <th>Free Kicks</th>
+        <th>Pass Total</th>
+        <th>Completed Passes</th>
+    </tr>
+    <tr>
+        <td>{{prediction[1]}}</td>
+        {% for item in stats[5:29:2] %}
+        <td> {{item}} </td>
+        {% endfor %}
+    </tr>
+    <tr>
+        <td>{{prediction[2]}}</td>
+        {% for item in stats[6:29:2] %}
+        <td> {{item}} </td>
+        {% endfor %}
+    </tr>
+</table>
+
+<a href="/profile/{{username}}/match_predictions/{{prediction_name}}/download">
+    <button type="button">Download</button>
+</a>
+<a href="/profile/{{username}}/match_predictions">
+    <button type="button">Back</button>
+</a>
+</body>
+</html>

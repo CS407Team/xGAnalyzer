@@ -22,9 +22,10 @@ if(mysqli_num_rows($dataentry) === 1) {
     $row = mysqli_fetch_assoc($dataentry);
     if($row['username'] === $username && $row['password'] === $password) {
         header("Location:userpage.php");
-    } else {
-        header("Location:userpage.php");
-    }
+    } 
+}
+else {
+        header("Location:usernotfound.php");
 }
 
 $_SESSION["username"] = $username;

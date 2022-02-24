@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="/add_table_prediction" method="post">
+    <table>
+        <tbody><tr>
+          <th>Season Table Prediction Form</th>
+        </tr>
+        <tr>
+            <td>
+                <select name="tournament"><option value="1">Premier League</option></select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <select name="team"><option value="1">Manchester City</option><option value="2">Liverpool</option><option value="3">Chelsea</option><option value="4">West Ham</option><option value="5">Manchester United</option><option value="6">Arsenal</option><option value="7">Wolves</option><option value="8">Tottenham</option><option value="9">Brighton</option><option value="10">Southampton</option><option value="11">Leicester</option><option value="12">Aston Villa</option><option value="13">Crystal Palace</option><option value="14">Brentford</option><option value="15">Leeds</option><option value="16">Everton</option><option value="17">Newcastle</option><option value="18">Norwich</option><option value="19">Watford</option><option value="20">Burnley</option>
+                </select>
+            </td>
+          </tr>
+        <tr>
+            <td> <input type="number" name="team_position" placeholder="Team Position"></td>
+        </tr>
+        <tr>
+            <td> <input type="number" name="team_points" placeholder="Team Points"></td>
+        </tr>
+        <tr>
+            <td> <input type="number" name="goals_for" placeholder="Goals For"></td>
+        </tr>
+        <tr>
+            <td> <input type="number" name="goals_against" placeholder="Goals Against"></td>
+        </tr>
+        <tr>
+            <td> <input type="number" name="season_year" placeholder="Season Year"></td>
+        </tr>
+        <tr>
+            <td> <input type="text" name="prediction_name" placeholder="Prediction Name"></td>
+        </tr>
+        </tbody></table>
+
+        <select name="access">
+                <option value="public">Public</option>
+                <option value="private">Private</option>
+        </select>
+
+        <input type="submit" name="submit" value="Save Prediction">
+        </form>
+</body>
+</html>

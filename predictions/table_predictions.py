@@ -28,7 +28,7 @@ def find_public_predictions(userid):
     db_cursor = db_connection.cursor()
     db_cursor.execute(f'select * from table_predictions'
                       f' where userid={userid}'
-                      f' AND visibility=1')
+                      f' AND (visibility=1 OR visibility="true")')
     return db_cursor.fetchall()
 
 
@@ -36,7 +36,7 @@ def find_all_public_predictions():
     db_connection = database.connect()
     db_cursor = db_connection.cursor()
     db_cursor.execute(f'select * from table_predictions'
-                      f' where visibility="true"')
+                      f' where (visibility="true" or visibility=1)')
     return db_cursor.fetchall()
 
 
@@ -59,7 +59,7 @@ def find_prediction_by_username_and_name(username, prediction_name):
                       f'tournaments on tp.tournament_id = tournaments.tournament_id '
                       f'join users on users.username = "{username}"'
                       f'where tp.name = "{prediction_name}"'
-                      f'AND visibility=1')
+                      f'AND (visibility=1 or visibility="true")')
     prediction = db_cursor.fetchone()
     return prediction
 

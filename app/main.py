@@ -1,12 +1,13 @@
 import mysql.connector as mariadb
 from flask import Flask, send_file
-from flask import render_template
+from flask import render_template, request, redirect
 from flask_login import current_user, LoginManager
 from mysql.connector import errorcode
 from user import user_utils
 from data_files import database
 
 from predictions import table_predictions, booking_predictions, match_predictions, stats_predictions
+
 """
 try:
     db_connection = mariadb.connect(user='root', password='V3z?RnzC', host='localhost', database='analyzer')
@@ -26,7 +27,6 @@ app.url_map.strict_slashes = False
 
 @app.before_request
 def clear_trailing():
-    from flask import redirect, request
     rp = request.path
     if rp != '/' and rp.endswith('/'):
         return redirect(rp[:-1])
@@ -65,9 +65,10 @@ def user_table_predictions(username):
         return "User not found"
     else:
         # Need to implement error checks
-        db_cursor.execute(f'select * from table_predictions')
         user = user_utils.find_by_username(username)
         predictions = table_predictions.find_public_predictions(user[0])
+        print(user)
+        print(predictions)
 
         return render_template('table_predictions.html', username=username, predictions=predictions)
 
@@ -85,7 +86,8 @@ def user_selected_table_prediction(username, prediction_name):
         prediction = table_predictions.find_prediction_by_username_and_name(username, prediction_name)
         if prediction is None:
             return "Prediction does not exist"
-        return render_template('show_table_pred.html', username=username, prediction_name=prediction_name, prediction=prediction)
+        return render_template('show_table_pred.html', username=username, prediction_name=prediction_name,
+                               prediction=prediction)
 
 
 @app.route('/profile/<username>/table_predictions/<prediction_name>/download')
@@ -136,7 +138,8 @@ def user_selected_match_prediction(username, prediction_name):
         return "Prediction does not exist"
     stats = stats_predictions.find_stats(prediction[4])
 
-    return render_template('show_match_pred.html', prediction_name=prediction_name, stats=stats, prediction=prediction, username=username)
+    return render_template('show_match_pred.html', prediction_name=prediction_name, stats=stats, prediction=prediction,
+                           username=username)
 
 
 @app.route('/profile/<username>/match_predictions/<prediction_name>/download')
@@ -147,26 +150,39 @@ def download_match_pred(username, prediction_name):
     return send_file(path, as_attachment=True)
 
 
-@app.route('/add_table_prediction')
-def add_match_prediction():
-    return f'nothing'
+@app.route('/add_table_prediction', methods=["POST", "GET"])
+def add_table_prediction():
+    if request.method == "POST":
+        data = request.form
+        for item in data:
+            print(item)
+            if data[item] == '':
+                return f"Form failure"
 
-
-@app.route('/php')
-def php():
-    from subprocess import call
-    call(["php", "/php/match_prediction.php"])
-
-
-@app.route('/auth')
-def auth_check():
-    user = user_utils.find_by_email("test@test.com")
-    return 'Test'
+        tournament_id = data['tournament']
+        team_id = data['team']
+        position = data['team_position']
+        points = data['team_points']
+        goals_for = data['goals_for']
+        goals_against = data['goals_against']
+        season_year = data['season_year']
+        prediction_name = data['prediction_name']
+        print(prediction_name)
+        if data['access'] == "public":
+            visibility = "1"
+        else:
+            visibility = "0"
+        result = table_predictions.add_prediction(tournament_id, position, points, goals_for, goals_against, team_id, season_year, 1, visibility, prediction_name)
+        if result is False:
+            return f"Failed to add {prediction_name} to database"
+        return f"Successfully added {prediction_name} to database"
+    else:
+        return render_template('add_table_pred.html')
 
 
 if __name__ == '__main__':
-    #login_manager = LoginManager()
-    #login_manager.init_app(app)
-    #login_manager.login_view = 'login'
+    # login_manager = LoginManager()
+    # login_manager.init_app(app)
+    # login_manager.login_view = 'login'
 
     app.run()

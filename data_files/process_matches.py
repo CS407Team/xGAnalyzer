@@ -95,9 +95,9 @@ for index in jsonObject:
             data = (match_number,tourny, home_team_id,away_team_id,id,winner, location, status,round_number)
             db_cursor.execute(insert_stmt, data)
 
-        except mariadb.Error as err:
+    except mariadb.Error as err:
             print("Something went wrong: {}".format(err))
-        else:
+    else:
             db_connection.commit()
             print("Done");
             db_connection.close()

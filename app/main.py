@@ -1,12 +1,12 @@
 import mysql.connector as mariadb
 from flask import Flask, send_file
 from flask import render_template, request, redirect
-from flask_login import current_user, LoginManager
 from mysql.connector import errorcode
 from user import user_utils
 from data_files import database
 
-from predictions import table_predictions, booking_predictions, match_predictions, stats_predictions
+
+from predictions import table_predictions, booking_predictions, match_predictions, stats_predictions, player_predictions
 
 """
 try:
@@ -172,12 +172,65 @@ def add_table_prediction():
             visibility = "1"
         else:
             visibility = "0"
-        result = table_predictions.add_prediction(tournament_id, position, points, goals_for, goals_against, team_id, season_year, 1, visibility, prediction_name)
+        result = table_predictions.add_prediction(tournament_id, position, points, goals_for, goals_against, team_id,
+                                                  season_year, 1, visibility, prediction_name)
         if result is False:
             return f"Failed to add {prediction_name} to database"
         return f"Successfully added {prediction_name} to database"
     else:
         return render_template('add_table_pred.html')
+
+
+@app.route('profile/<username>/follow')
+def find_user(username):
+    return render_template('search_user.html', username=username)
+
+
+@app.route('profile/<username>/follow/found_follower')
+def follow_user(username):
+    if request.method == "POST":
+        data = request.form
+        for item in data:
+            print(item)
+            if data[item] == '':
+                return f"Form failure"
+
+    follower = data['player_name']
+
+    user_exists = player_predictions.follower_exists(follower)
+
+    if user_exists:
+        return render_template("follower.html", follower=follower)
+    else:
+        return render_template("dne.html")
+
+
+@app.route('profile/<username>/follow/found_follower/<follower>')
+def finalise_follow(username, follower):
+    success = player_predictions.follow(username, follower)
+
+    if success:
+        return f"user followed"
+    else:
+        return f"failed to follow"
+
+
+@app.route('profile/<username>/list_follower')
+def list_user(username):
+    followers = player_predictions.get_followers(username)
+    return render_template('list_followers.html',
+                           followers=followers)
+
+
+@app.route('profile/<username>/player_rating')
+def ratings():
+    return render_template('predictions.html')
+
+
+@app.route('/add_table_prediction')
+def add_predictions():
+    return render_template('predictions.html')
+
 
 
 if __name__ == '__main__':

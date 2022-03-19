@@ -1,4 +1,4 @@
-host = 'https://34.125.181.75/'
-user = 'newuser'
-password = 'test'
+host = '35.225.215.107'
+user = 'root'
+password = 'V3z?RnzC'
 name = 'analyzer'

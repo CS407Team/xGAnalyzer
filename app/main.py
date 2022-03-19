@@ -2,6 +2,8 @@ import mysql.connector as mariadb
 from flask import Flask, send_file
 from flask import render_template, request, redirect
 from flask_login import current_user, LoginManager
+from flask_sqlalchemy import SQLAlchemy
+
 from mysql.connector import errorcode
 from user import user_utils
 from data_files import database
@@ -35,6 +37,28 @@ def clear_trailing():
 @app.route('/')
 def home():
     return render_template('index.html')
+
+
+@app.route('/login', methods=["POST", "GET"])
+def login():
+    if request.method == "GET":
+        return redirect('/')
+    data = request.form
+    print(data['username'])
+    print(data['password'])
+
+    # Perform data check
+    return f'User not found'
+    return render_template('userpage.html', user=data['username'])
+
+
+@app.route('/signup', methods=["POST", "GET"])
+def signup():
+    if request.method == "GET":
+        return render_template('signup.html')
+
+    if request.method == "POST":
+        return render_template('signup.html')
 
 
 # User Profile Page
@@ -172,7 +196,7 @@ def add_table_prediction():
             visibility = "1"
         else:
             visibility = "0"
-        result = table_predictions.add_prediction(tournament_id, position, points, goals_for, goals_against, team_id, season_year, 1, visibility, prediction_name)
+        result = table_predictions.add_prediction(tournament_id, position, points, goals_for, goals_against, team_id, season_year, 7, visibility, prediction_name)
         if result is False:
             return f"Failed to add {prediction_name} to database"
         return f"Successfully added {prediction_name} to database"

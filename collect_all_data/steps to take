@@ -1,0 +1,14 @@
+Notes for ml algorithms
+=========
+
+Multiple Linear Regression:
+    - Used for goal predictions for matches
+    - Need at least 10 observations per variables
+    - variables will be based on table columns
+        - every value in the table column will be used to predict the other values in the table column
+
+Logistical Regression 
+    - Used to calculate discrete outcomes like winners and losers for table point predictions
+    - Atleast 10 obeservations for each fixure
+    - For games with less than 10 observations, use averages to predict the outcome and goals.
+    

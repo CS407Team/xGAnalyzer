@@ -1,7 +1,8 @@
 import json
 from urllib.request import HTTPPasswordMgrWithPriorAuth
 
-seasons = ["2021","2020","2019","2018","2017","2016","2015","2015","2014","2013","2012","2011","2010"]
+# seasons = ["2021","2020","2019","2018","2017","2016","2015","2015","2014","2013","2012","2011","2010"]
+seasons = ["2021","2020","2019","2018","2017","2016"]
 
 # for season in seasons:
 # filename = "premier_league/"+season
@@ -10,22 +11,23 @@ with open(filename) as jsonFile:
     jsonObject = json.load(jsonFile)
 jsonFile.close()
 
-team = "Manchester City"
-away = "Liverpool"
+team = "Liverpool"
+away = "Manchester United"
 round = ""
 count = 0
-file = open("file.csv","a")
+file = open("file2.csv","a")
 
 for curr_fixture in jsonObject:
     if(str(curr_fixture['fixture']['status']['long']) == "Not Started" and curr_fixture['fixture']['status']['elapsed'] == None):
-        teams = {"home":str(curr_fixture['teams']['home']['name']), "away":str(curr_fixture['teams']["away"]['name'])}
+        teams = {"home":str(curr_fixture['teams']['home']['name']), "away":str(curr_fixture['teams']["away"]['name'])}        
+        # print(teams)
         for season in seasons[1:]:
             next_season = "premier_league/"+season
             with open(next_season) as seasonFile:
                 seasonObject = json.load(seasonFile)
             seasonFile.close()
             
-            for fixureObject in seasonObject:              
+            for fixureObject in seasonObject:
                 fixure_teams = fixureObject["teams"]
                 if(str(fixure_teams["home"]["name"]) == team and fixure_teams["away"]["name"] == away):
                     round = str(fixureObject['league']['round'])
@@ -36,12 +38,13 @@ for curr_fixture in jsonObject:
                     full_time_home = fixureObject['score']['fulltime']['home']
                     full_time_away = fixureObject['score']['fulltime']['away']
                     if(bool(fixure_teams['home']['winner']) == True):
-                        winner = team
+                        winner = fixure_teams['home']['id']
                     elif(bool(fixure_teams['away']['winner']) == True):
-                        winner = away
+                        winner = fixure_teams['away']['id']
                     else:
-                        winner = "None"
+                        winner = "0"
                     line = str(num)+","+ str(half_time_away)+","+str(half_time_home)+","+ str(full_time_away)+","+ str(full_time_home)+","+ str(winner)+"\n"
+                    # print(line)
                     file.write(line)
 file.close()
                     

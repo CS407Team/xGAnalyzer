@@ -20,6 +20,7 @@ def validate_data(winner):
 
 def generate_odds():
     df = pandas.read_csv("fixture_data.csv",converters={"RoundNum":int})
+ 
     X = df[['RoundNum','HalftimeHome','HalftimeAway','FulltimeHome','FulltimeAway']]
     y = df['Winner']
     if(len(y) == 0):
@@ -30,7 +31,10 @@ def generate_odds():
 
     if(validate_data(y) == False):
         os.remove("fixture_data.csv")
-        return {"Winner":y[0]}
+        return {"Winner":int(y[0])}
+    
+    home_id = int(df.HomeId[0])
+    away_id = int(df.AwayId[0])
 
     # col_name =['RoundNum','HalftimeHome','HalftimeAway','FulltimeHome','FulltimeAway', 'Winner']
     # df = pandas.read_csv("file.csv")
@@ -54,9 +58,9 @@ def generate_odds():
     tie_freq = 0
 
     for val in y_pred:
-        if val == 33:
+        if val == home_id:
             home_freq = home_freq +1
-        elif val == 40:
+        elif val == away_id:
             away_freq = away_freq +1
         else:
             tie_freq = tie_freq +1

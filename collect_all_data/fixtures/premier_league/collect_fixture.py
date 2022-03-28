@@ -20,7 +20,7 @@ def collect_fixure(team1, team2):
     round = ""
     count = 0
     file = open("fixture_data.csv","a")
-    file.write("RoundNum,HalftimeHome,HalftimeAway,FulltimeHome,FulltimeAway,Winner\n")
+    file.write("HomeId,AwayId,RoundNum,HalftimeHome,HalftimeAway,FulltimeHome,FulltimeAway,Winner\n")
 
     for curr_fixture in jsonObject:
         if(str(curr_fixture['fixture']['status']['long']) == "Not Started" and curr_fixture['fixture']['status']['elapsed'] == None):
@@ -48,7 +48,7 @@ def collect_fixure(team1, team2):
                             winner = fixure_teams['away']['id']
                         else:
                             winner = "0"
-                        line = str(num)+","+ str(half_time_away)+","+str(half_time_home)+","+ str(full_time_away)+","+ str(full_time_home)+","+ str(winner)+"\n"
+                        line = str(fixure_teams['home']['id']) +","+str(fixure_teams['away']['id'])+","+ str(num)+","+str(half_time_home) +","+str(half_time_away)+","+ str(full_time_home)+","+ str(full_time_away)+","+ str(winner)+"\n"
                         # print(line)
                         file.write(line)
     file.close()

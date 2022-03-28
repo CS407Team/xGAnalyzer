@@ -1,3 +1,5 @@
+from asyncio import run_coroutine_threadsafe
+from xxlimited import new
 from soupsieve import match
 import get_unplayed
 import generate_odds
@@ -34,25 +36,38 @@ def get_stats(team):
     return None    
 
 def max_key(scores):
-    if(scores['home'] >= scores['away'] and scores['home'] >= scores['tie']):
+    if(scores['home'] > scores['away'] and scores['home'] > scores['tie']):
         return "H"
-    elif(scores['away'] >= scores['home'] and scores['away'] >= scores['tie']):
+    elif(scores['away'] > scores['home'] and scores['away'] > scores['tie']):
         return 'A'
-    elif(scores['tie'] >= scores['away'] and scores['tie'] >= scores['home']):
+    elif(scores['tie'] > scores['away'] and scores['tie'] > scores['home']):
         return 'T'
     else:
-        return 'N'
+        return 'T'
     
-def generate_weekly(standings,points,max):
+def generate_weekly(max):
+    with open("current_standings") as jsonFile:
+        standings = json.load(jsonFile)
+        jsonFile.close()
+        
+    fixture_results = []
+    file = open("weekly_points","r")
+    lines = file.readlines()
+    for line in lines:
+        data = json.loads(line.strip())
+        fixture_results.append(data)
+        
+
+    
     for current_team in standings:
-        for i in range(len(points)-1):
-            if(points[i]['team'] == current_team['team']):
+        for team in fixture_results:
+            if(team['team'] == current_team['team']):
                 curr_max = max
                 total = 0
                 wins = 0
                 losses = 0
                 draws = 0
-                for current_points in points[i]['results']:
+                for current_points in team['results']:
                     if curr_max <= 0:
                         break
                     if current_points["points"] == -1:
@@ -72,9 +87,9 @@ def generate_weekly(standings,points,max):
                 current_team["W"] = current_team["W"] + wins
                 current_team["D"] = current_team["D"] + draws
                 current_team["L"] = current_team["L"] + losses
-                points = ((3*wins)+(draws))* current_team["Played"]
+                points = total
                 current_team["Pts"] = current_team["Pts"] + points
-    
+    # print(standings)
     return standings
 
 def sort_standings(standings):
@@ -145,6 +160,8 @@ round_points = [
     {"id":"44", "team": "Burnley","results": []},
 ]
 
+# results = open("fixture_results", "a")
+
 # for team in teams:
 #     matches = get_unplayed.get_remaining_fixtures(team["team"])
 #     round = 0
@@ -157,6 +174,10 @@ round_points = [
 #         odds = generate_odds.generate_odds()
 #         game = {"round":round ,"teams":{"home":team1, "away":team2}, "odds":odds}
 #         team["results"].append(game)
+#     json.dump(team, results)
+#     results.write("\n")
+
+# results.close()
 
 
 
@@ -171,6 +192,7 @@ round_points = [
 
 # # Generate Weekly Points for each rounds
 
+# weekly_points = open("weekly_points", "a")
 # for team in round_points:
 #     curr_team = team["team"]
 #     for current_round in round_results.keys():
@@ -216,6 +238,10 @@ round_points = [
 #                 result = {"round":current_round, "points":1}
 #                 team["results"].append(result)
 #                 break 
+#     json.dump(team, weekly_points)
+#     weekly_points.write("\n")
+# weekly_points.close()
+    
                 
 # print(round_points[0]["results"])
 
@@ -244,10 +270,17 @@ round_points = [
 #     {"id":"44", "team": "Burnley","Played":28, "W":0, "D":0, "L":0, "Pts":0},
 # ]
 
+# current_file = open("current_standings", "a")
+# json.dump(current_standings, current_file)
+# current_file.close()
+
+new_standings = generate_weekly(1)
 # new_standings = generate_weekly(current_standings,round_points,3)
-# sort_standings(new_standings)
-# for current in new_standings:
-#     print(current)
+sort_standings(new_standings)
+new_standings.reverse()
+for current in new_standings:
+    print(current)
+
 
                 
     
@@ -259,11 +292,11 @@ round_points = [
 # game = teams[1]["results"][0]
 
 
-val = test_stats.generate_stats(28)
+# val = test_stats.generate_stats(28)
 
-print(type(val))
+# print(type(val))
 
-{"home_stats":get_stats(teams[0]["team"]), "away_stats":get_stats(teams[1]["team"])}
+# {"home_stats":get_stats(teams[0]["team"]), "away_stats":get_stats(teams[1]["team"])}
 
 
 # print("\t\tManchester City\t - \tLiverpool")

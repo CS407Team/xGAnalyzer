@@ -9,7 +9,8 @@ from sklearn.preprocessing import StandardScaler
 def find_team(team):
     index = 0
     for current_team in possession['Unnamed: 0']:
-        if current_team == stats["team"]:
+        # if current_team == stats["team"]:
+        if current_team == team:
             return index
         index = index+1
         
@@ -27,9 +28,6 @@ for line in lines:
     team = {"team":team_name, "id":team_id}
     teams.append(team)    
 
-
-
-print("\n\n\n")
 
 # def generate_stats(team):
 
@@ -49,19 +47,20 @@ shots = pandas.read_csv("shots.csv")
 
 stats = {}
 round_stats = []
-# team = "Manchester City"
 
-for current_team in teams:
-    
-    
-    stats["team"] = current_team['team']
-    stats["id"] = current_team['id']
+def generate_stats(current_team, games_played):
+# team = "Manchester City"
+    # for current_team in teams:
+        
+        
+    # stats["team"] = current_team['team']
+    # stats["id"] = current_team['id']
     index = find_team(current_team)
 
     # Generate Possession
     # print(possession.columns)
     
-    games_played = int(str(possession['Unnamed: 1'][index]))
+    # games_played = int(str(possession['Unnamed: 1'][index]))
     current_possession = float(str(possession['Unnamed: 2'][index]))
     projected_possession = (current_possession * games_played)/(games_played+1)
     stats['possession'] = projected_possession
@@ -110,7 +109,7 @@ for current_team in teams:
     stats['complete_passes'] = complete_passes
     # print("Projected Complete Passes: ", complete_passes)
 
-    round_stats.append(stats)
-    # print(stats)
+    # round_stats.append(stats)
+    return (stats)
 
-print(round_stats)
+    # return(round_stats)

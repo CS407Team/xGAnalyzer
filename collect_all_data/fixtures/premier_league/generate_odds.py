@@ -7,12 +7,30 @@ from sklearn.linear_model import LogisticRegression
 from sklearn import metrics
 import os
 
-def predict_Winner():
+def validate_data(winner):
+    start = winner[0]
+
+    for val in winner:
+        if val != start:
+            return True
+            break
+
+    return False
+
+
+def generate_odds():
     df = pandas.read_csv("fixture_data.csv",converters={"RoundNum":int})
     X = df[['RoundNum','HalftimeHome','HalftimeAway','FulltimeHome','FulltimeAway']]
     y = df['Winner']
+    if(len(y) == 0):
+        os.remove("fixture_data.csv")
+        return {"Error": -1}
+    
     X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=0.25,random_state=0)
 
+    if(validate_data(y) == False):
+        os.remove("fixture_data.csv")
+        return {"Winner":y[0]}
 
     # col_name =['RoundNum','HalftimeHome','HalftimeAway','FulltimeHome','FulltimeAway', 'Winner']
     # df = pandas.read_csv("file.csv")

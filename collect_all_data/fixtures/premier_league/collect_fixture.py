@@ -9,23 +9,25 @@ def collect_fixure(team1, team2):
 
     # for season in seasons:
     # filename = "premier_league/"+season
-    filename = "premier_league/2021"
+    filename = "2021"
     with open(filename) as jsonFile:
         jsonObject = json.load(jsonFile)
     jsonFile.close()
 
+    print("Home: ", team1, "Away: ", team2)
     team = team1
     away = team2
     round = ""
     count = 0
     file = open("fixture_data.csv","a")
+    file.write("RoundNum,HalftimeHome,HalftimeAway,FulltimeHome,FulltimeAway,Winner\n")
 
     for curr_fixture in jsonObject:
         if(str(curr_fixture['fixture']['status']['long']) == "Not Started" and curr_fixture['fixture']['status']['elapsed'] == None):
             teams = {"home":str(curr_fixture['teams']['home']['name']), "away":str(curr_fixture['teams']["away"]['name'])}        
             # print(teams)
             for season in seasons[1:]:
-                next_season = "premier_league/"+season
+                next_season = season
                 with open(next_season) as seasonFile:
                     seasonObject = json.load(seasonFile)
                 seasonFile.close()
@@ -50,4 +52,5 @@ def collect_fixure(team1, team2):
                         # print(line)
                         file.write(line)
     file.close()
+    print("Data collection status: COMPLETE")
 

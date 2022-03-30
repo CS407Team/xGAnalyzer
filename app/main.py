@@ -161,7 +161,9 @@ def add_table_prediction():
         return render_template('add_table_pred.html')
 
 
-
+if __name__ == '__main__':
+    print("here")
+    app.run()
 
 
 

@@ -7,12 +7,34 @@ from sklearn.linear_model import LogisticRegression
 from sklearn import metrics
 import os
 
-def predict_Winner():
+def validate_data(winner):
+    start = winner[0]
+
+    for val in winner:
+        if val != start:
+            return True
+            break
+
+    return False
+
+
+def generate_odds():
     df = pandas.read_csv("fixture_data.csv",converters={"RoundNum":int})
+ 
     X = df[['RoundNum','HalftimeHome','HalftimeAway','FulltimeHome','FulltimeAway']]
     y = df['Winner']
+    if(len(y) == 0):
+        os.remove("fixture_data.csv")
+        return {"Error": -1}
+    
     X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=0.25,random_state=0)
 
+    if(validate_data(y) == False):
+        os.remove("fixture_data.csv")
+        return {"Winner":int(y[0])}
+    
+    home_id = int(df.HomeId[0])
+    away_id = int(df.AwayId[0])
 
     # col_name =['RoundNum','HalftimeHome','HalftimeAway','FulltimeHome','FulltimeAway', 'Winner']
     # df = pandas.read_csv("file.csv")
@@ -36,9 +58,9 @@ def predict_Winner():
     tie_freq = 0
 
     for val in y_pred:
-        if val == 33:
+        if val == home_id:
             home_freq = home_freq +1
-        elif val == 40:
+        elif val == away_id:
             away_freq = away_freq +1
         else:
             tie_freq = tie_freq +1

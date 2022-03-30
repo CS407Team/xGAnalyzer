@@ -5,7 +5,6 @@ from mysql.connector import errorcode
 from user import user_utils
 from data_files import database
 
-
 from predictions import table_predictions, booking_predictions, match_predictions, stats_predictions, player_predictions
 
 """
@@ -231,6 +230,18 @@ def ratings():
 def add_predictions():
     return render_template('predictions.html')
 
+
+@app.route('/profile/<username>/find_plyer')
+def search_player(username):
+    if request.method == "POST":
+        data = request.form
+        if data['type'] == "Player Rating":
+            return render_template('player_rating.html', {'username': username, 'player_name': data["player_name"]})
+        elif data['type'] == "Player Goals":
+            return render_template('player_goals.html', {'username': username, 'player_name': data["player_name"]})
+        elif data['type'] == "Player Saves":
+            return render_template('player_saves.html', {'username': username, 'player_name': data["player_name"]})
+    return render_template('index.html')
 
 
 if __name__ == '__main__':

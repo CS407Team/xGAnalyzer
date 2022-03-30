@@ -44,4 +44,39 @@ class Player(db.Model):
     player_age = db.Column(db.Integer)
 
 
-    
+class GamePredictions(db.Model):
+    game_prediction_id = db.Column(db.Integer, primary_key=True)
+    gameid = db.Column(db.Integer)
+    home_team_id = db.Column(db.Integer)
+    away_team_id = db.Column(db.Integer)
+    stats_predictions_id = db.Column(db.Integer)
+    visibility = db.Column(db.Integer)
+    userid = db.Column(db.Integer)
+    name = db.Column(db.String(50))
+    location = db.Column(db.String(20))
+    status = db.Column(db.String(20))
+    round_number = db.Column(db.Integer)
+    winner = db.Column(db.Integer)
+
+
+class Games(db.Model):
+    gameid = db.Column(db.Integer, primary_key=True)
+    tournament_id = db.Column(db.Integer)
+    hometeam_id = db.Column(db.Integer)
+    awayteam_id = db.Column(db.Integer)
+    stats_id = db.Column(db.Integer)
+    winner_id = db.Column(db.Integer)
+    location_id = db.Column(db.Integer)
+    prediction_name = db.Column(db.String(20))
+    location = db.Column(db.String(20))
+    status = db.Column(db.String(20))
+    round_number = db.Column(db.Integer)
+    xG_graph = db.Column(db.String(256))
+
+
+class Teams(db.Model):
+    team_id = db.Column(db.Integer, primary_key=True)
+    tournament_id = db.Column(db.Integer)
+    team_name = db.Column(db.String(50))
+    home_stadium = db.Column(db.String(50))
+

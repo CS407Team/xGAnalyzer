@@ -1,5 +1,5 @@
-from flask import Flask, redirect, request
-from flask_login import LoginManager
+from flask import Flask, redirect, request, session
+from flask_login import LoginManager, current_user
 from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
@@ -11,7 +11,7 @@ def create_app():
                                                           'analyzer')
     app.config['SQLALCHEMY_DATABASE_URI'] = connection
     app.url_map.strict_slashes = False
-
+    app.secret_key = "secret key"
     db.init_app(app)
 
     login_manager = LoginManager()
@@ -21,6 +21,12 @@ def create_app():
 
     from .auth import auth as auth_blueprint
     app.register_blueprint(auth_blueprint)
+
+    from .history import history as history_blueprint
+    app.register_blueprint(history_blueprint)
+
+    from .players import players as players_blueprint
+    app.register_blueprint(players_blueprint)
 
     from .models import User
 
@@ -33,6 +39,15 @@ def create_app():
         rp = request.path
         if rp != '/' and rp.endswith('/'):
             return redirect(rp[:-1])
+
+    @app.after_request
+    def test_history(self):
+        if current_user.is_authenticated:
+            session['urls'].append(request.url)
+            if(len(session['urls'])) > 5:
+                session['urls'].pop(0)
+            session.modified = True
+        return self
 
     return app
 

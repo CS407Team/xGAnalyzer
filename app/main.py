@@ -1,68 +1,25 @@
-import mysql.connector as mariadb
-from flask import Flask, send_file
+from flask import Flask, send_file, Blueprint
 from flask import render_template, request, redirect
-from flask_login import current_user, LoginManager
+from flask_login import LoginManager, current_user, UserMixin, login_user
 from flask_sqlalchemy import SQLAlchemy
+from werkzeug.security import generate_password_hash, check_password_hash
 
-from mysql.connector import errorcode
+
 from user import user_utils
 from data_files import database
 
 from predictions import table_predictions, booking_predictions, match_predictions, stats_predictions
 
-"""
-try:
-    db_connection = mariadb.connect(user='root', password='V3z?RnzC', host='localhost', database='analyzer')
-    db_cursor = db_connection.cursor()
-    print("Successful connection")
-except mariadb.Error as err:
-    if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
-        print("Something is wrong with your user name or password")
-    elif err.errno == errorcode.ER_BAD_DB_ERROR:
-        print("Database does not exist")
-    else:
-        print(err)
-"""
-app = Flask(__name__)
-app.url_map.strict_slashes = False
+main = Blueprint('main', __name__)
 
 
-@app.before_request
-def clear_trailing():
-    rp = request.path
-    if rp != '/' and rp.endswith('/'):
-        return redirect(rp[:-1])
-
-
-@app.route('/')
+@main.route('/')
 def home():
     return render_template('index.html')
 
 
-@app.route('/login', methods=["POST", "GET"])
-def login():
-    if request.method == "GET":
-        return redirect('/')
-    data = request.form
-    print(data['username'])
-    print(data['password'])
-
-    # Perform data check
-    return f'User not found'
-    return render_template('userpage.html', user=data['username'])
-
-
-@app.route('/signup', methods=["POST", "GET"])
-def signup():
-    if request.method == "GET":
-        return render_template('signup.html')
-
-    if request.method == "POST":
-        return render_template('signup.html')
-
-
 # User Profile Page
-@app.route('/profile/<username>')
+@main.route('/profile/<username>')
 def profile(username):
     # Maybe optimize user checking with extra time
     db_connection = database.connect()
@@ -75,7 +32,7 @@ def profile(username):
         return render_template('profile.html', username=username)
 
 
-@app.route('/profile/<username>/table_predictions')
+@main.route('/profile/<username>/table_predictions')
 def user_table_predictions(username):
     db_connection = database.connect()
     db_cursor = db_connection.cursor()
@@ -97,7 +54,7 @@ def user_table_predictions(username):
         return render_template('table_predictions.html', username=username, predictions=predictions)
 
 
-@app.route('/profile/<username>/table_predictions/<prediction_name>')
+@main.route('/profile/<username>/table_predictions/<prediction_name>')
 def user_selected_table_prediction(username, prediction_name):
     db_connection = database.connect()
     db_cursor = db_connection.cursor()
@@ -114,7 +71,7 @@ def user_selected_table_prediction(username, prediction_name):
                                prediction=prediction)
 
 
-@app.route('/profile/<username>/table_predictions/<prediction_name>/download')
+@main.route('/profile/<username>/table_predictions/<prediction_name>/download')
 def download_table(username, prediction_name):
     path = table_predictions.export(username, prediction_name)
     if path is None:
@@ -122,7 +79,7 @@ def download_table(username, prediction_name):
     return send_file(path, as_attachment=True)
 
 
-@app.route('/profile/<username>/booking_predictions')
+@main.route('/profile/<username>/booking_predictions')
 def user_booking_predictions(username):
     user = user_utils.find_by_username(username)
     if user is None:
@@ -133,7 +90,7 @@ def user_booking_predictions(username):
     return render_template('booking_predictions.html', predictions=predictions, username=username)
 
 
-@app.route('/profile/<username>/booking_predictions/download')
+@main.route('/profile/<username>/booking_predictions/download')
 def download_bookings(username):
     path = booking_predictions.export(username)
     if path is None:
@@ -141,7 +98,7 @@ def download_bookings(username):
     return send_file(path, as_attachment=True)
 
 
-@app.route('/profile/<username>/match_predictions')
+@main.route('/profile/<username>/match_predictions')
 def user_match_predictions(username):
     user = user_utils.find_by_username(username)
     if user is None:
@@ -151,7 +108,7 @@ def user_match_predictions(username):
     return render_template('match_predictions.html', username=username, predictions=predictions)
 
 
-@app.route('/profile/<username>/match_predictions/<prediction_name>')
+@main.route('/profile/<username>/match_predictions/<prediction_name>')
 def user_selected_match_prediction(username, prediction_name):
     user = user_utils.find_by_username(username)
     if user is None:
@@ -166,7 +123,7 @@ def user_selected_match_prediction(username, prediction_name):
                            username=username)
 
 
-@app.route('/profile/<username>/match_predictions/<prediction_name>/download')
+@main.route('/profile/<username>/match_predictions/<prediction_name>/download')
 def download_match_pred(username, prediction_name):
     path = match_predictions.export(username, prediction_name)
     if path is None:
@@ -174,7 +131,7 @@ def download_match_pred(username, prediction_name):
     return send_file(path, as_attachment=True)
 
 
-@app.route('/add_table_prediction', methods=["POST", "GET"])
+@main.route('/add_table_prediction', methods=["POST", "GET"])
 def add_table_prediction():
     if request.method == "POST":
         data = request.form
@@ -196,7 +153,7 @@ def add_table_prediction():
             visibility = "1"
         else:
             visibility = "0"
-        result = table_predictions.add_prediction(tournament_id, position, points, goals_for, goals_against, team_id, season_year, 7, visibility, prediction_name)
+        result = table_predictions.add_prediction(tournament_id, position, points, goals_for, goals_against, team_id, season_year, current_user.userid, visibility, prediction_name)
         if result is False:
             return f"Failed to add {prediction_name} to database"
         return f"Successfully added {prediction_name} to database"
@@ -204,9 +161,7 @@ def add_table_prediction():
         return render_template('add_table_pred.html')
 
 
-if __name__ == '__main__':
-    # login_manager = LoginManager()
-    # login_manager.init_app(app)
-    # login_manager.login_view = 'login'
 
-    app.run()
+
+
+

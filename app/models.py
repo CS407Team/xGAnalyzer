@@ -16,9 +16,32 @@ class User(UserMixin, db.Model):
     def set_password(self, password):
         self.password = generate_password_hash(password, method='sha256')
 
+    def is_authenticated(self):
+        return None
+
+    def is_active(self):
+        return None
+
+    def get_id(self):
+        return self.userid
+
+    def is_anonymous(self):
+        return None
+
     def check_password(self, password):
         """Check hashed password."""
         return check_password_hash(self.password, password)
 
     def __repr__(self):
         return '<User {}>'.format(self.username)
+
+
+class Player(db.Model):
+    playerid = db.Column(db.Integer, primary_key=True)
+    teamid = db.Column(db.Integer)
+    playername = db.Column(db.String(50))
+    position = db.Column(db.String(20))
+    player_age = db.Column(db.Integer)
+
+
+    

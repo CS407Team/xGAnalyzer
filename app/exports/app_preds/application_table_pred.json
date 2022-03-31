@@ -1,0 +1,182 @@
+[
+  {
+    "Team": 50,
+    "Position": 1,
+    "Points": 91,
+    "Games Played": 38,
+    "Games Won": 29,
+    "Games Lost": 5,
+    "Games Drawn": 4
+  },
+  {
+    "Team": 40,
+    "Position": 2,
+    "Points": 71,
+    "Games Played": 38,
+    "Games Won": 20,
+    "Games Lost": 7,
+    "Games Drawn": 11
+  },
+  {
+    "Team": 49,
+    "Position": 3,
+    "Points": 65,
+    "Games Played": 38,
+    "Games Won": 17,
+    "Games Lost": 7,
+    "Games Drawn": 14
+  },
+  {
+    "Team": 42,
+    "Position": 4,
+    "Points": 60,
+    "Games Played": 38,
+    "Games Won": 17,
+    "Games Lost": 12,
+    "Games Drawn": 9
+  },
+  {
+    "Team": 33,
+    "Position": 5,
+    "Points": 55,
+    "Games Played": 38,
+    "Games Won": 14,
+    "Games Lost": 11,
+    "Games Drawn": 13
+  },
+  {
+    "Team": 47,
+    "Position": 6,
+    "Points": 54,
+    "Games Played": 38,
+    "Games Won": 15,
+    "Games Lost": 14,
+    "Games Drawn": 9
+  },
+  {
+    "Team": 48,
+    "Position": 7,
+    "Points": 50,
+    "Games Played": 38,
+    "Games Won": 13,
+    "Games Lost": 14,
+    "Games Drawn": 11
+  },
+  {
+    "Team": 39,
+    "Position": 8,
+    "Points": 49,
+    "Games Played": 38,
+    "Games Won": 13,
+    "Games Lost": 15,
+    "Games Drawn": 10
+  },
+  {
+    "Team": 41,
+    "Position": 9,
+    "Points": 41,
+    "Games Played": 38,
+    "Games Won": 8,
+    "Games Lost": 14,
+    "Games Drawn": 17
+  },
+  {
+    "Team": 66,
+    "Position": 10,
+    "Points": 39,
+    "Games Played": 38,
+    "Games Won": 11,
+    "Games Lost": 18,
+    "Games Drawn": 9
+  },
+  {
+    "Team": 46,
+    "Position": 11,
+    "Points": 39,
+    "Games Played": 38,
+    "Games Won": 10,
+    "Games Lost": 15,
+    "Games Drawn": 13
+  },
+  {
+    "Team": 51,
+    "Position": 12,
+    "Points": 39,
+    "Games Played": 38,
+    "Games Won": 7,
+    "Games Lost": 14,
+    "Games Drawn": 19
+  },
+  {
+    "Team": 52,
+    "Position": 13,
+    "Points": 38,
+    "Games Played": 38,
+    "Games Won": 7,
+    "Games Lost": 14,
+    "Games Drawn": 17
+  },
+  {
+    "Team": 34,
+    "Position": 14,
+    "Points": 37,
+    "Games Played": 38,
+    "Games Won": 7,
+    "Games Lost": 15,
+    "Games Drawn": 16
+  },
+  {
+    "Team": 55,
+    "Position": 15,
+    "Points": 33,
+    "Games Played": 38,
+    "Games Won": 7,
+    "Games Lost": 19,
+    "Games Drawn": 12
+  },
+  {
+    "Team": 45,
+    "Position": 16,
+    "Points": 31,
+    "Games Played": 38,
+    "Games Won": 7,
+    "Games Lost": 20,
+    "Games Drawn": 11
+  },
+  {
+    "Team": 63,
+    "Position": 17,
+    "Points": 29,
+    "Games Played": 38,
+    "Games Won": 5,
+    "Games Lost": 20,
+    "Games Drawn": 10
+  },
+  {
+    "Team": 44,
+    "Position": 18,
+    "Points": 28,
+    "Games Played": 38,
+    "Games Won": 3,
+    "Games Lost": 19,
+    "Games Drawn": 17
+  },
+  {
+    "Team": 38,
+    "Position": 19,
+    "Points": 24,
+    "Games Played": 38,
+    "Games Won": 5,
+    "Games Lost": 23,
+    "Games Drawn": 10
+  },
+  {
+    "Team": 71,
+    "Position": 20,
+    "Points": 23,
+    "Games Played": 38,
+    "Games Won": 4,
+    "Games Lost": 23,
+    "Games Drawn": 11
+  }
+]

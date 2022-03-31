@@ -80,3 +80,15 @@ class Teams(db.Model):
     team_name = db.Column(db.String(50))
     home_stadium = db.Column(db.String(50))
 
+
+class SeasonTable(db.Model):
+    season_table_id = db.Column(db.Integer, primary_key=True)
+    team_id = db.Column(db.Integer)
+    tournament_id = db.Column(db.Integer)
+    team_position = db.Column(db.Integer)
+    team_points  = db.Column(db.Integer)
+    games_played = db.Column(db.Integer)
+    won = db.Column(db.Integer)
+    lost = db.Column(db.Integer)
+    drawn = db.Column(db.Integer)
+    round_number = db.Column(db.Integer)

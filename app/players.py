@@ -18,5 +18,5 @@ def match_history():
 
 @players.route('/player/<fName>-<lName>')
 def player_page(fName, lName):
-    return f'{fName}, {lName}'
-    # return render_template(fName=fName, lName=lName)
+    #return f'{fName}, {lName}'
+    return render_template("playerpage.html", fName=fName, lName=lName)

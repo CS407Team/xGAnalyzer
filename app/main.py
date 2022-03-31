@@ -4,11 +4,12 @@ from flask_login import LoginManager, current_user, UserMixin, login_user
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 
-
+from app.models import GamePredictions, SeasonTable
 from user import user_utils
 from data_files import database
 
-from predictions import table_predictions, booking_predictions, match_predictions, stats_predictions
+from predictions import table_predictions, booking_predictions, match_predictions, stats_predictions, \
+    app_generated_predictions
 
 main = Blueprint('main', __name__)
 
@@ -104,7 +105,15 @@ def user_match_predictions(username):
     if user is None:
         return 'User not found'
 
-    predictions = match_predictions.find_public_predictions(user[0])
+    # Check to see if we are visiting the current user's page
+    if current_user.username != username:
+        print("Not the same user")
+        predictions = match_predictions.find_public_predictions(user[0])
+    else:
+        # Return all prediction
+        print("All predictions")
+        predictions = match_predictions.find_all_predictions_by_userid(current_user.userid)
+        print(predictions)
     return render_template('match_predictions.html', username=username, predictions=predictions)
 
 
@@ -161,7 +170,38 @@ def add_table_prediction():
         return render_template('add_table_pred.html')
 
 
+@main.route('/match/<home_team>-v-<away_team>-<date>')
+def match_page(home_team, away_team, date):
+    #TODO: String formatting from team names and dates to proper database version.
 
 
 
 
+    return f'{home_team} vs {away_team} on {date}'
+
+
+@main.route('/table')
+def application_table():
+    data = SeasonTable.query.filter_by(round_number=38).order_by('team_position').all()
+    for team in data:
+        print(f'ID: {team.team_id}')
+        print(f'pos: {team.team_position}')
+    return render_template('application_table_pred.html', team_data=data)
+
+
+@main.route('/table/download')
+def download_app_table():
+    data = SeasonTable.query.filter_by(round_number=38).order_by('team_position').all()
+    path = app_generated_predictions.export()
+    if path is None:
+        return
+    return send_file(path, as_attachment=True)
+
+
+"""
+def download_table(username, prediction_name):
+    path = table_predictions.export(username, prediction_name)
+    if path is None:
+        return 'Prediction does not exist'
+    return send_file(path, as_attachment=True)
+"""

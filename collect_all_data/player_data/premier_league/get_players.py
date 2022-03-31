@@ -28,7 +28,7 @@ teams = [
 for team in teams:
     id = team["id"]
     file = open(team["team"],"a")
-    querystring = {"team":id,"season":"2020"}
+    querystring = {"team":id,"season":"2021"}
 
     headers = {
         "X-RapidAPI-Host": "api-football-v1.p.rapidapi.com",

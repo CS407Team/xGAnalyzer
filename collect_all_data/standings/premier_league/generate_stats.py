@@ -28,9 +28,6 @@ for line in lines:
     teams.append(team)    
 
 
-
-print("\n\n\n")
-
 # def generate_stats(team):
 
 standings = pandas.read_csv("team_standings.csv")

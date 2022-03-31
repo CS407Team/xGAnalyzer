@@ -32,190 +32,216 @@ teams = [
 file = open("teams_list","r")
 lines = file.readlines()
 team_files = []
+
+player_stats = open("player_stats","a")
+
 for line in lines:
     data = line.strip()
     team_files.append(data)
 
-    
 for team in teams:
     file = open(team["team"],"r")
     files_lines = file.readlines()
     players = []
-    team_name = team["team"] +"_xg"
-    team_xg = open(team_name,"a")
+    # team_name = team["team"] +"_xg"
+    # team_xg = open(team_name,"a")
     
+    print(team["team"]+"\n\n")
     for current_line in files_lines:
-        data = json.loads(current_line.strip())
-        players.append(data)        
-        
-    for player in players:
-        
-        player_id =  player[0]["player"]['id']
-        player_name =  player[0]["player"]['name']
-        games = 1
-        if( player[0]["statistics"][0]['games']['appearences']!= None):
-            games = player[0]["statistics"][0]['games']['appearences']
-        
-        minutes = 0
-        if(player[0]["statistics"][0]['games']['minutes'] != None):
-            minutes = player[0]["statistics"][0]['games']['minutes']
-            
-        rating = 0
-        if(player[0]["statistics"][0]['games']['rating'] != None):
-            rating = player[0]["statistics"][0]['games']['rating']
-        
-        
-        total_shots = 0
-        if(player[0]["statistics"][0]['shots']['total'] != None):
-            total_shots = player[0]["statistics"][0]['shots']['total']
-            
-        on_target = 0
-        if(player[0]["statistics"][0]['shots']['on'] != None):
-            on_target = player[0]["statistics"][0]['shots']['on']
-            
-        total_goals = 0
-        if(player[0]["statistics"][0]['goals']['total'] != None):
-            total_goals = player[0]["statistics"][0]['goals']['total']
-            
-        conceded = 0
-        if(player[0]["statistics"][0]['goals']['conceded'] != None):
-            conceded = player[0]["statistics"][0]['goals']['conceded']
-            
-        assists = 0
-        if(player[0]["statistics"][0]['goals']['assists'] != None):
-            assists = player[0]["statistics"][0]['goals']['assists']
-            
-        saves = 0
-        if(player[0]["statistics"][0]['goals']['saves'] != None):
-            saves = player[0]["statistics"][0]['goals']['saves']
-            
-        total_passes  = 0
-        if(player[0]["statistics"][0]['passes']['total'] != None):
-            total_passes = player[0]["statistics"][0]['passes']['total']
-            
-        complete = 0
-        if(player[0]["statistics"][0]['passes']['accuracy'] != None):
-            complete = int(float(player[0]["statistics"][0]['passes']['accuracy']/100) * total_passes)
-            
-        total_tackles = 0
-        if(player[0]["statistics"][0]['tackles']['total']!= None):
-            total_tackles = player[0]["statistics"][0]['tackles']['total']
-            
-        total_duels = 0
-        if(player[0]["statistics"][0]['duels']['total'] != None):
-            total_duels = player[0]["statistics"][0]['duels']['total']
-            
-        duels_won = 0
-        if(player[0]["statistics"][0]['duels']['won'] != None):
-            duels_won = player[0]["statistics"][0]['duels']['won']
-        
-        attempted_dribbles = 0
-        if(player[0]["statistics"][0]['dribbles']['attempts'] != None):
-            attempted_dribbles = player[0]["statistics"][0]['dribbles']['attempts']
-            
-        successful_dribbles = 0
-        if(player[0]["statistics"][0]['dribbles']['success'] != None):
-            successful_dribbles = player[0]["statistics"][0]['dribbles']['success']
-            
-        total_fouls = 0
-        if(player[0]["statistics"][0]['fouls']['committed']!= None):
-            total_fouls = player[0]["statistics"][0]['fouls']['committed']
+        players = json.loads(current_line.strip())
+        # print("\n\n\n")
+        # players.append(data) 
+             
+    # print(len(players))
     
-        red_cards = 0
-        if(player[0]["statistics"][0]['cards']['yellow']!=None):
-            red_cards = player[0]["statistics"][0]['cards']['yellow']
+        for player in players:
             
-        yellow_cards = 0
-        if(player[0]["statistics"][0]['cards']['red'] != None):
-            yellow_cards = player[0]["statistics"][0]['cards']['red']
-        
-           
-        red_cards = 0
-        if(player[0]["statistics"][0]['cards']['yellow'] != None):
-            red_cards = player[0]["statistics"][0]['cards']['yellow']
+            team_id = player["statistics"][0]["team"]["id"]
             
-        penalties = 0
-        if(player[0]["statistics"][0]['penalty']['scored'] != None):
-            penalties = player[0]["statistics"][0]['penalty']['scored']
+            player_id = player["player"]['id']
+            player_name = player["player"]['name']
+            games = 1
+            if( player["statistics"][0]['games']['appearences']!= None):
+                games = player["statistics"][0]['games']['appearences']
             
+            minutes = 0
+            if(player["statistics"][0]['games']['minutes'] != None):
+                minutes = int(player["statistics"][0]['games']['minutes'])
+                
+            rating = 0
+            if(player["statistics"][0]['games']['rating'] != None):
+                rating = player["statistics"][0]['games']['rating']
+            
+            
+            total_shots = 0
+            if(player["statistics"][0]['shots']['total'] != None):
+                total_shots = player["statistics"][0]['shots']['total']
+                
+            on_target = 0
+            if(player["statistics"][0]['shots']['on'] != None):
+                on_target = player["statistics"][0]['shots']['on']
+                
+            total_goals = 0
+            if(player["statistics"][0]['goals']['total'] != None):
+                total_goals = player["statistics"][0]['goals']['total']
+                
+            conceded = 0
+            if(player["statistics"][0]['goals']['conceded'] != None):
+                conceded = player["statistics"][0]['goals']['conceded']
+                
+            assists = 0
+            if(player["statistics"][0]['goals']['assists'] != None):
+                assists = player["statistics"][0]['goals']['assists']
+                
+            saves = 0
+            if(player["statistics"][0]['goals']['saves'] != None):
+                saves = player["statistics"][0]['goals']['saves']
+                
+            total_passes  = 0
+            if(player["statistics"][0]['passes']['total'] != None):
+                total_passes = player["statistics"][0]['passes']['total']
+                
+            complete = 0
+            if(player["statistics"][0]['passes']['accuracy'] != None):
+                complete = int(float(player["statistics"][0]['passes']['accuracy']/100) * total_passes)
+                
+            total_tackles = 0
+            if(player["statistics"][0]['tackles']['total']!= None):
+                total_tackles = player["statistics"][0]['tackles']['total']
+                
+            total_duels = 0
+            if(player["statistics"][0]['duels']['total'] != None):
+                total_duels = player["statistics"][0]['duels']['total']
+                
+            duels_won = 0
+            if(player["statistics"][0]['duels']['won'] != None):
+                duels_won = player["statistics"][0]['duels']['won']
+            
+            attempted_dribbles = 0
+            if(player["statistics"][0]['dribbles']['attempts'] != None):
+                attempted_dribbles = player["statistics"][0]['dribbles']['attempts']
+                
+            successful_dribbles = 0
+            if(player["statistics"][0]['dribbles']['success'] != None):
+                successful_dribbles = player["statistics"][0]['dribbles']['success']
+                
+            total_fouls = 0
+            if(player["statistics"][0]['fouls']['committed']!= None):
+                total_fouls = player["statistics"][0]['fouls']['committed']
         
-        avg_minutes = 0
-        next_rating = 0
-        avg_shots = 0
-        on_target = 0
-        avg_conceded = 0
-        avg_goals = 0
-        avg_assists = 0
-        avg_saves = 0
-        avg_total_passes = 0
-        avg_complete = 0
-        avg_yellow = 0
-        avg_red = 0
-        avg_tackles = 0
-        if games != 0:
-            if(minutes != None and games != None):
-                avg_minutes = minutes/games
-            if(rating != None and games != None):
-                next_rating = (float(rating)*(games))/(games+1)
-            if(total_shots != None and games != None):
-                avg_shots = int(total_shots/games)
+            red_cards = 0
+            if(player["statistics"][0]['cards']['yellow']!=None):
+                red_cards = player["statistics"][0]['cards']['yellow']
                 
-            if(on_target != None and games != None):
-                on_target = math.floor(on_target/games)
+            yellow_cards = 0
+            if(player["statistics"][0]['cards']['red'] != None):
+                yellow_cards = player["statistics"][0]['cards']['red']
+            
+            
+            red_cards = 0
+            if(player["statistics"][0]['cards']['yellow'] != None):
+                red_cards = player["statistics"][0]['cards']['yellow']
                 
-            if(conceded != None and games != None):
-                avg_conceded = conceded/games
+            penalties = 0
+            if(player["statistics"][0]['penalty']['scored'] != None):
+                penalties = player["statistics"][0]['penalty']['scored']
                 
-            if(total_goals != None and games != None):
-                avg_goals =total_goals/games
-                
-            if(assists != None and games != None):
-                avg_assists = math.floor(assists/games)
-                
-            if(saves != None):
-                avg_saves = math.ceil(saves/games)
-        
-            if(total_passes != None and games != None):
-                avg_total_passes = math.ceil(total_passes/games)
+            
+            avg_minutes = 0
+            next_rating = 0
+            avg_shots = 0
+            on_target = 0
+            avg_conceded = 0
+            avg_goals = 0
+            avg_assists = 0
+            avg_saves = 0
+            avg_total_passes = 0
+            avg_complete = 0
+            avg_yellow = 0
+            avg_red = 0
+            avg_tackles = 0
+            if games != 0:
+                if(minutes != None and games != None):
+                    avg_minutes = minutes/games
+                if(rating != None and games != None):
+                    next_rating = (float(rating)*(games))/(games+1)
+                if(total_shots != None and games != None):
+                    avg_shots = int(total_shots/games)
                     
-            if(complete != None):
-                avg_complete = math.ceil(complete/games)
-                
-            if(yellow_cards != None):
-                avg_yellow = math.floor(yellow_cards/games)
-                
-            if red_cards != None:
-                avg_red = math.floor(red_cards/games)
+                if(on_target != None and games != None):
+                    on_target = math.floor(on_target/games)
+                    
+                if(conceded != None and games != None):
+                    avg_conceded = conceded/games
+                    
+                if(total_goals != None and games != None):
+                    avg_goals =math.ceil(total_goals/games)
+                    print(total_goals)
+                    
+                if(assists != None and games != None):
+                    avg_assists = math.floor(assists/games)
+                    
+                if(saves != None):
+                    avg_saves = math.ceil(saves/games)
+            
+                if(total_passes != None and games != None):
+                    avg_total_passes = math.ceil(total_passes/games)
+                        
+                if(complete != None):
+                    avg_complete = math.ceil(complete/games)
+                    
+                if(yellow_cards != None):
+                    avg_yellow = math.floor(yellow_cards/games)
+                    
+                if red_cards != None:
+                    avg_red = math.floor(red_cards/games)
 
-            if total_tackles != None:
-                avg_tackles = math.ceil(total_tackles/games)
+                if total_tackles != None:
+                    avg_tackles = math.ceil(total_tackles/games)
 
+            
+            player_xg = {"id":player_id, 
+                        "name":player_name, 
+                        "avg_minutes":int(avg_minutes), 
+                        "avg_shots":avg_shots,
+                        "avg_target":on_target,
+                        "avg_conceded":avg_conceded,
+                        "avg_goals":avg_goals,
+                        "avg_assists":avg_assists,
+                        "avg_saves":avg_saves,
+                        "avg_total_passes":avg_total_passes,
+                        "avg_complete":avg_complete,
+                        "avg_yellow":avg_yellow,
+                        "avg_red":avg_red,
+                        "avg_tackles":avg_tackles,
+                        "team_id":team_id
+                        }
+            # combined_xg.append(player_xg)  
+            # print (player["player"]['name'])    
+            # print(player_xg)
+            # print("\n\n")
+            print(player_xg)
+            # combined_xg.append(player_xg)
+        #     player_xg = {}
+            json.dump(player_xg,player_stats)
+            player_stats.write("\n")
+        #     team_xg.write("\n")
+        # team_xg.close()
+
+            # print( player["player"])
+        # print(combined_xg)
+player_stats.close()
         
-        player_xg = {"id":player_id, 
-                     "name":player_name, 
-                     "avg_minutes":avg_minutes, 
-                     "avg_shots":avg_shots,
-                     "avg_target":on_target,
-                     "avg_conceded":avg_conceded,
-                     "avg_goals":avg_goals,
-                     "avg_assists":avg_assists,
-                     "avg_saves":avg_saves,
-                     "avg_total_passes":avg_total_passes,
-                     "avg_complete":avg_complete,
-                     "avg_yellow":avg_yellow,
-                     "avg_red":avg_red,
-                     "avg_tackles":avg_tackles
-                     }
-        # combined_xg.append(player_xg)  
-        # print (player[0]["player"]['name'])    
-        # print(player_xg)
-        # print("\n\n")
-        combined_xg.append(player_xg)
-        player_xg = {}
-        json.dump(combined_xg,team_xg)
-        team_xg.write("\n")
-    team_xg.close()
-
-        # print( player[0]["player"])
-    # print(combined_xg)
+        
+gameid,tournament_id,hometeam_id,awayteam_id,winner_id,status,round_number
     
+get_stats(29)
+# get_stats(30)
+# get_stats(31)
+# get_stats(32)
+# get_stats(33)
+# get_stats(34)
+# get_stats(35)
+# get_stats(36)
+# get_stats(37)
+# get_stats(38)

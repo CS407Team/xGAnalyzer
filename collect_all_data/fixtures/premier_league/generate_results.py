@@ -200,47 +200,90 @@ round_points = [
 #             winner = "Winner"
 #             error = "Error"
 
-#             if winner in fixture['odds']:
-#                 if(team["id"] == str(fixture['odds']['Winner'])):
-#                     result = {"round":current_round, "points":3}
-#                     team["results"].append(result)
-#                     break
-#                 else:
-#                     result = {"round":current_round, "points":0}
-#                     team["results"].append(result)
-#                     break
+            # if winner in fixture['odds']:
+            #     if(team["id"] == str(fixture['odds']['Winner'])):
+            #         result = {"round":current_round, "points":3}
+            #         team["results"].append(result)
+            #         break
+            #     else:
+            #         result = {"round":current_round, "points":0}
+            #         team["results"].append(result)
+            #         break
             
-#             if error in fixture['odds']:
-#                 result = {"round":current_round, "points":-1}
-#                 team["results"].append(result)
-#                 break
+            # if error in fixture['odds']:
+            #     result = {"round":current_round, "points":-1}
+            #     team["results"].append(result)
+            #     break
             
-#             max = max_key(fixture['odds'])
-#             if curr_team == fixture['teams']['home']:
-#                 if max == 'H':
-#                     result = {"round":current_round, "points":3}
-#                     team["results"].append(result)
-#                     break
-#                 elif max == 'A':
-#                     result = {"round":current_round, "points":0}
-#                     team["results"].append(result)
-#                     break
-#             elif curr_team == fixture['teams']['away']:
-#                 if max == 'A':
-#                     result = {"round":current_round, "points":3}
-#                     team["results"].append(result)
-#                     break
-#                 elif max == 'H':
-#                     result = {"round":current_round, "points":0}
-#                     team["results"].append(result)
-#                     break
-#             else:
-#                 result = {"round":current_round, "points":1}
-#                 team["results"].append(result)
-#                 break 
+            # max = max_key(fixture['odds'])
+            # if curr_team == fixture['teams']['home']:
+            #     if max == 'H':
+            #         result = {"round":current_round, "points":3}
+            #         team["results"].append(result)
+            #         break
+            #     elif max == 'A':
+            #         result = {"round":current_round, "points":0}
+            #         team["results"].append(result)
+            #         break
+            # elif curr_team == fixture['teams']['away']:
+            #     if max == 'A':
+            #         result = {"round":current_round, "points":3}
+            #         team["results"].append(result)
+            #         break
+            #     elif max == 'H':
+            #         result = {"round":current_round, "points":0}
+            #         team["results"].append(result)
+            #         break
+            # else:
+            #     result = {"round":current_round, "points":1}
+            #     team["results"].append(result)
+            #     break 
 #     json.dump(team, weekly_points)
 #     weekly_points.write("\n")
 # weekly_points.close()
+    
+update stats set home_team_id = 1 where team_id = 50;
+update stats set home_team_id = 2 where team_id = 40;
+update stats set home_team_id = 3 where team_id = 49;
+update stats set home_team_id = 4 where team_id = 48;
+update stats set home_team_id = 5 where team_id = 33;
+update stats set home_team_id = 6 where team_id = 42;
+update stats set home_team_id = 7 where team_id = 39;
+update stats set home_team_id = 8 where team_id = 47;
+update stats set home_team_id = 9 where team_id = 51;
+update stats set home_team_id = 10 where team_id = 41;
+update stats set home_team_id = 11 where team_id = 46;
+update stats set home_team_id = 12 where team_id = 66;
+update stats set home_team_id = 13 where team_id = 52;
+update stats set home_team_id = 14 where team_id = 55;
+update stats set home_team_id = 15 where team_id = 63;
+update stats set home_team_id = 16 where team_id = 45;
+update stats set home_team_id = 17 where team_id = 34;
+update stats set home_team_id = 18 where team_id = 71;
+update stats set home_team_id = 19 where team_id = 38;
+update stats set home_team_id = 20 where team_id = 44; 
+
+update stats set away_team_id = 1 where team_id = 50;
+update stats set away_team_id = 2 where team_id = 40;
+update stats set away_team_id = 3 where team_id = 49;
+update stats set away_team_id = 4 where team_id = 48;
+update stats set away_team_id = 5 where team_id = 33;
+update stats set away_team_id = 6 where team_id = 42;
+update stats set away_team_id = 7 where team_id = 39;
+update stats set away_team_id = 8 where team_id = 47;
+update stats set away_team_id = 9 where team_id = 51;
+update stats set away_team_id = 10 where team_id = 41;
+update stats set away_team_id = 11 where team_id = 46;
+update stats set away_team_id = 12 where team_id = 66;
+update stats set away_team_id = 13 where team_id = 52;
+update stats set away_team_id = 14 where team_id = 55;
+update stats set away_team_id = 15 where team_id = 63;
+update stats set away_team_id = 16 where team_id = 45;
+update stats set away_team_id = 17 where team_id = 34;
+update stats set away_team_id = 18 where team_id = 71;
+update stats set away_team_id = 19 where team_id = 38;
+update stats set away_team_id = 20 where team_id = 44;
+    
     
                 
 # print(round_points[0]["results"])

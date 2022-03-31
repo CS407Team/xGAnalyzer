@@ -46,7 +46,7 @@ def login():
     print(data['password'])
 
     # Perform data check
-    return f'User not found'
+    #return f'User not found'
     return render_template('userpage.html', user=data['username'])
 
 
@@ -289,7 +289,7 @@ def save_save_prediction(username, playerid, prediction):
     db_cursor.save()
 
 
-@app.route('/find_player/<username>/<playerid>/get_saves')
+@app.route('/profile/<username>/find_player/<playerid>/get_saves')
 def predict_saves(username, playerid):
     prediction = 0
     # prediction = get_save_prediction(playerid)

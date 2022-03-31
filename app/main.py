@@ -37,6 +37,28 @@ def home():
     return render_template('index.html')
 
 
+@app.route('/login', methods=["POST", "GET"])
+def login():
+    if request.method == "GET":
+        return redirect('/')
+    data = request.form
+    print(data['username'])
+    print(data['password'])
+
+    # Perform data check
+    return f'User not found'
+    return render_template('userpage.html', user=data['username'])
+
+
+@app.route('/signup', methods=["POST", "GET"])
+def signup():
+    if request.method == "GET":
+        return render_template('signup.html')
+
+    if request.method == "POST":
+        return render_template('signup.html')
+
+
 # User Profile Page
 @app.route('/profile/<username>')
 def profile(username):
@@ -172,23 +194,36 @@ def add_table_prediction():
             visibility = "1"
         else:
             visibility = "0"
-        result = table_predictions.add_prediction(tournament_id, position, points, goals_for, goals_against, team_id,
-                                                  season_year, 1, visibility, prediction_name)
+        result = table_predictions.add_prediction(tournament_id, position, points, goals_for, goals_against, team_id, season_year, 7, visibility, prediction_name)
         if result is False:
             return f"Failed to add {prediction_name} to database"
         return f"Successfully added {prediction_name} to database"
     else:
         return render_template('add_table_pred.html')
 
-
 @app.route('/search_page')
 def search_page():
     return render_template('search_players.html')
 
 
-@app.route('/search_page/find_player')
+@app.route('/find_player', methods=['GET', 'POST'])
 def find_player():
-    return render_template('player_goals.html')
+    data = request.form
+
+    player = data['player']
+
+
+
+    db_connection = database.connect()
+    db_cursor = db_connection.cursor()
+    db_cursor.execute(f'select player.playerid from player where playername="{player}"')
+    found_player = db_cursor.fetchone()
+
+    if found_player is None:
+        return "No Player Found"
+    else:
+        return render_template('select_player_stat.html', found_player=found_player)
+
 
 
 if __name__ == '__main__':

@@ -39,9 +39,12 @@
     </style>
 </head>
 <body>
-    <form class="Search_Player" >
-        <input type="text" placeholder="Search For A Player" name="search">
-        <button type="submit" action="/find_player"><i class="fa fa-search"></i></button>
+     <form action="/find_player" method="post">
+        <div class="container">
+            <label>player_search</label>
+            <input type="text" placeholder="Search for a player" name="player" required>
+            <br><button type="submit">Search</button>
+        </div>
     </form>
 </body>
 </html>

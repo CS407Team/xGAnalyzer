@@ -203,13 +203,17 @@ def add_table_prediction():
         return render_template('add_table_pred.html')
 
 
-@app.route('/search_page')
-def search_page():
-    return render_template('search_players.html')
+@app.route('/profile/<username>/search_page')
+def search_page(username):
+    return render_template('search_players.html', username=username)
 
 
-@app.route('/find_player', methods=['GET', 'POST'])
-def find_player():
+@app.route('/profile/<username>/find_player', methods=['GET', 'POST'])
+def find_player(username):
+    user = user_utils.find_by_username(username)
+    if user is None:
+        return 'User not found'
+
     data = request.form
 
     player = data['player']
@@ -225,24 +229,74 @@ def find_player():
         return render_template('select_player_stat.html', found_player=found_player)
 
 
-@app.route('/find_player/<playerid>/get_rating')
-def predict_rating(playerid):
-    return 0
+def save_prediction_rating(username, playerid, prediction):
+    # INSERT INTO player_prediction_ratings (username, playerid, prediction_rating)
+    # VALUES ("{username}", "{playerid}", "{prediction}");
+    db_connection = database.connect()
+    db_cursor = db_connection.cursor()
+    db_cursor.execute(f'INSERT INTO player_prediction_ratings (username, playerid, prediction_rating) VALUES ("{username}", "{playerid}", "{prediction}")')
+    db_cursor.save()
 
 
-@app.route('/find_player/<playerid>/get_goals')
-def predict_goals(playerid):
-    return 0
+@app.route('/profile/<username>/find_player/<playerid>/get_rating')
+def predict_rating(username, playerid):
+    prediction = 0
+    # prediction = get_prediction_rating(playerid)
+
+    save_prediction_rating(username, playerid, prediction)
+
+    return render_template('player_rating.html', username=username, playerid=playerid, prediction=prediction)
 
 
-@app.route('/find_player/<playerid>/get_assists')
-def predict_assists(playerid):
-    return 0
+def save_goal_prediction(username, playerid, prediction):
+    db_connection = database.connect()
+    db_cursor = db_connection.cursor()
+    db_cursor.execute(f'INSERT INTO player_goal_prediction (username, playerid, predicted_goals) VALUES ("{username}", "{playerid}", "{prediction}")')
+    db_cursor.save()
 
 
-@app.route('/find_player/<playerid>/get_saves')
-def predict_saves(playerid):
-    return 0
+@app.route('/profile/<username>/find_player/<playerid>/get_goals')
+def predict_goals(username, playerid):
+    prediction = 0
+    # prediction = get_goal_prediction(playerid)
+
+    save_goal_prediction(username, playerid, prediction)
+
+    return render_template('player_goals.html', username=username, playerid=playerid, prediction=prediction)
+
+
+def save_assist_prediction(username, playerid, prediction):
+    db_connection = database.connect()
+    db_cursor = db_connection.cursor()
+    db_cursor.execute(f'INSERT INTO player_assist_prediction (username, playerid, predicted_assists) VALUES ("{username}", "{playerid}", "{prediction}")')
+    db_cursor.save()
+
+
+@app.route('/profile/<username>/find_player/<playerid>/get_assists')
+def predict_assists(username, playerid):
+    prediction = 0
+    # prediction = get_assist_prediction(playerid)
+
+    save_assist_prediction(username, playerid, prediction)
+
+    return render_template('player_assists.html', username=username, playerid=playerid, prediction=prediction)
+
+
+def save_save_prediction(username, playerid, prediction):
+    db_connection = database.connect()
+    db_cursor = db_connection.cursor()
+    db_cursor.execute(f'INSERT INTO player_saves_prediction (username, playerid, predicted_saves) VALUES ("{username}", "{playerid}", "{prediction}")')
+    db_cursor.save()
+
+
+@app.route('/find_player/<username>/<playerid>/get_saves')
+def predict_saves(username, playerid):
+    prediction = 0
+    # prediction = get_save_prediction(playerid)
+
+    save_save_prediction(username, playerid, prediction)
+
+    return render_template('player_save.html', username=username, playerid=playerid, prediction=prediction)
 
 
 if __name__ == '__main__':

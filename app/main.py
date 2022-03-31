@@ -194,12 +194,14 @@ def add_table_prediction():
             visibility = "1"
         else:
             visibility = "0"
-        result = table_predictions.add_prediction(tournament_id, position, points, goals_for, goals_against, team_id, season_year, 7, visibility, prediction_name)
+        result = table_predictions.add_prediction(tournament_id, position, points, goals_for, goals_against, team_id,
+                                                  season_year, 7, visibility, prediction_name)
         if result is False:
             return f"Failed to add {prediction_name} to database"
         return f"Successfully added {prediction_name} to database"
     else:
         return render_template('add_table_pred.html')
+
 
 @app.route('/search_page')
 def search_page():
@@ -212,11 +214,9 @@ def find_player():
 
     player = data['player']
 
-
-
     db_connection = database.connect()
     db_cursor = db_connection.cursor()
-    db_cursor.execute(f'select player.playerid from player where playername="{player}"')
+    db_cursor.execute(f'select playerid from player where playername="{player}"')
     found_player = db_cursor.fetchone()
 
     if found_player is None:
@@ -224,6 +224,25 @@ def find_player():
     else:
         return render_template('select_player_stat.html', found_player=found_player)
 
+
+@app.route('/find_player/<playerid>/get_rating')
+def predict_rating(playerid):
+    return 0
+
+
+@app.route('/find_player/<playerid>/get_goals')
+def predict_goals(playerid):
+    return 0
+
+
+@app.route('/find_player/<playerid>/get_assists')
+def predict_assists(playerid):
+    return 0
+
+
+@app.route('/find_player/<playerid>/get_saves')
+def predict_saves(playerid):
+    return 0
 
 
 if __name__ == '__main__':

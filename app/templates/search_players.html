@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        form.Search_Player input[text=text]
+        {
+              padding: 10px;
+            font-size: 17px;
+            border: 1px solid grey;
+            float: left;
+            width: 90%;
+            background: #f1f1f1;
+        }
+
+        form.Search_Player button {
+              float: left;
+  width: 5%;
+  padding: 2px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+        }
+
+        form.Search_Player button:hover {
+  background: #0b7dda;
+}
+
+      form.Search_Player::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+    </style>
+</head>
+<body>
+    <form class="Search_Player" >
+        <input type="text" placeholder="Search For A Player" name="search">
+        <button type="submit" action="/find_player"><i class="fa fa-search"></i></button>
+    </form>
+</body>
+</html>
+

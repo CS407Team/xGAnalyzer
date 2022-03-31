@@ -221,12 +221,12 @@ def find_player(username):
     db_connection = database.connect()
     db_cursor = db_connection.cursor()
     db_cursor.execute(f'select playerid from player where playername="{player}"')
-    found_player = db_cursor.fetchone()
+    playerid = db_cursor.fetchone()
 
-    if found_player is None:
+    if playerid is None:
         return "No Player Found"
     else:
-        return render_template('select_player_stat.html', found_player=found_player)
+        return render_template('select_player_stat.html', playerid=playerid)
 
 
 def save_prediction_rating(username, playerid, prediction):

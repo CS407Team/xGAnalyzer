@@ -65,7 +65,7 @@ def getPrevxG(teamname, filenames, scoreOrCon):
             col = "blue"
             if scoreOrCon == "conceive":
                 col = "yellow"
-        teamXG.append(functions.getXgData(team, float(team.split("-")[2].replace(".png", "")), col))
+        teamXG.append(functions.getXgData(team, float(team.split("-")[2].replace(".png", "")), teamname, col, "predict"))
     print("prev xG " + str(teamXG))
     return teamXG
 
@@ -200,14 +200,14 @@ def predctXG(homeid, awayid, homename, awayname, homeXGs, awayXGs, homeRes, away
     print(str(homefiles))
     print(str(awayfiles))
     homePrevXG = getPrevxG(homename, homefiles, "goal")
-    homeNextXG = [functions.getXgData(xGgraph, maxXG, "blue")]
+    homeNextXG = [functions.getXgData(xGgraph, maxXG, homename, "blue", "upload")]
     homePrevCon = getPrevxG(homename, homefiles, "conceive")
-    homeNextCon = [functions.getXgData(xGgraph, maxXG, "yellow")]
+    homeNextCon = [functions.getXgData(xGgraph, maxXG, homename, "yellow", "upload")]
     homeXgoals = 0
     awayPrevXG = getPrevxG(awayname, awayfiles, "goal")
-    awayNextXG = [functions.getXgData(xGgraph, maxXG, "yellow")]
+    awayNextXG = [functions.getXgData(xGgraph, maxXG, awayname, "yellow", "upload")]
     awayPrevCon = getPrevxG(awayname, awayfiles, "conceive")
-    awayNextCon = [functions.getXgData(xGgraph, maxXG, "blue")]
+    awayNextCon = [functions.getXgData(xGgraph, maxXG, awayname, "blue", "upload")]
     awayXgoals = 0
     for homeXG in homeNextXG[0]:
         homeXgoals += homeXG

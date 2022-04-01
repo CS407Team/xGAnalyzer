@@ -4,23 +4,33 @@ import requests
 from io import BytesIO
 
 
-def getXgData(xGFile, maxXG, col):
+def getXgData(xGFile, maxXG, teamname, col, kind):
     maxX = 1490
     maxY = 90
     xGData = []
-    response = requests.get(xGFile)
-    if response is None:
-        xGFile = "https://storage.googleapis.com/xganalyzer_exports/games/tottenham-liverpool-3.0.png"
+    a = None
+    if kind == "predict":
         response = requests.get(xGFile)
-    a = Image.open(BytesIO(response.content))
+        if response is None:
+            xGFile = "https://storage.googleapis.com/xganalyzer_exports/games/tottenham-liverpool-3.0.png"
+            response = requests.get(xGFile)
+        a = Image.open(BytesIO(response.content))
+    elif kind == "upload":
+        a = xGFile
     if a is None:
         xGFile = "https://storage.googleapis.com/xganalyzer_exports/games/tottenham-liverpool-3.0.png"
         response = requests.get(xGFile)
-        a = Image.open(BytesIO(response.content))
+        if kind == "predict":
+            a = Image.open(BytesIO(response.content))
+        elif kind == "upload":
+            a = xGFile
     temp = np.asarray(a)
     for i in range(1, 19):
         xG = -1
         if col == "blue":
+            if kind == "predict":
+                b = xGFile.replace("https://storage.googleapis.com/xganalyzer_exports/games/", "").split("-")
+                xGFile = "https://storage.googleapis.com/xganalyzer_exports/games/" + teamname + "-" + b[1] + "-" + b[2]
             for j in range(860, maxY, -1):
                 if tuple(temp[j, 180 + round(i * (maxX - 180) / 18)]) == (0, 188, 212):
                     xG = maxXG * (860 - j) / (860 - maxY)
@@ -28,6 +38,9 @@ def getXgData(xGFile, maxXG, col):
                 xG = findTillFound(maxXG, maxX, maxY, xGData, temp, i, "blue")
             xGData.append(round(xG, 2))
         elif col == "yellow":
+            if kind == "predict":
+                b = xGFile.replace("https://storage.googleapis.com/xganalyzer_exports/games/", "").split("-")
+                xGFile = "https://storage.googleapis.com/xganalyzer_exports/games/" + b[0] + "-" + teamname + "-" + b[2]
             for j in range(860, maxY, -1):
                 if tuple(temp[j, 180 + round(i * (maxX - 180) / 18)]) == (255, 235, 59) \
                         or tuple(temp[j, 180 + round(i * (maxX - 180) / 18)]) == (229, 230, 75):
@@ -36,7 +49,6 @@ def getXgData(xGFile, maxXG, col):
                 xG = findTillFound(maxXG, maxX, maxY, xGData, temp, i, "yellow")
             xGData.append(round(xG, 2))
     return xGData
-
 
 
 def findTillFound(maxXG, maxX, maxY, xGData, temp, min, col):

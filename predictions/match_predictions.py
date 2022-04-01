@@ -102,8 +102,8 @@ def export(username, prediction_name):
             "Competed Passes": team[12]
         }
         predictionary.append(entry)
-    filepath = f'exports/match/{username}_{prediction_name}.json'
-    with open(filepath, 'w') as outfile:
+    filepath = f'exports\\match\\{username}_{prediction_name}.json'
+    with open(f'app/exports/match/{username}_{prediction_name}.json', 'w') as outfile:
         json.dump(predictionary, outfile, indent=2)
     return filepath
 

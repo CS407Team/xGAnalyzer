@@ -20,11 +20,10 @@ def find_public_predictions_by_username(username):
     db_cursor = db_connection.cursor()
     user = user_utils.find_by_username(username)
     userid = user[0]
-
     db_cursor.execute(
         f'select pred.gameid, player.playername, pred.yellow_cards, pred.red_cards from player_performance_prediction pred'
         f' join player on player.playerid = pred.playerid'
-        f' where visibility=1 AND pred.userid = {userid}')
+        f' where (visibility=1 OR visibility="public")  AND pred.userid = {userid}')
     predictions = db_cursor.fetchall()
     return predictions
 
@@ -43,7 +42,7 @@ def export(username):
         }
         predictionary.append(entry)
 
-    filepath = f'exports/booking/{username}_bookings.json'
-    with open(filepath, 'w') as outfile:
+    filepath = f'exports\\booking\\{username}_bookings.json'
+    with open(f'app/exports/booking/{username}_bookings.json', 'w') as outfile:
         json.dump(predictionary, outfile, indent=2)
     return filepath

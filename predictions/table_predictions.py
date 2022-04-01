@@ -87,7 +87,7 @@ def export(username, prediction_name):
         "Team Goals Against": prediction[5]
     }
     print(type(predictionary))
-    filepath = f'exports/table/{username}_{prediction_name}.json'
-    with open(filepath, 'w') as outfile:
+    filepath = f'exports\\table\\{username}_{prediction_name}.json'
+    with open(f'app/exports/table/{username}_{prediction_name}.json', 'w') as outfile:
         json.dump(predictionary, outfile, indent=2)
     return filepath

@@ -147,6 +147,13 @@ for team in teams:
                 penalties = player["statistics"][0]['penalty']['scored']
                 
             
+            rating = 0
+            if(player['statistics'][0]['games']['rating']) == None:
+                rating = -1
+            else:
+                rating = player['statistics'][0]['games']['rating']
+                
+            
             avg_minutes = 0
             next_rating = 0
             avg_shots = 0
@@ -160,9 +167,11 @@ for team in teams:
             avg_yellow = 0
             avg_red = 0
             avg_tackles = 0
+            avg_rating = 0
             if games != 0:
                 if(minutes != None and games != None):
                     avg_minutes = minutes/games
+                    avg_rating = rating
                 if(rating != None and games != None):
                     next_rating = (float(rating)*(games))/(games+1)
                 if(total_shots != None and games != None):
@@ -199,6 +208,7 @@ for team in teams:
                 if total_tackles != None:
                     avg_tackles = math.ceil(total_tackles/games)
 
+                
             
             player_xg = {"id":player_id, 
                         "name":player_name, 
@@ -214,6 +224,7 @@ for team in teams:
                         "avg_yellow":avg_yellow,
                         "avg_red":avg_red,
                         "avg_tackles":avg_tackles,
+                        "avg_rating":avg_rating,
                         "team_id":team_id
                         }
             # combined_xg.append(player_xg)  
@@ -233,15 +244,13 @@ for team in teams:
 player_stats.close()
         
         
-gameid,tournament_id,hometeam_id,awayteam_id,winner_id,status,round_number
-    
-get_stats(29)
-# get_stats(30)
-# get_stats(31)
-# get_stats(32)
-# get_stats(33)
-# get_stats(34)
-# get_stats(35)
-# get_stats(36)
-# get_stats(37)
-# get_stats(38)
+# get_stats(29)
+# # get_stats(30)
+# # get_stats(31)
+# # get_stats(32)
+# # get_stats(33)
+# # get_stats(34)
+# # get_stats(35)
+# # get_stats(36)
+# # get_stats(37)
+# # get_stats(38)

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Match History</title>
+</head>
+<body>
+<h1>{{current_user.username}}'s Recently Viewed Matches</h1>
+<div>
+    {% for url_split in urls_split %}
+    <a href="/match/{{url_split}}">{{url_split}}</a>
+    {% endfor %}
+</div>
+</body>
+</html>

@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>{{home_team_name}} vs {{away_team_name}}</title>
+</head>
+
 <style>
 .dropbtn {
   background-color: #04AA6D;
@@ -54,22 +57,44 @@
 .dropdown a:hover {background-color: #ddd;}
 
 .show {display: block;}
+
+
 </style>
-</head>
+
+<h1>
+    {{home_team_name}} (Home) vs {{away_team_name}} (Away)
+</h1>
 <body>
+<div> Round Number: {{game.round_number}} </div>
+
+{% if game.status == 0 %}
+<div> Status: Not Played</div>
+<div> Application Predicts: {{winner}} Will Win </div>
+{% else %}
+<div> Status: Played</div>
+<div> Winner: </div>
+{% endif %}
+
+
+<a href="/">
+    <button type="button">Back</button>
+</a>
+
+{% if current_user.is_authenticated %}
+
+{% if predictions %}
 <div class="dropdown">
   <button onclick="myFunction()" class="dropbtn">Show Tables</button>
   <div id="myDropdown" class="dropdown-content">
     <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-
       {% for prediction in predictions %}
-            <a href="/profile/{{username}}/table_predictions/{{prediction[10]}}">{{prediction[10]}}</a>
-            {% endfor %}
+      <a href="/profile/{{current_user.username}}/match_predictions/{{prediction.name}}">{{prediction.name}}</a>
+      {% endfor %}
   </div>
 </div>
-    <a href="/profile/{{username}}">
-    <button type="button">Back</button>
-</a>
+{% endif %}
+
+{% endif %}
 
 
 <script>

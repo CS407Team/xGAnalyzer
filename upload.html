@@ -1,0 +1,169 @@
+<?php
+ echo "Connected successfully";
+?>
+
+<html>
+<head>
+    <style>
+        .container0 {
+          width: calc((100% - 130px)/5.5*2.35);
+          padding: 0px 20px;
+          height: 100px;
+          background-color: #80e6e6;
+          border: 1px solid black;
+          float: left;
+          display: block;
+          font-size: xx-large;
+        }
+        .container1 {
+          width: calc((100% - 130px)/5.5);
+          padding: 0px 20px;
+          height: 100px;
+          background-color: #b746eb;
+          border: 1px solid black;
+          float: left;
+          display: block;
+          font-size: medium;
+        }
+        .container2 {
+          width: calc((100% - 130px)/5.5);
+          padding: 0px 20px;
+          height: 100px;
+          background-color: #e33bcd;
+          border: 1px solid black;
+          float: left;
+          display: block;
+          font-size: medium;
+        }
+        .container3 {
+          width: calc((100% - 130px)/5.5);
+          padding: 0px 20px;
+          height: 100px;
+          background-color: #f0279f;
+          border: 1px solid black;
+          float: left;
+          display: block;
+          font-size: medium;
+        }
+        .container5 {
+            padding-top: 25px;
+            background-color: #0096FF;
+            color: #0096FF;
+            height: 700px;
+        }
+        .container6 {
+            margin-left: 100px;
+            margin-right: 80px;
+            padding-top: 25px;
+            position: relative;
+            background-color: lightblue;
+            color: whitesmoke;
+            height: 600px;
+            font-size: x-large;
+        }
+        .container7 {
+            font-size: medium;
+            color: whitesmoke;
+        }
+        h1 {
+        position: relative;
+        color: grey;
+        }
+        h2 {
+            font-size: medium;
+            color: lightgray;
+        }
+        .header{
+            padding-left: 100px;
+        }
+        .header img {
+            float: left;
+            width: 370px;
+            height: 210px;
+        }
+        Body {
+            font-family: Calibri, Helvetica, sans-serif;
+            background-color: darkblue;
+            font-size: x-large;
+        }
+        button {
+            color: white;
+            font-size: x-large;
+            background-color: #80e6e6;
+        }
+		input {
+			width: 300px;
+			color: white;
+            font-size: x-large;
+            background-color: #80e6e6;
+		}
+    </style>
+</head>
+<body>
+<script></script>
+    <div class="header">
+    <img src="https://i.ibb.co/K7K5D49/xgGraph.png" alt="logo" />
+    <h1>&ensp;xG Analyzer</h1>
+    </div>
+      <h2>&emsp; We analyze, you decide </h2>
+    <br><br><br>
+    <div class="container">
+        <div class="container0"><br>&emsp;&emsp;  Welcome back {{ username }}</div>
+        <div class="container1"><br><br>
+            <a href="{{ url_for('guess',userid=userid,username=username,leagueid=leagueid) }}">
+            Predict a  match based on xG graph</a></div>
+        <div class="container2"><br><br>
+            <a href="{{ url_for('userpage',userid=userid,username=username,leagueid=1,season=2021,pos=pos)}}">
+            Back to user page</a></div>
+        <div class="container3"><br><br>
+            <a href="{{ url_for('upload_page',userid=userid,username=username,leagueid=leagueid) }}">
+                Generate xG graph for soccer match></a></div>
+    </div>
+    <br><br><br><br><br><br><br>
+    <div>
+        <div class="container5">
+            <div class="container6">
+                <form method="post">
+                    Select Favorite League:
+                    <select name="league">
+                    {% for league in leagues %}
+                        <option value="{{ league.leagueid }}">{{ league.name }}</option>
+                    {% endfor %}
+                    </select>
+                    <br><button type="submit">
+                        Submit
+                    </button>
+                </form><br><br><br><br>
+				Upload xG graph:
+				<form method="post" action="{{ url_for('upload_image',userid=userid,username=username,leagueid=leagueid) }}"
+                      enctype="multipart/form-data">
+                    Select Home Team:
+                    <select name="hometeam" id="hometeam">
+                    {% for team in teams %}
+                        <option value="{{ team.teamid ~ "," ~ team.name }}">{{ team.name }}</option>
+                    {% endfor %}
+                    </select>&emsp;&emsp;&emsp;&emsp;
+                    Select Away Team:
+                    <select name="awayteam" id="awayteam">
+                    {% for team in teams %}
+                        <option value="{{ team.teamid ~ "," ~ team.name }}">{{ team.name }}</option>
+                    {% endfor %}
+                    </select><br>
+    				<dl>
+					<p>
+						<input type="file" name="file" autocomplete="off" required>
+					</p>
+    				</dl>
+    				<p><input type="submit" value="Submit">
+					</p>
+                <div class="container7">(filename format: "hometeam(lowercase)-awayteam(lowercase).png")</div>
+                Enter max XG value (value on top of the xG axis):
+    				<dl>
+						<input type="text" name="maxXG" autocomplete="off" required>
+    				</dl>
+				</form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

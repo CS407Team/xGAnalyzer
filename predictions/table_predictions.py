@@ -32,6 +32,14 @@ def find_public_predictions(userid):
     return db_cursor.fetchall()
 
 
+def find_all_predictions_by_userid(userid):
+    db_connection = database.connect()
+    db_cursor = db_connection.cursor()
+    db_cursor.execute(f'select * from table_predictions'
+                      f' where userid={userid}')
+    return db_cursor.fetchall()
+
+
 def find_all_public_predictions():
     db_connection = database.connect()
     db_cursor = db_connection.cursor()

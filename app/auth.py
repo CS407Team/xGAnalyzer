@@ -23,7 +23,7 @@ def login():
     login_user(user)
     session['username'] = data['username']
     session['urls'] = []
-    return render_template('userpage.html', user=data['username'])
+    return redirect('/')
 
 
 @auth.route('/signup', methods=["POST", "GET"])
@@ -68,3 +68,4 @@ def authenticated():
 def logout():
     logout_user()
     return redirect('/')
+

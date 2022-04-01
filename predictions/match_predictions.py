@@ -12,12 +12,13 @@ def add_prediction(db_connection):
 def find_public_predictions(userid):
     db_connection = database.connect()
     db_cursor = db_connection.cursor()
+    print(userid)
     db_cursor.execute(f'select tournaments.name, home_team.team_name, away_team.team_name, pred.name, '
                       f'pred.stats_predictions_id from game_predictions pred join games on games.gameid = pred.gameid '
                       f'join tournaments on tournaments.tournament_id = games.tournament_id join teams home_team on '
                       f'home_team.team_id = pred.home_team_id join teams away_team on away_team.team_id = '
                       f'pred.away_team_id where pred.userid = {userid} '
-                      f'and (visibility = 1 or visibility="public" or visibility="true")')
+                      f'and pred.visibility = 1')
     predictions = db_cursor.fetchall()
     print(predictions)
     return predictions
@@ -28,6 +29,19 @@ def find_all_public_predictions():
     db_cursor = db_connection.cursor()
     db_cursor.execute(f'select * from game_predictions'
                       f' where (visibility="true" or visibility=1 or visibility="public")')
+    predictions = db_cursor.fetchall()
+    return predictions
+
+
+def find_all_predictions_by_userid(userid):
+    db_connection = database.connect()
+    db_cursor = db_connection.cursor()
+    print(userid)
+    db_cursor.execute(f'select tournaments.name, home_team.team_name, away_team.team_name, pred.name, '
+                      f'pred.stats_predictions_id from game_predictions pred join games on games.gameid = pred.gameid '
+                      f'join tournaments on tournaments.tournament_id = games.tournament_id join teams home_team on '
+                      f'home_team.team_id = pred.home_team_id join teams away_team on away_team.team_id = '
+                      f'pred.away_team_id where pred.userid = {userid}')
     predictions = db_cursor.fetchall()
     return predictions
 

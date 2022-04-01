@@ -1,10 +1,10 @@
-from flask import Flask, send_file, Blueprint
+from flask import Flask, send_file, Blueprint, session
 from flask import render_template, request, redirect
 from flask_login import LoginManager, current_user, UserMixin, login_user
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 
-from app.models import GamePredictions, SeasonTable
+from app.models import GamePredictions, SeasonTable, Teams, Games, Stats, TablePredictions
 from user import user_utils
 from data_files import database
 
@@ -16,7 +16,10 @@ main = Blueprint('main', __name__)
 
 @main.route('/')
 def home():
-    return render_template('index.html')
+    if current_user.is_authenticated:
+        return render_template('userpage.html', user=current_user.username)
+    else:
+        return render_template('index.html')
 
 
 # User Profile Page
@@ -162,7 +165,8 @@ def add_table_prediction():
             visibility = "1"
         else:
             visibility = "0"
-        result = table_predictions.add_prediction(tournament_id, position, points, goals_for, goals_against, team_id, season_year, current_user.userid, visibility, prediction_name)
+        result = table_predictions.add_prediction(tournament_id, position, points, goals_for, goals_against, team_id,
+                                                  season_year, current_user.userid, visibility, prediction_name)
         if result is False:
             return f"Failed to add {prediction_name} to database"
         return f"Successfully added {prediction_name} to database"
@@ -170,23 +174,100 @@ def add_table_prediction():
         return render_template('add_table_pred.html')
 
 
-@main.route('/match/<home_team>-v-<away_team>-<date>')
-def match_page(home_team, away_team, date):
-    #TODO: String formatting from team names and dates to proper database version.
+@main.route('/search_matches', methods=["POST", "GET"])
+def search_matches():
+    if request.method == "GET":
+        return render_template('search_matches.html')
+    else:
+        data = request.form
+        for item in data:
+            print(data[item])
+        home_team = Teams.query.filter_by(team_id=data['home_team']).first()
+        away_team = Teams.query.filter_by(team_id=data['away_team']).first()
+        home_team_name = home_team.team_name.replace(' ', '-')
+        away_team_name = away_team.team_name.replace(' ', '-')
+        return redirect(f'/match/{home_team_name}-v-{away_team_name}-{data["round_number"]}')
+        # return 'post'
 
 
+@main.route('/match/<home_team>-v-<away_team>-<round_number>')
+def match_page(home_team, away_team, round_number):
+    home_team_name = home_team.replace('-', ' ')
+    away_team_name = away_team.replace('-', ' ')
 
+    home_team = Teams.query.filter(Teams.team_name.ilike(home_team_name)).first()
+    away_team = Teams.query.filter(Teams.team_name.ilike(away_team_name)).first()
 
-    return f'{home_team} vs {away_team} on {date}'
+    if home_team is None:
+        return render_template('match_does_not_exist.html')
+    if away_team is None:
+        return render_template('match_does_not_exist.html')
+
+    game = Games.query.filter_by(hometeam_id=home_team.team_id, awayteam_id=away_team.team_id,
+                                 round_number=round_number).first()
+    if game is None:
+        return render_template('match_does_not_exist.html')
+    print(game.gameid)
+
+    stats = Stats.query.filter_by(gameid=game.gameid)
+    # return f'{home_team} vs {away_team} on {round_number}'
+
+    if current_user.is_authenticated:
+        if request.url not in session['urls']:
+            session['urls'].append(request.url)
+            if (len(session['urls'])) > 10:
+                session['urls'].pop(0)
+            session.modified = True
+    if home_team.team_id == game.winner_id:
+        winner = home_team_name
+    elif away_team.team_id == game.winner_id:
+        winner = away_team_name
+    else:
+        winner = "Neither"
+
+    if current_user.is_authenticated:
+        predictions = GamePredictions.query.filter_by(userid=current_user.userid, home_team_id=home_team.team_id, away_team_id=away_team.team_id, round_number=round_number).all()
+
+    return render_template('matchpage.html', home_team_name=home_team_name, away_team_name=away_team_name, game=game,
+                           stats=stats, winner=winner, predictions=predictions, current_user=current_user)
 
 
 @main.route('/table')
 def application_table():
     data = SeasonTable.query.filter_by(round_number=38).order_by('team_position').all()
+    team_names = []
     for team in data:
-        print(f'ID: {team.team_id}')
-        print(f'pos: {team.team_position}')
-    return render_template('application_table_pred.html', team_data=data)
+        team_query = Teams.query.filter_by(team_id=team.team_id).first()
+        team_names.append(team_query.team_name)
+    if current_user.is_authenticated:
+        predictions = table_predictions.find_all_predictions_by_userid(current_user.userid)
+    return render_template('application_table_pred.html', team_data=data, current_user=current_user,
+                           team_names=team_names, predictions=predictions, test=None)
+
+
+@main.route('/table/compare-<prediction_name>')
+def application_table_compare(prediction_name):
+    prediction_name = prediction_name.replace('-', ' ')
+    pred = TablePredictions.query.filter_by(userid=current_user.userid, name=prediction_name).first()
+    if pred is None:
+        return redirect('/table')
+    prediction_team = Teams.query.filter_by(team_id=pred.team_id).first()
+    data = SeasonTable.query.filter_by(round_number=38).order_by('team_position').all()
+    team_names = []
+    test = {}
+    for team in data:
+        team_query = Teams.query.filter_by(team_id=team.team_id).first()
+        team_names.append(team_query.team_name)
+        if team.team_id == pred.team_id:
+            print(team_query.team_name)
+            test[f'{team_query.team_name}'] = team.team_position
+
+    if current_user.is_authenticated:
+        predictions = table_predictions.find_all_predictions_by_userid(current_user.userid)
+
+    return render_template('application_table_pred.html', team_data=data, current_user=current_user,
+                           team_names=team_names, predictions=predictions, prediction=pred,
+                           prediction_team=prediction_team, test=test)
 
 
 @main.route('/table/download')
@@ -198,10 +279,11 @@ def download_app_table():
     return send_file(path, as_attachment=True)
 
 
-"""
-def download_table(username, prediction_name):
-    path = table_predictions.export(username, prediction_name)
-    if path is None:
-        return 'Prediction does not exist'
+@main.route('/table/compare-<prediction_name>/download')
+def download_app_table_compare(prediction_name):
+    prediction_name = prediction_name.replace('-', ' ')
+    pred = TablePredictions.query.filter_by(userid=current_user.userid, name=prediction_name).first()
+    if pred is None:
+        return redirect('/table')
+    path = app_generated_predictions.export_with_compare(prediction_name)
     return send_file(path, as_attachment=True)
-"""

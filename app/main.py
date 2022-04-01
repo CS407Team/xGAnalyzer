@@ -247,6 +247,7 @@ def application_table():
 
 @main.route('/table/compare-<prediction_name>')
 def application_table_compare(prediction_name):
+    orig_pred_name = prediction_name
     prediction_name = prediction_name.replace('-', ' ')
     pred = TablePredictions.query.filter_by(userid=current_user.userid, name=prediction_name).first()
     if pred is None:
@@ -267,7 +268,7 @@ def application_table_compare(prediction_name):
 
     return render_template('application_table_pred.html', team_data=data, current_user=current_user,
                            team_names=team_names, predictions=predictions, prediction=pred,
-                           prediction_team=prediction_team, test=test)
+                           prediction_team=prediction_team, test=test, orig_pred_name=orig_pred_name)
 
 
 @main.route('/table/download')

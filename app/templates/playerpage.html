@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{player.playername}}'s Page</title>
+</head>
+<body>
+<div>Player: {{player.playername}}</div>
+<div>Team: {{team.team_name}}</div>
+{% for year in ratings %}
+<div> {{year}}: Rating: {{ratings[year]}}</div>
+{% endfor %}
+
+
+</body>
+</html>

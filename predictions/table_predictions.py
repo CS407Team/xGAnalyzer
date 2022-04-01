@@ -32,6 +32,14 @@ def find_public_predictions(userid):
     return db_cursor.fetchall()
 
 
+def find_all_predictions_by_userid(userid):
+    db_connection = database.connect()
+    db_cursor = db_connection.cursor()
+    db_cursor.execute(f'select * from table_predictions'
+                      f' where userid={userid}')
+    return db_cursor.fetchall()
+
+
 def find_all_public_predictions():
     db_connection = database.connect()
     db_cursor = db_connection.cursor()
@@ -79,7 +87,7 @@ def export(username, prediction_name):
         "Team Goals Against": prediction[5]
     }
     print(type(predictionary))
-    filepath = f'exports/table/{username}_{prediction_name}.json'
-    with open(filepath, 'w') as outfile:
+    filepath = f'exports\\table\\{username}_{prediction_name}.json'
+    with open(f'app/exports/table/{username}_{prediction_name}.json', 'w') as outfile:
         json.dump(predictionary, outfile, indent=2)
     return filepath

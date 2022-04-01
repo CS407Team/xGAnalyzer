@@ -40,14 +40,17 @@ def create_app():
         if rp != '/' and rp.endswith('/'):
             return redirect(rp[:-1])
 
+    # This has been moved into the match page generation function.
+    """
     @app.after_request
     def test_history(self):
         if current_user.is_authenticated:
             session['urls'].append(request.url)
-            if(len(session['urls'])) > 5:
+            if(len(session['urls'])) > 10:
                 session['urls'].pop(0)
             session.modified = True
         return self
+    """
 
     return app
 

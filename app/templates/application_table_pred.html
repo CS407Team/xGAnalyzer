@@ -4,8 +4,67 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
 
+<style>
+.dropbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #3e8e41;
+}
+
+#myInput {
+  box-sizing: border-box;
+  background-image: url('searchicon.png');
+  background-position: 14px 12px;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  padding: 14px 20px 12px 45px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+}
+
+#myInput:focus {outline: 3px solid #ddd;}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f6f6f6;
+  min-width: 230px;
+  overflow: auto;
+  border: 1px solid #ddd;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+
+
+</style>
+
+<body>
+<h1>
+    Premier League Predictions
+</h1>
 <table border = 1>
     <tr>
         <th>Team Name</th>
@@ -19,7 +78,7 @@
     </tr>
     {% for team in team_data %}
     <tr>
-      <td> {{team.team_name}}</td>
+      <td> {{team_names[team.team_position - 1]}}</td>
       <td> {{team.team_position}} </td>
       <td> {{team.team_points}}</td>
       <td> {{team.games_played}}</td>
@@ -36,5 +95,69 @@
 <a href="/">
     <button type="button">Back</button>
 </a>
+
+{% if current_user.is_authenticated %}
+
+{% if test %}
+<h1>
+    Your Prediction
+</h1>
+
+<table border = 1>
+    <tr>
+        <th>Team Name</th>
+        <th>Team Position</th>
+    </tr>
+
+    <tr>
+        {% for key, value in test.items() %}
+        <td>{{key}}</td>
+        {% if prediction.team_position < value %}
+        <td bgcolor="pink">{{prediction.team_position}}</td>
+        {% elif prediction.team_position > value %}
+        <td bgcolor="palegreen">{{prediction.team_position}}</td>
+        {% else %}
+        <td>{{value}}</td>
+        {% endif %}
+        {% endfor %}
+    </tr>
+</table>
+{% endif %}
+
+    <div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">Show Tables</button>
+  <div id="myDropdown" class="dropdown-content">
+    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+
+      {% for prediction in predictions %}
+            <a href="/table/compare-{{prediction[10]}}">{{prediction[10]}}</a>
+            {% endfor %}
+  </div>
+</div>
+{% endif %}
+
+<script>
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function filterFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("myDropdown");
+  a = div.getElementsByTagName("a");
+  for (i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
+</script>
+
 </body>
 </html>
+

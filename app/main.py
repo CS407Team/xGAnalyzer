@@ -2,9 +2,12 @@ from flask import Flask, send_file, Blueprint, session
 from flask import render_template, request, redirect
 from flask_login import LoginManager, current_user, UserMixin, login_user
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.testing import db
 from werkzeug.security import generate_password_hash, check_password_hash
 
-from app.models import GamePredictions, SeasonTable, Teams, Games, Stats, TablePredictions
+from app import create_app
+from app.models import GamePredictions, SeasonTable, Teams, Games, Stats, TablePredictions, User, \
+    PlayerPredictionRating, Player
 from user import user_utils
 from data_files import database
 
@@ -226,7 +229,8 @@ def match_page(home_team, away_team, round_number):
         winner = "Neither"
 
     if current_user.is_authenticated:
-        predictions = GamePredictions.query.filter_by(userid=current_user.userid, home_team_id=home_team.team_id, away_team_id=away_team.team_id, round_number=round_number).all()
+        predictions = GamePredictions.query.filter_by(userid=current_user.userid, home_team_id=home_team.team_id,
+                                                      away_team_id=away_team.team_id, round_number=round_number).all()
 
     return render_template('matchpage.html', home_team_name=home_team_name, away_team_name=away_team_name, game=game,
                            stats=stats, winner=winner, predictions=predictions, current_user=current_user)
@@ -288,3 +292,39 @@ def download_app_table_compare(prediction_name):
         return redirect('/table')
     path = app_generated_predictions.export_with_compare(prediction_name)
     return send_file(path, as_attachment=True)
+
+
+@main.route('/player_prediction', methods=["POST", "GET"])
+def player_prediction():
+    if request.method == "GET":
+        return render_template('search_player_rating.html')
+    else:
+        data = request.form
+        # print(data)
+
+        player = Player.query.filter_by(playername=data['player_name'], teamid=data['home_team']).first()
+        team = Teams.query.filter_by(team_id=data['home_team']).first()
+
+        # print(team.team_name)
+
+        if player is not None:
+            return render_template('player_rating_pred.html', playername=player.playername, team_name=team.team_name, playerid=player.playerid, team_id=team.team_id)
+        else:
+            return redirect('/player_prediction')
+
+
+@main.route('/player_prediction/add-<playerid>-<team_id>', methods=["POST"])
+def add_prediction_rating(playerid, team_id):
+    if request.method == 'POST':
+        data = request.form
+        if data['visibility'] is None:
+            print("not selected")
+        # prediction = PlayerPredictionRating(playerid, current_user.userid, team_id, data['player_rating'], data['visibility'], data['shareable'])
+        # db.session.add(prediction)
+        # db.session.commit()
+        return render_template("tester.html")
+
+
+if __name__ == '__main__':
+    app = create_app()
+    app.run(debug=True)

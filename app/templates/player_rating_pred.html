@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{playername}}'s Page</title>
+</head>
+<body>
+<div>Player: {{playername}}</div>
+<div>Team: {{team_name}}</div>
+<div></div>
+<form action="/player_prediction/add-{{ playerid }}-{{ team_id }}" method="post">
+  <table>
+    <tbody>
+    <tr>Player Rating Prediction Form</tr>
+    </tbody>
+      <td>Player Rating:
+        <input type="number" min="0" max="10" name="player_rati®ng">
+      </td>
+    </tr>
+      <td>
+          <input type="checkbox" id="visibility" name="visibility" value="1" default>
+          <label for="visibility"> Visibility</label><br>
+      </td>
+  </table>
+  <input type="submit" name="submit" value="Search for Player">
+</form>
+
+
+</body>
+</html>

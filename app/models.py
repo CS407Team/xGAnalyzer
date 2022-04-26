@@ -86,7 +86,7 @@ class SeasonTable(db.Model):
     team_id = db.Column(db.Integer)
     tournament_id = db.Column(db.Integer)
     team_position = db.Column(db.Integer)
-    team_points  = db.Column(db.Integer)
+    team_points = db.Column(db.Integer)
     games_played = db.Column(db.Integer)
     won = db.Column(db.Integer)
     lost = db.Column(db.Integer)
@@ -103,7 +103,7 @@ class Stats(db.Model):
     away_team_id = db.Column(db.Integer)
     away_possession = db.Column(db.Integer)
     home_possession = db.Column(db.Integer)
-    away_shots =db.Column(db.Integer)
+    away_shots = db.Column(db.Integer)
     home_shots = db.Column(db.Integer)
     home_shots_on_target = db.Column(db.Integer)
     away_shots_on_target = db.Column(db.Integer)
@@ -135,3 +135,13 @@ class TablePredictions(db.Model):
     visibility = db.Column(db.Integer)
     userid = db.Column(db.Integer)
     name = db.Column(db.String(50))
+
+
+class PlayerPredictionRating(db.Model):
+    player_rating_id = db.Column(db.Integer, primary_key=True)
+    playerid = db.Column(db.Integer)
+    userid = db.Column(db.Integer)
+    team_id = db.Column(db.Integer)
+    player_rating = db.Column(db.Integer)
+    visibility = db.Column(db.Integer)
+    sharability = db.Column(db.Integer)

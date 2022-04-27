@@ -335,10 +335,10 @@ def user_rating_prediction():
 
 @main.route(('/edit_rating-<player_rating_id>'))
 def edit_rating(player_rating_id):
-
     player = PlayerRatings.query.filter_by(player_rating_id=player_rating_id).first()
     player_name = Player.query.filter_by(playerid=player.playerid).first()
-    return render_template("edit_prediction.html", playername=player_name.playername, player_rating=player.player_rating, player_rating_id=player_rating_id)
+    return render_template("edit_prediction.html", playername=player_name.playername,
+                           player_rating=player.player_rating, player_rating_id=player_rating_id)
 
 
 @main.route('/edit_rating-<player_rating_id>/edit', methods=["POST"])
@@ -347,6 +347,35 @@ def edit(player_rating_id):
     player_rating.edit(player_rating_id, data['player_rating'], data['visibility'], data['sharable'])
     return redirect('/my_player_predictions')
 
+
+@main.route('/search_user_ratings')
+def follower_rating_predictions():
+    return render_template("search_user_predcitions.html")
+
+
+@main.route('/find_user_ratings', methods=["POST"])
+def find_user_ratings():
+    data = request.form
+    user = User.query.filter_by(username=data['username']).first()
+
+    if user is None:
+        return render_template("match_does_not_exist.html")
+
+    ratings = PlayerRatings.query.filter_by(userid=user.userid)
+    visible = [rating for rating in ratings if rating.visibility == 1]
+    return render_template("list_user_predictions.html", predictions=visible)
+
+
+@main.route('/download_rating-<player_rating_id>')
+def download_rating(player_rating_id):
+    return render_template("download_predictions.html", player_rating_id=player_rating_id)
+
+
+@main.route('/download-<player_rating_id>')
+def download(player_rating_id):
+    player_rating_prediction = PlayerRatings.query.filter_by(player_rating_id=player_rating_id).first()
+    player_rating.download(player_rating_prediction)
+    return redirect('/search_user_ratings')
 
 
 if __name__ == '__main__':

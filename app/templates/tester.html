@@ -5,7 +5,13 @@
     <title>Title</title>
 </head>
 <body>
-Tester. This is working
+    <ul>
+        {% for item in predictions %}
+        <li> <a href="/edit_rating-{{ item.player_rating_id }}"> player rating : {{item.player_rating_id}} </a></li>
+            {% endfor %}
+    </ul>
+
+
 </body>
 </html>
 

@@ -2,17 +2,17 @@ from flask import Flask, send_file, Blueprint, session
 from flask import render_template, request, redirect
 from flask_login import LoginManager, current_user, UserMixin, login_user
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.testing import db
+from app import db
 from werkzeug.security import generate_password_hash, check_password_hash
 
 from app import create_app
 from app.models import GamePredictions, SeasonTable, Teams, Games, Stats, TablePredictions, User, \
-    PlayerPredictionRating, Player
+    PlayerRatings, Player
 from user import user_utils
 from data_files import database
 
 from predictions import table_predictions, booking_predictions, match_predictions, stats_predictions, \
-    app_generated_predictions
+    app_generated_predictions, player_rating
 
 main = Blueprint('main', __name__)
 
@@ -308,7 +308,8 @@ def player_prediction():
         # print(team.team_name)
 
         if player is not None:
-            return render_template('player_rating_pred.html', playername=player.playername, team_name=team.team_name, playerid=player.playerid, team_id=team.team_id)
+            return render_template('player_rating_pred.html', playername=player.playername, team_name=team.team_name,
+                                   playerid=player.playerid, team_id=team.team_id)
         else:
             return redirect('/player_prediction')
 
@@ -317,12 +318,35 @@ def player_prediction():
 def add_prediction_rating(playerid, team_id):
     if request.method == 'POST':
         data = request.form
-        if data['visibility'] is None:
-            print("not selected")
-        # prediction = PlayerPredictionRating(playerid, current_user.userid, team_id, data['player_rating'], data['visibility'], data['shareable'])
-        # db.session.add(prediction)
-        # db.session.commit()
+        db.create_all()
+        prediction = PlayerRatings(playerid=playerid, userid=current_user.userid, team_id=team_id,
+                                   player_rating=data['player_rating'], visibility=data["visibility"],
+                                   sharability=data["sharable"])
+        db.session.add(prediction)
+        db.session.commit()
         return render_template("tester.html")
+
+
+@main.route('/my_player_predictions')
+def user_rating_prediction():
+    predictions = PlayerRatings.query.filter_by(userid=current_user.userid).all()
+    return render_template("tester.html", predictions=predictions)
+
+
+@main.route(('/edit_rating-<player_rating_id>'))
+def edit_rating(player_rating_id):
+
+    player = PlayerRatings.query.filter_by(player_rating_id=player_rating_id).first()
+    player_name = Player.query.filter_by(playerid=player.playerid).first()
+    return render_template("edit_prediction.html", playername=player_name.playername, player_rating=player.player_rating, player_rating_id=player_rating_id)
+
+
+@main.route('/edit_rating-<player_rating_id>/edit', methods=["POST"])
+def edit(player_rating_id):
+    data = request.form
+    player_rating.edit(player_rating_id, data['player_rating'], data['visibility'], data['sharable'])
+    return redirect('/my_player_predictions')
+
 
 
 if __name__ == '__main__':

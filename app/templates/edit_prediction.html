@@ -6,15 +6,14 @@
 </head>
 <body>
 <div>Player: {{playername}}</div>
-<div>Team: {{team_name}}</div>
 <div></div>
-<form action="/player_prediction/add-{{ playerid }}-{{ team_id }}" method="post">
+<form action="/edit_rating-{{ player_rating_id }}/edit" method="post">
   <table>
     <tbody>
     <tr>Player Rating Prediction Form</tr>
     </tbody>
       <td>Player Rating:
-        <input type="number" min="0" max="10" name="player_rating">
+        <input type="number" min="0" max="10" name="player_rating" placeholder="{{ player_rating }}">
       </td>
     </tr>
   </table>
@@ -26,9 +25,13 @@
                 <option value="1">Allow Sharing</option>
                 <option value="0">Do not Allow</option>
         </select>
-  <input type="submit" name="submit" value="Search for Player">
+  <input type="submit" name="submit" value="Edit Player Rating">
 
 </form>
+
+<a href="/my_player_predictions">
+    <button type="button">Back</button>
+</a>
 
 
 </body>

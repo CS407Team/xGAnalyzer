@@ -2,6 +2,7 @@ from flask import Flask, redirect, request, session
 from flask_login import LoginManager, current_user
 from flask_sqlalchemy import SQLAlchemy
 
+
 db = SQLAlchemy()
 
 

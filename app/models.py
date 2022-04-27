@@ -137,7 +137,8 @@ class TablePredictions(db.Model):
     name = db.Column(db.String(50))
 
 
-class PlayerPredictionRating(db.Model):
+class PlayerRatings(db.Model):
+
     player_rating_id = db.Column(db.Integer, primary_key=True)
     playerid = db.Column(db.Integer)
     userid = db.Column(db.Integer)

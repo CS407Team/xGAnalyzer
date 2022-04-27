@@ -1,21 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{username}}'s Booking Predictions</title>
-</head>
+{% extends 'base.html'%}
+
+{% block title %}
+    Temp Title
+{% endblock %}
+{% block content %}
 <body>
-<table border = 1>
+<table id="generic_table">
     <tr>
-        <th>Game</th>
-        <th>Player Name</th>
-        <th>Yellow Cards</th>
-        <th>Red Cards</th>
+        <th id="generic_header">Game</th>
+        <th id="generic_header">Player Name</th>
+        <th id="generic_header">Yellow Cards</th>
+        <th id="generic_header">Red Cards</th>
     </tr>
     {% for prediction in predictions %}
     <tr>
         {% for item in prediction %}
-        <td> {{item}} </td>
+        <td id="generic_column"> {{item}} </td>
             {% endfor %}
     </tr>
     {% endfor %}
@@ -27,4 +27,5 @@
     <button type="button">Back</button>
 </a>
 </body>
-</html>
+
+{% endblock %}

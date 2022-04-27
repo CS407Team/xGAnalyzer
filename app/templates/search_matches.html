@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Search for a Match</title>
-</head>
-<body>
+{% extends 'base.html'%}
 
+{% block title %}
+    Temp Title
+{% endblock %}
+{% block content %}
 <form action="/search_matches" method="post">
   <table>
     <tbody>
@@ -32,5 +30,4 @@
   <input type="submit" name="submit" value="Search for Match">
 </form>
 
-</body>
-</html>
+{% endblock %}

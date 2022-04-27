@@ -230,6 +230,8 @@ def match_page(home_team, away_team, round_number):
 
     if current_user.is_authenticated:
         predictions = GamePredictions.query.filter_by(userid=current_user.userid, home_team_id=home_team.team_id, away_team_id=away_team.team_id, round_number=round_number).all()
+    else:
+        predictions = None
 
     return render_template('matchpage.html', home_team_name=home_team_name, away_team_name=away_team_name, game=game,
                            stats=stats, winner=winner, predictions=predictions, current_user=current_user, orig_home=orig_home, orig_away=orig_away)
@@ -268,9 +270,6 @@ def download_match(home_team, away_team, round_number):
     return send_file(filepath, as_attachment=True)
 
 
-
-
-
 @main.route('/table')
 def application_table():
     data = SeasonTable.query.filter_by(round_number=38).order_by('team_position').all()
@@ -304,6 +303,8 @@ def application_table_compare(prediction_name):
 
     if current_user.is_authenticated:
         predictions = table_predictions.find_all_predictions_by_userid(current_user.userid)
+    else:
+        predictions = None
 
     return render_template('application_table_pred.html', team_data=data, current_user=current_user,
                            team_names=team_names, predictions=predictions, prediction=pred,

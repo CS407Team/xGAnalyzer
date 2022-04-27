@@ -1,0 +1,1178 @@
+{
+  "squad": [
+    {
+      "height": "1,88",
+      "foot": "links",
+      "injury": null,
+      "suspension": null,
+      "joined": 1346364000,
+      "contractUntil": 1719698400,
+      "captain": true,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "17965",
+      "name": "Hugo Lloris",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/17965-1465213375.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "1",
+      "age": 35,
+      "dateOfBirth": 535935600,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/hugo-lloris-bei-tottenham-hotspur-2021-22-1642753702-78910.jpg?lm=1642753713",
+      "isGoalkeeper": true,
+      "positions": {
+        "first": {
+          "id": "1",
+          "name": "Torwart",
+          "shortName": "TW",
+          "group": "Torwart"
+        },
+        "second": null,
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 50,
+          "name": "Frankreich",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/50.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 7000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,72",
+      "foot": "rechts",
+      "injury": null,
+      "suspension": null,
+      "joined": 1517353200,
+      "contractUntil": 1719698400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "77100",
+      "name": "Lucas Moura",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/77100-1454602060.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "27",
+      "age": 29,
+      "dateOfBirth": 713656800,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/lucas-moura-von-tottenham-1557349598-22166.jpg?lm=1557349611",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "12",
+          "name": "Rechtsau\u00dfen",
+          "shortName": "RA",
+          "group": "Sturm"
+        },
+        "second": {
+          "id": "11",
+          "name": "Linksau\u00dfen",
+          "shortName": "LA",
+          "group": "Sturm"
+        },
+        "third": {
+          "id": "13",
+          "name": "H\u00e4ngende Spitze",
+          "shortName": "HS",
+          "group": "Sturm"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 26,
+          "name": "Brasilien",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/26.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 20000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,84",
+      "foot": "beidf\u00fc\u00dfig",
+      "injury": null,
+      "suspension": null,
+      "joined": 1440712800,
+      "contractUntil": 1751234400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "91845",
+      "name": "Heung-min Son",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/91845-1599987413.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "7",
+      "age": 29,
+      "dateOfBirth": 710546400,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/heung-min-son-sudkorea-2021-1633615955-72328.jpg?lm=1633615970",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "11",
+          "name": "Linksau\u00dfen",
+          "shortName": "LA",
+          "group": "Sturm"
+        },
+        "second": {
+          "id": "12",
+          "name": "Rechtsau\u00dfen",
+          "shortName": "RA",
+          "group": "Sturm"
+        },
+        "third": {
+          "id": "14",
+          "name": "Mittelst\u00fcrmer",
+          "shortName": "MS",
+          "group": "Sturm"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 87,
+          "name": "S\u00fcdkorea",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/87.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 80000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,88",
+      "foot": "rechts",
+      "injury": null,
+      "suspension": null,
+      "joined": 1293836400,
+      "contractUntil": 1719698400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "132098",
+      "name": "Harry Kane",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/132098-1623778520.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "10",
+      "age": 28,
+      "dateOfBirth": 743810400,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/harry-kane-erzielt-einen-hattrick-fur-tottenham-in-der-conference-league-1633066850-71978.jpg?lm=1633066866",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "14",
+          "name": "Mittelst\u00fcrmer",
+          "shortName": "MS",
+          "group": "Sturm"
+        },
+        "second": {
+          "id": "13",
+          "name": "H\u00e4ngende Spitze",
+          "shortName": "HS",
+          "group": "Sturm"
+        },
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 189,
+          "name": "England",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/189.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 100000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,85",
+      "foot": "rechts",
+      "injury": null,
+      "suspension": null,
+      "joined": 1597096800,
+      "contractUntil": 1751234400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "167799",
+      "name": "Pierre-Emile H\u00f6jbjerg",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/167799-1629882773.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "5",
+      "age": 26,
+      "dateOfBirth": 807573600,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/pierre-emile-hojbjerg-tottenham-hotspur-1602502399-48972.jpg?lm=1602502424",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "7",
+          "name": "Zentrales Mittelfeld",
+          "shortName": "ZM",
+          "group": "Mittelfeld"
+        },
+        "second": {
+          "id": "6",
+          "name": "Defensives Mittelfeld",
+          "shortName": "DM",
+          "group": "Mittelfeld"
+        },
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 39,
+          "name": "D\u00e4nemark",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/39.png?lm=1520611569"
+        },
+        {
+          "id": 50,
+          "name": "Frankreich",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/50.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 40000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,85",
+      "foot": "rechts",
+      "injury": {
+        "id": "157",
+        "description": "Innenbandriss",
+        "until": 1657404000,
+        "category": "Unbekannt",
+        "rehabilitation": "",
+        "clubIdStart": null,
+        "clubIdEnd": null
+      },
+      "suspension": null,
+      "joined": 1598738400,
+      "contractUntil": 1719698400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "171679",
+      "name": "Matt Doherty",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/171679-1536063364.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "2",
+      "age": 30,
+      "dateOfBirth": 695516400,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/matt-doherty-tottenham-hotspur-1600607619-47565.jpg?lm=1600607630",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "5",
+          "name": "Rechter Verteidiger",
+          "shortName": "RV",
+          "group": "Abwehr"
+        },
+        "second": {
+          "id": "8",
+          "name": "Rechtes Mittelfeld",
+          "shortName": "RM",
+          "group": "Mittelfeld"
+        },
+        "third": {
+          "id": "4",
+          "name": "Linker Verteidiger",
+          "shortName": "LV",
+          "group": "Abwehr"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 72,
+          "name": "Irland",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/72.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 12000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,88",
+      "foot": "rechts",
+      "injury": null,
+      "suspension": null,
+      "joined": 1406757600,
+      "contractUntil": 1719698400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "175722",
+      "name": "Eric Dier",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/175722-1490363990.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "15",
+      "age": 28,
+      "dateOfBirth": 758588400,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/eric-dier-tottenham-1591341186-40568.jpg?lm=1591341168",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "3",
+          "name": "Innenverteidiger",
+          "shortName": "IV",
+          "group": "Abwehr"
+        },
+        "second": {
+          "id": "6",
+          "name": "Defensives Mittelfeld",
+          "shortName": "DM",
+          "group": "Mittelfeld"
+        },
+        "third": {
+          "id": "5",
+          "name": "Rechter Verteidiger",
+          "shortName": "RV",
+          "group": "Abwehr"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 189,
+          "name": "England",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/189.png?lm=1520611569"
+        },
+        {
+          "id": 136,
+          "name": "Portugal",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/136.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 22000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,81",
+      "foot": "links",
+      "injury": null,
+      "suspension": null,
+      "joined": 1406066400,
+      "contractUntil": 1719698400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "192765",
+      "name": "Ben Davies",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/192765-1456302282.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "33",
+      "age": 29,
+      "dateOfBirth": 735602400,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/ben-davies-tottenham-hotspur-1565092514-24352.jpg?lm=1565092525",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "4",
+          "name": "Linker Verteidiger",
+          "shortName": "LV",
+          "group": "Abwehr"
+        },
+        "second": {
+          "id": "3",
+          "name": "Innenverteidiger",
+          "shortName": "IV",
+          "group": "Abwehr"
+        },
+        "third": {
+          "id": "9",
+          "name": "Linkes Mittelfeld",
+          "shortName": "LM",
+          "group": "Mittelfeld"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 191,
+          "name": "Wales",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/191.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 20000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,94",
+      "foot": "rechts",
+      "injury": null,
+      "suspension": null,
+      "joined": 1627077600,
+      "contractUntil": 1656540000,
+      "captain": false,
+      "lastClub": {
+        "id": "800",
+        "name": "Atal. Bergamo",
+        "fullName": "Atalanta Bergamo",
+        "image": "https://tmssl.akamaized.net/images/wappen/medium/800.png?lm=1438547428",
+        "nationalTeam": "",
+        "flag": null,
+        "marketValue": null,
+        "mainCompetition": null
+      },
+      "isLoan": true,
+      "wasLoan": null,
+      "id": "244192",
+      "name": "Pierluigi Gollini",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/244192-1609842497.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "22",
+      "age": 27,
+      "dateOfBirth": 795481200,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/pierluigi-gollini-tottenham-1636553905-74520.jpg?lm=1636553915",
+      "isGoalkeeper": true,
+      "positions": {
+        "first": {
+          "id": "1",
+          "name": "Torwart",
+          "shortName": "TW",
+          "group": "Torwart"
+        },
+        "second": null,
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 75,
+          "name": "Italien",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/75.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 10000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,78",
+      "foot": "rechts",
+      "injury": null,
+      "suspension": null,
+      "joined": 1467324000,
+      "contractUntil": 1719698400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "249126",
+      "name": "Harry Winks",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/249126-1457456772.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "8",
+      "age": 26,
+      "dateOfBirth": 823215600,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/winks-pochettino-tottenham-1487070658-8357.jpg?lm=1487070680",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "6",
+          "name": "Defensives Mittelfeld",
+          "shortName": "DM",
+          "group": "Mittelfeld"
+        },
+        "second": {
+          "id": "7",
+          "name": "Zentrales Mittelfeld",
+          "shortName": "ZM",
+          "group": "Mittelfeld"
+        },
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 189,
+          "name": "England",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/189.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 17000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,78",
+      "foot": "links",
+      "injury": null,
+      "suspension": null,
+      "joined": 1600466400,
+      "contractUntil": 1751234400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "282429",
+      "name": "Sergio Reguil\u00f3n",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/282429-1559807731.png?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "3",
+      "age": 25,
+      "dateOfBirth": 850690800,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/sergio-reguilon-tottenham-hotspur-2020-1601984331-48537.jpg?lm=1601984356",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "4",
+          "name": "Linker Verteidiger",
+          "shortName": "LV",
+          "group": "Abwehr"
+        },
+        "second": {
+          "id": "9",
+          "name": "Linkes Mittelfeld",
+          "shortName": "LM",
+          "group": "Mittelfeld"
+        },
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 157,
+          "name": "Spanien",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/157.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 28000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,78",
+      "foot": "rechts",
+      "injury": null,
+      "suspension": null,
+      "joined": 1580252400,
+      "contractUntil": 1751234400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "284165",
+      "name": "Steven Bergwijn",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/284165-1548177491.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "23",
+      "age": 24,
+      "dateOfBirth": 876261600,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/steven-bergwijn-tottenham-hotspur-1583783309-33431.jpg?lm=1583783327",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "11",
+          "name": "Linksau\u00dfen",
+          "shortName": "LA",
+          "group": "Sturm"
+        },
+        "second": {
+          "id": "12",
+          "name": "Rechtsau\u00dfen",
+          "shortName": "RA",
+          "group": "Sturm"
+        },
+        "third": {
+          "id": "14",
+          "name": "Mittelst\u00fcrmer",
+          "shortName": "MS",
+          "group": "Sturm"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 122,
+          "name": "Niederlande",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/122.png?lm=1520611569"
+        },
+        {
+          "id": 161,
+          "name": "Suriname",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/161.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 18000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,92",
+      "foot": "rechts",
+      "injury": null,
+      "suspension": null,
+      "joined": 1602799200,
+      "contractUntil": 1751234400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "297212",
+      "name": "Joe Rodon",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/297212-1543411072.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "14",
+      "age": 24,
+      "dateOfBirth": 877471200,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/joe-rodon-tottenham-2020-1608133966-53291.jpg?lm=1608133987",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "3",
+          "name": "Innenverteidiger",
+          "shortName": "IV",
+          "group": "Abwehr"
+        },
+        "second": null,
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 191,
+          "name": "Wales",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/191.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 8000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,87",
+      "foot": "rechts",
+      "injury": null,
+      "suspension": null,
+      "joined": 1503439200,
+      "contractUntil": 1719698400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "341429",
+      "name": "Davinson S\u00e1nchez",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/341429-1464272554.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "6",
+      "age": 25,
+      "dateOfBirth": 834530400,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/davinson-sanchez-colombia-1648635252-82895.jpg?lm=1648635261",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "3",
+          "name": "Innenverteidiger",
+          "shortName": "IV",
+          "group": "Abwehr"
+        },
+        "second": null,
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 83,
+          "name": "Kolumbien",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/83.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 30000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,84",
+      "foot": "rechts",
+      "injury": {
+        "id": "195",
+        "description": "Knieverletzung",
+        "until": null,
+        "category": "Unbekannt",
+        "rehabilitation": "",
+        "clubIdStart": null,
+        "clubIdEnd": null
+      },
+      "suspension": null,
+      "joined": 1577833200,
+      "contractUntil": 1751234400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "346478",
+      "name": "Japhet Tanganga",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/346478-1629882567.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "25",
+      "age": 23,
+      "dateOfBirth": 922831200,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/japhet-tanganga-spurs-1580809416-31098.jpg?lm=1580809436",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "3",
+          "name": "Innenverteidiger",
+          "shortName": "IV",
+          "group": "Abwehr"
+        },
+        "second": {
+          "id": "5",
+          "name": "Rechter Verteidiger",
+          "shortName": "RV",
+          "group": "Abwehr"
+        },
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 189,
+          "name": "England",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/189.png?lm=1520611569"
+        },
+        {
+          "id": 193,
+          "name": "DR Kongo",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/193.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 15000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,87",
+      "foot": "rechts",
+      "injury": null,
+      "suspension": null,
+      "joined": 1643583600,
+      "contractUntil": 1782770400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "354362",
+      "name": "Rodrigo Bentancur",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/354362-1596001806.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "30",
+      "age": 24,
+      "dateOfBirth": 867189600,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/rodrigo-bentancur-juventus-1594724169-43493.jpg?lm=1594724141",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "7",
+          "name": "Zentrales Mittelfeld",
+          "shortName": "ZM",
+          "group": "Mittelfeld"
+        },
+        "second": {
+          "id": "6",
+          "name": "Defensives Mittelfeld",
+          "shortName": "DM",
+          "group": "Mittelfeld"
+        },
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 179,
+          "name": "Uruguay",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/179.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 25000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,85",
+      "foot": "rechts",
+      "injury": null,
+      "suspension": null,
+      "joined": 1628200800,
+      "contractUntil": 1688076000,
+      "captain": false,
+      "lastClub": {
+        "id": "800",
+        "name": "Atal. Bergamo",
+        "fullName": "Atalanta Bergamo",
+        "image": "https://tmssl.akamaized.net/images/wappen/medium/800.png?lm=1438547428",
+        "nationalTeam": "",
+        "flag": null,
+        "marketValue": null,
+        "mainCompetition": null
+      },
+      "isLoan": true,
+      "wasLoan": null,
+      "id": "355915",
+      "name": "Cristian Romero",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/355915-1595857770.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "4",
+      "age": 24,
+      "dateOfBirth": 893628000,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/cristian-romero-tottenham-hotspur-1635845064-73980.jpg?lm=1635845094",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "3",
+          "name": "Innenverteidiger",
+          "shortName": "IV",
+          "group": "Abwehr"
+        },
+        "second": null,
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 9,
+          "name": "Argentinien",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/9.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 40000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,78",
+      "foot": "links",
+      "injury": null,
+      "suspension": null,
+      "joined": 1565215200,
+      "contractUntil": 1751234400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "392775",
+      "name": "Ryan Sessegnon",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/392775-1554559145.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "19",
+      "age": 21,
+      "dateOfBirth": 958600800,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/ryan-sessegnon-tsg-1899-hoffenheim-1604479483-50461.jpg?lm=1604479494",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "9",
+          "name": "Linkes Mittelfeld",
+          "shortName": "LM",
+          "group": "Mittelfeld"
+        },
+        "second": {
+          "id": "11",
+          "name": "Linksau\u00dfen",
+          "shortName": "LA",
+          "group": "Sturm"
+        },
+        "third": {
+          "id": "4",
+          "name": "Linker Verteidiger",
+          "shortName": "LV",
+          "group": "Abwehr"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 189,
+          "name": "England",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/189.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 15000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,75",
+      "foot": "rechts",
+      "injury": {
+        "id": "39",
+        "description": "Schambeinentz\u00fcndung",
+        "until": null,
+        "category": "Unbekannt",
+        "rehabilitation": "",
+        "clubIdStart": null,
+        "clubIdEnd": null
+      },
+      "suspension": null,
+      "joined": 1530396000,
+      "contractUntil": 1814306400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "406638",
+      "name": "Oliver Skipp",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/406638-1572887410.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "29",
+      "age": 21,
+      "dateOfBirth": 969055200,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/antonio-conte-oliver-skipp-tottenham-2022-1646487064-81449.jpg?lm=1646487081",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "6",
+          "name": "Defensives Mittelfeld",
+          "shortName": "DM",
+          "group": "Mittelfeld"
+        },
+        "second": {
+          "id": "7",
+          "name": "Zentrales Mittelfeld",
+          "shortName": "ZM",
+          "group": "Mittelfeld"
+        },
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 189,
+          "name": "England",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/189.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 20000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,88",
+      "foot": "rechts",
+      "injury": null,
+      "suspension": null,
+      "joined": 1627768800,
+      "contractUntil": 1719698400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "428016",
+      "name": "Brandon Austin",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/428016-1618736681.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "Major League Soccer",
+      "shirtNumber": "40",
+      "age": 23,
+      "dateOfBirth": 915750000,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/brandon-austin-1611335224-55162.jpg?lm=1611335296",
+      "isGoalkeeper": true,
+      "positions": {
+        "first": {
+          "id": "1",
+          "name": "Torwart",
+          "shortName": "TW",
+          "group": "Torwart"
+        },
+        "second": null,
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 189,
+          "name": "England",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/189.png?lm=1520611569"
+        },
+        {
+          "id": 184,
+          "name": "Vereinigte Staaten",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/184.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 250000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,86",
+      "foot": "links",
+      "injury": null,
+      "suspension": null,
+      "joined": 1643583600,
+      "contractUntil": 1688076000,
+      "captain": false,
+      "lastClub": {
+        "id": "506",
+        "name": "Juventus Turin",
+        "fullName": "Juventus Turin",
+        "image": "https://tmssl.akamaized.net/images/wappen/medium/506.png?lm=1626441487",
+        "nationalTeam": "",
+        "flag": null,
+        "marketValue": null,
+        "mainCompetition": null
+      },
+      "isLoan": true,
+      "wasLoan": null,
+      "id": "431755",
+      "name": "Dejan Kulusevski",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/431755-1624534430.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "21",
+      "age": 22,
+      "dateOfBirth": 956613600,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/dejan-kulusevski-tottenham-2021-2022-1646732085-81584.jpg?lm=1646732100",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "12",
+          "name": "Rechtsau\u00dfen",
+          "shortName": "RA",
+          "group": "Sturm"
+        },
+        "second": {
+          "id": "7",
+          "name": "Zentrales Mittelfeld",
+          "shortName": "ZM",
+          "group": "Mittelfeld"
+        },
+        "third": {
+          "id": "10",
+          "name": "Offensives Mittelfeld",
+          "shortName": "OM",
+          "group": "Mittelfeld"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 147,
+          "name": "Schweden",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/147.png?lm=1520611569"
+        },
+        {
+          "id": 100,
+          "name": "Nordmazedonien",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/100.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 35000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,83",
+      "foot": "rechts",
+      "injury": null,
+      "suspension": null,
+      "joined": 1630360800,
+      "contractUntil": 1782770400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "476344",
+      "name": "Emerson Royal",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/476344-1553782032.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "12",
+      "age": 23,
+      "dateOfBirth": 916268400,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/emerson-royal-spurs-2021-1633450668-72215.jpg?lm=1633450710",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "5",
+          "name": "Rechter Verteidiger",
+          "shortName": "RV",
+          "group": "Abwehr"
+        },
+        "second": {
+          "id": "8",
+          "name": "Rechtes Mittelfeld",
+          "shortName": "RM",
+          "group": "Mittelfeld"
+        },
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 26,
+          "name": "Brasilien",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/26.png?lm=1520611569"
+        },
+        {
+          "id": 157,
+          "name": "Spanien",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/157.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 25000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    }
+  ]
+}

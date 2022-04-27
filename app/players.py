@@ -24,7 +24,11 @@ def player_page(playername):
     playername = playername.replace('-', ' ')
     player = Player.query.filter_by(playername=playername).first()
     if player is None:
-        return 'Player not found'
+        player = Player.query.filter_by(updated_name=playername).first()
+
+        # Check Updated Name
+        if player is None:
+            return 'Player not found'
     ratings = {}
     yellow = {}
     yellowred = {}

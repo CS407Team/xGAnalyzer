@@ -19,7 +19,7 @@
           width: calc((100% - 130px)/5.5);
           padding: 0px 20px;
           height: 100px;
-          background-color: #b746eb;
+          background-color: #1691d3;
           border: 1px solid black;
           float: left;
           display: block;
@@ -29,17 +29,17 @@
           width: calc((100% - 130px)/5.5);
           padding: 0px 20px;
           height: 100px;
-          background-color: #e33bcd;
+          background-color: #80e6e6;
           border: 1px solid black;
           float: left;
           display: block;
           font-size: medium;
         }
         .container3 {
-          width: calc((100% - 130px)/5.5);
+          width: calc((100% - 130px)/5.495);
           padding: 0px 20px;
           height: 100px;
-          background-color: #f0279f;
+          background-color: #1691d3;
           border: 1px solid black;
           float: left;
           display: block;
@@ -55,15 +55,12 @@
             margin-left: 100px;
             margin-right: 80px;
             padding-top: 25px;
+            margin-top: 15px;
             position: relative;
             background-color: lightblue;
             color: whitesmoke;
             height: 600px;
-            font-size: xx-large;
-        }
-        .container7 {
-            color: whitesmoke;
-            font-size: large;
+            font-size: x-large;
         }
         h1 {
         position: relative;
@@ -72,6 +69,9 @@
         h2 {
             font-size: medium;
             color: lightgray;
+        }
+        a {
+            color: black;
         }
         .header{
             padding-left: 100px;
@@ -104,16 +104,16 @@
     <div class="container">
         <div class="container0"><br>&emsp;&emsp;  Welcome back {{ username }}</div>
         <div class="container1"><br><br>
-        <a href="{{ url_for('userpage',userid=userid,username=username,leagueid=1,season=2021,pos=pos)}}">
+        <a href="{{ url_for('userpage',userid=userid,username=username,leagueid=1,leagueid2=1,season=2021,pos=pos)}}">
             Back to user page</a></div>
         <div class="container2"><br><br>
-            <a href="{{ url_for('upload_page',userid=userid,username=username,leagueid=leagueid) }}">
+            <a href="{{ url_for('upload_page',userid=userid,username=username,leagueid2=1,leagueid=leagueid) }}">
             Find game result based on xG graph</a></div>
         <div class="container3"><br><br>
-            <a href="{{ url_for('upload_page',userid=userid,username=username,leagueid=leagueid) }}">
-                Generate xG graph for soccer match></a></div>
+            <a href="{{ url_for('upload_page',userid=userid,username=username,leagueid2=1,leagueid=leagueid) }}">
+                Generate xG graph for soccer match</a></div>
     </div>
-    <br><br><br><br><br><br><br>
+    <br><br><br>
     <div>
         <div class="container5">
             <div class="container6"><br><br><br>

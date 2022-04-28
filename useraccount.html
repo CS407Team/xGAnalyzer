@@ -1,0 +1,226 @@
+<?php
+ echo "Connected successfully";
+?>
+
+<html>
+<head>
+    <style>
+        .container0 {
+          width: calc((100% - 130px)/4);
+          padding: 0px 20px;
+          height: 100px;
+          background-color: #80e6e6;
+          border: 1px solid black;
+          float: left;
+          display: block;
+          font-size: xx-large;
+        }
+        .container1 {
+          width: calc((100% - 130px)/4);
+          padding: 0px 20px;
+          height: 100px;
+          background-color: #1691d3;
+          border: 1px solid black;
+          float: left;
+          display: block;
+          font-size: medium;
+        }
+        .container2 {
+          width: calc((100% - 130px)/4);
+          padding: 0px 20px;
+          height: 100px;
+          background-color: #80e6e6;
+          border: 1px solid black;
+          float: left;
+          display: block;
+          font-size: medium;
+        }
+        .container3 {
+          width: calc((100% - 130px)/4.5);
+          padding: 0px 20px;
+          height: 100px;
+          background-color: #1691d3;
+          border: 1px solid black;
+          float: left;
+          display: block;
+          font-size: medium;
+        }
+        .container11 {
+          width: calc((100% - 130px)/7.5*5);
+          padding: 0px 20px;
+          height: 40px;
+          background-color: #80e6e6;
+          border: 1px solid black;
+          float: left;
+          display: block;
+          font-size: x-large;
+        }
+        .container22 {
+          width: calc((100% - 130px)/7.5);
+          padding: 0px 20px;
+          height: 40px;
+          background-color: #1691d3;
+          border: 1px solid black;
+          float: left;
+          display: block;
+          font-size: medium;
+        }
+        .container33 {
+          width: calc((100% - 130px)/7.5);
+          padding: 0px 20px;
+          height: 40px;
+          background-color: #80e6e6;
+          border: 1px solid black;
+          float: left;
+          display: block;
+          font-size: medium;
+        }
+        .container5 {
+            padding-top: 25px;
+            background-color: #0096FF;
+            color: #0096FF;
+            height: 700px;
+        }
+        .container6 {
+            margin-left: 20px;
+            margin-right: 20px;
+            padding-top: 25px;
+            margin-top: 15px;
+            position: relative;
+            background-color: lightblue;
+            color: whitesmoke;
+            height: 600px;
+            font-size: x-large;
+        }
+        .vl {
+            border-left: calc((100% - 130px)/4);
+            color: green;
+            height: 500px;
+        }
+        td {
+            color: white;
+        }
+        .downlink {
+            color: white;
+        }
+        h1 {
+            position: relative;
+            color: grey;
+        }
+        h2 {
+            font-size: medium;
+            color: lightgray;
+        }
+        a {
+            color: black;
+        }
+        .header{
+            padding-left: 100px;
+        }
+        .header img {
+            float: left;
+            width: 500px;
+            height: 300px;
+        }
+        Body {
+            font-family: Calibri, Helvetica, sans-serif;
+            background-color: darkblue;
+            font-size: x-large;
+        }
+        button {
+            color: white;
+            font-size: x-large;
+            background-color: #80e6e6;
+        }
+    </style>
+</head>
+<body>
+<script></script>
+    {% for noti in notifications %}
+        <div class="container11" id="{{ noti[0] }}">&ensp;&ensp;&ensp;&ensp;&ensp;{{ noti[1] }}</div>
+        <div class="container22">
+            <a href="{{ url_for('accept',user=noti.user,userid=userid,notid=noti[0],item=noti[4], leagueid=leagueid,
+            leagueid2=leagueid2, season=season, username=username, targetid=targetid) }}">
+            Accept</a></div>
+        <div class="container33">
+            <a href="{{ url_for('decline',user=noti.user,userid=userid,notid=noti[0],item=noti[4], leagueid=leagueid,
+            leagueid2=leagueid2, season=season, username=username, targetid=targetid) }}">
+            Decline</a></div>
+    {% endfor %}<br>
+    <div class="header">
+    <img src="https://i.ibb.co/K7K5D49/xgGraph.png" alt="logo" />
+    <h1>&ensp;&ensp;{{ username }}</h1>&ensp;&ensp;&ensp;&ensp;
+        {% if userid == targetid %}
+        <form method="post" name="search"><input placeholder="Search for user" type="text" name="searchi">
+            <button type="submit" >Submit</button></form>
+        {% endif %}
+    </div>
+      <h2>&emsp;{{ firstname }}{% for i in range(4) %} &ensp;{% endfor %}Followers&ensp;&ensp;  Following</h2>
+      <h2>&emsp;{% for i in range(4) %} &ensp;{% endfor %}{{ followers[0][0] }}{% for i in range(6) %} &ensp;{% endfor %}
+          {{ followings[0][0] }}</h2>
+    <br>
+<h2>&emsp;{{ lastname }}{% for i in range(7) %} &ensp;{% endfor %}<button href="follow user">Follow User</button></h2><br>
+    <div class="container">
+        <div class="container0"><br>&emsp;&emsp;  Favorite teams</div>
+        <div class="container1"><br><br>
+        <a href="{{ url_for('userpage',userid=userid,username=username,leagueid=1,leagueid2=1,season=2021,pos=pos)}}">
+            Players ratings</a></div>
+        <div class="container2"><br><br>
+            <a href="{{ url_for('upload_page',userid=userid,username=username,leagueid2=1,leagueid=leagueid) }}">
+            Game Predictions</div>
+        <div class="container3"><br><br>
+            <a href="{{ url_for('upload_page',userid=userid,username=username,leagueid2=1,leagueid=leagueid) }}">
+                Season Predictions</a></div>
+    </div>
+    <br><br><br>
+    <div>
+        <div class="container5">
+            <div class="container6"><br><br><br>
+                <div class="container7">
+                    <table>
+                      <tr>
+                        <th>Game</th>
+                        <th>Name</th>
+                        <th>Tackles</th>
+                          <th>C.Tack</th>
+                        <th>Yellows</th>
+                        <th>Reds</th>
+                          <th>Shots</th>
+                        <th>Target</th>
+                        <th>Goals</th>
+                          <th>Passes</th>
+                        <th>C.Pass</th>
+                        <th>Saves</th>
+                          <th>Concede</th>
+                        <th>Assists</th>
+                        <th>Visibility</th>
+                      </tr>
+                        {% for player in players %}
+                      <tr>
+                          <td>{{ player.game }}</td>
+                          <td>{{ player.name }}</td>
+                          <td>{{ player.tackles }}</td>
+                          <td>{{ player.ctack }}</td>
+                          <td>{{ player.yellows }}</td>
+                          <td>{{ player.reds }}</td>
+                          <td>{{ player.shots }}</td>
+                          <td>{{ player.target }}</td>
+                          <td>{{ player.goals }}</td>
+                          <td>{{ player.passes }}</td>
+                          <td>{{ player.cpass }}</td>
+                          <td>{{ player.saves }}</td>
+                          <td>{{ player.assists }}</td>
+                          <td>{{ player.concede }}</td>
+                          <td>{{ player.visibility }}</td>
+                      </tr>
+                        {% endfor %}
+                    </table>
+                    <br>
+                    <a href="{{ url_for('download',filename='playrs.json') }}" download>Download</a>
+                    <div class="vl"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

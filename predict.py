@@ -7,44 +7,6 @@ import numpy as np
 from sklearn import linear_model
 from sklearn import svm
 
-"""from statsbombpy import sb
-
-sb.competitions()"""
-
-"""X1 = functions.getXgDataYellow("https://storage.googleapis.com/xganalyzer_exports/games/astonvilla-tottenham.png", 1.6)
-X2 = functions.getXgDataBlue("https://storage.googleapis.com/xganalyzer_exports/games/astonvilla-tottenham.png", 1.6,"blue")
-X3 = functions.getXgDataYellow("https://storage.googleapis.com/xganalyzer_exports/games/leicester-tottenham.png", 4.5)
-X4 = functions.getXgDataYellow("https://storage.googleapis.com/xganalyzer_exports/games/southampton-tottenham.png", 3.0)
-X5 = functions.getXgDataYellow("https://storage.googleapis.com/xganalyzer_exports/games/westham-tottenham.png", 1.8)
-X6 = functions.getXgDataBlue("https://storage.googleapis.com/xganalyzer_exports/games/tottenham-brentford.png", 2.5,"blue")
-X7 = functions.getXgDataBlue("https://storage.googleapis.com/xganalyzer_exports/games/tottenham-crystalpalace.png", 3.0,"blue")
-X8 = functions.getXgDataBlue("https://storage.googleapis.com/xganalyzer_exports/games/tottenham-liverpool.png", 3.0,"blue")
-X9 = functions.getXgDataBlue("https://storage.googleapis.com/xganalyzer_exports/games/tottenham-southampton.png", 1.80,"blue")
-X10 = functions.getXgDataBlue("https://storage.googleapis.com/xganalyzer_exports/games/tottenham-watford.png", 1.0,"blue")
-X11 = functions.getXgDataBlue("https://storage.googleapis.com/xganalyzer_exports/games/arsenal-tottenham.png", 1.6,"blue")
-X12 = functions.getXgDataBlue("https://storage.googleapis.com/xganalyzer_exports/games/chelsea-tottenham.png", 1.2,"blue")
-X13 = functions.getXgDataBlue("https://storage.googleapis.com/xganalyzer_exports/games/leicester-tottenham.png", 4.5,"blue")
-X14 = functions.getXgDataBlue("https://storage.googleapis.com/xganalyzer_exports/games/southampton-tottenham.png", 3.0,"blue")
-X15 = functions.getXgDataBlue("https://storage.googleapis.com/xganalyzer_exports/games/westham-tottenham.png", 1.8,"blue")
-X16 = functions.getXgDataYellow("https://storage.googleapis.com/xganalyzer_exports/games/tottenham-brentford.png", 2.5,"blue")
-X17 = functions.getXgDataYellow("https://storage.googleapis.com/xganalyzer_exports/games/tottenham-crystalpalace.png", 3.0)
-X18 = functions.getXgDataYellow("https://storage.googleapis.com/xganalyzer_exports/games/tottenham-liverpool.png", 3)
-X19 = functions.getXgDataYellow("https://storage.googleapis.com/xganalyzer_exports/games/tottenham-southampton.png", 1.8)
-X20 = functions.getXgDataYellow("https://storage.googleapis.com/xganalyzer_exports/games/tottenham-watford.png", 1)
-print("X1 is " + str(X1))
-x = [X1, X2, X8, X4, X5, X6, X7, X9, X10]
-y = [1, 0, 2, 1, 0, 2, 3, 2, 1]
-model = LogisticRegression(solver='lbfgs')
-model.fit(x, y)
-new_input = [X3]
-new_output = model.predict(new_input)
-X = [X11, X12, X8, X14, X15, X16, X17, X19, X20]
-Y = [3, 2, 2, 1, 1, 0, 0, 3, 0]
-mod = LogisticRegression(solver='lbfgs')
-mod.fit(X, Y)
-inp = [X13]
-output = mod.predict(inp)"""
-
 
 def predictRes(teamNextXG, teamPrevXG, teamRes):
     model = LogisticRegression(solver='lbfgs', max_iter=2500)
@@ -65,7 +27,8 @@ def getPrevxG(teamname, filenames, scoreOrCon):
             col = "blue"
             if scoreOrCon == "conceive":
                 col = "yellow"
-        teamXG.append(functions.getXgData(team, float(team.split("-")[2].replace(".png", "")), teamname, col, "predict"))
+        teamXG.append(
+            functions.getXgData(team, float(team.split("-")[2].replace(".png", "")), teamname, col, "predict"))
     print("prev xG " + str(teamXG))
     return teamXG
 
@@ -95,6 +58,12 @@ def getNextxG(teamXG, teamname):
 
 
 def predct(homeid, awayid, homename, awayname, homeXGs, awayXGs, homeRes, awayRes):
+    prdctn = modules.get_prediction(homeid, awayid)
+    print(prdctn)
+    if len(prdctn) != 0:
+        prdct = [prdctn[0][2], prdctn[0][3]]
+        anlys = [prdctn[0][4], prdctn[0][5]]
+        return prdct, anlys
     homefiles = []
     homescoreRes = []
     homeconveRes = []
@@ -158,16 +127,22 @@ def predct(homeid, awayid, homename, awayname, homeXGs, awayXGs, homeRes, awayRe
         awaygoals += 1
     prediction = [homegoals, awaygoals]
     analysis = []
-    homestr = homename + " will score " + str(homegoals) + " goal(s) with a " + \
-              str(round(100 - 100 * abs(homeXgoals - float(homeround)), 2)) + "% probability"
     awaystr = awayname + " will score " + str(awaygoals) + " goal(s) with a " + \
               str(round(100 - 100 * abs(awayXgoals - float(awayround)), 2)) + "% probability"
+    homestr = homename + " will score " + str(homegoals) + " goal(s) with a " + \
+              str(round(100 - 100 * abs(homeXgoals - float(homeround)), 2)) + "% probability"
     analysis.append(homestr)
     analysis.append(awaystr)
+    modules.insert_prediction(homeid, awayid, homegoals, awaygoals, homestr, awaystr)
     return prediction, analysis
 
 
 def predctXG(homeid, awayid, homename, awayname, homeXGs, awayXGs, homeRes, awayRes, xGgraph, maxXG):
+    prdctn = modules.get_prediction(homeid, awayid)
+    if prdctn is not None:
+        prdct = [prdctn[0][0], prdctn[0][1]]
+        anlys = prdctn[0][2]
+        return prdct, anlys
     homefiles = []
     homescoreRes = []
     homeconveRes = []
@@ -201,6 +176,7 @@ def predctXG(homeid, awayid, homename, awayname, homeXGs, awayXGs, homeRes, away
     print(str(awayfiles))
     homePrevXG = getPrevxG(homename, homefiles, "goal")
     homeNextXG = [functions.getXgData(xGgraph, maxXG, homename, "blue", "upload")]
+    print(homeNextXG)
     homePrevCon = getPrevxG(homename, homefiles, "conceive")
     homeNextCon = [functions.getXgData(xGgraph, maxXG, homename, "yellow", "upload")]
     homeXgoals = 0
@@ -237,6 +213,7 @@ def predctXG(homeid, awayid, homename, awayname, homeXGs, awayXGs, homeRes, away
               str(round(100 - 100 * abs(awayXgoals - float(awayround)), 2)) + "% probability"
     analysis.append(homestr)
     analysis.append(awaystr)
+    modules.insert_prediction(homeid, awayid, homegoals, awaygoals, analysis)
     return prediction, analysis
 
 

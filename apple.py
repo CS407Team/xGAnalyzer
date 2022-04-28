@@ -1,37 +1,5 @@
 import numpy as np
 from PIL import Image
-"""from flask import Flask
-from flask import render_template, request, jsonify, url_for, redirect
-from flask import render_template, request, jsonify, url_for
-from . import modules
-from . import  database
-import mysql.connector as connector
-import decimal
-import subprocess as sub
-# import xml.dom.minidom as m
-# doc = m.parse(r"C:/Users/pc/Downloads/eshop-io/eshop/src/templates/home.html")
-
-
-# js2py.translate_file('src/templates/Nice.js', 'Verynice.py')
-# import Verynice
-# from Verynice import *
-
-app = Flask(__name__, template_folder='../html')
-
-db_connection = None
-db_cursor = None
-
-try:
-    db_connection = connector.connect(user=database.user,
-                                      password=database.password,
-                                      host=database.host,
-                                      database=database.name)
-except connector.Error as err:
-    print("ERROR")
-
-db_cursor = db_connection.cursor(buffered=True)
-db_cursor.execute("SET SESSION TRANSACTION ISOLATION LEVEL READ UNCOMMITTED")
-db_cursor.execute("USE analyzer")"""
 
 def getXgDataBlue(xGFile, maxXG, maxX, maxY):
     xGData = []

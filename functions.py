@@ -24,7 +24,10 @@ def getXgData(xGFile, maxXG, teamname, col, kind):
             a = Image.open(BytesIO(response.content))
         elif kind == "upload":
             a = xGFile
-    temp = np.asarray(a)
+    response = requests.get(xGFile)
+    c = Image.open(BytesIO(response.content))
+    temp = np.asarray(c)
+    print("temp is " + str(temp))
     for i in range(1, 19):
         xG = -1
         if col == "blue":

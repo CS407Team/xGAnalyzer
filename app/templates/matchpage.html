@@ -35,33 +35,31 @@
                 <th id="generic_header">Goals</th>
                 <th id="generic_header">Pens</th>
                 <th id="generic_header">Free Kicks</th>
-                <th id="generic_header">Pass Total</th>
-                <th id="generic_header">Completed Passes</th>
             </tr>
             <tr>
-                <th id="generic_column">{{ home_team_name }}</th>
-                <th id="generic_column">{{ stats.home_possession }}</th>
-                <th id="generic_column">{{ stats.home_shots }}</th>
-                <th id="generic_column">{{ stats.home_shots_on_target }}</th>
-                <th id="generic_column">{{ stats.home_yellow_cards }}</th>
-                <th id="generic_column">{{ stats.home_goals }}</th>
-                <th id="generic_column">{{ stats.home_pens }}</th>
-                <th id="generic_column">{{ stats.home_freekicks }}</th>
-                <th id="generic_column">{{ stats.home_pass_total }}</th>
-                <th id="generic_column">{{ stats.home_complete_passes}}</th>
+                <td id="generic_column">{{ home_team_name }}</td>
+                <td id="generic_column">{{ stats.home_possession }}</td>
+                <td id="generic_column">{{ stats.home_shots }}</td>
+                <td id="generic_column">{{ stats.home_shots_on_target }}</td>
+                <td id="generic_column">{{ stats.home_yellow_cards }}</td>
+                <td id="generic_column">{{ stats.home_red_cards }}</td>
+                <td id="generic_column">{{ stats.home_corners }}</td>
+                <td id="generic_column">{{ stats.home_goals }}</td>
+                <td id="generic_column">{{ stats.home_pens }}</td>
+                <td id="generic_column">{{ stats.home_freekicks }}</td>
             </tr>
 
             <tr>
-                <th id="generic_column">{{ away_team_name }}</th>
-                <th id="generic_column">{{ stats.away_possession }}</th>
-                <th id="generic_column">{{ stats.away_shots }}</th>
-                <th id="generic_column">{{ stats.away_shots_on_target }}</th>
-                <th id="generic_column">{{ stats.away_yellow_cards }}</th>
-                <th id="generic_column">{{ stats.away_goals }}</th>
-                <th id="generic_column">{{ stats.away_pens }}</th>
-                <th id="generic_column">{{ stats.away_freekicks }}</th>
-                <th id="generic_column">{{ stats.away_pass_total }}</th>
-                <th id="generic_column">{{ stats.away_complete_passes}}</th>
+                <td id="generic_column">{{ away_team_name }}</td>
+                <td id="generic_column">{{ stats.away_possession }}</td>
+                <td id="generic_column">{{ stats.away_shots }}</td>
+                <td id="generic_column">{{ stats.away_shots_on_target }}</td>
+                <td id="generic_column">{{ stats.away_yellow_cards }}</td>
+                <td id="generic_column">{{ stats.away_red_cards }}</td>
+                <td id="generic_column">{{ stats.away_corners }}</td>
+                <td id="generic_column">{{ stats.away_goals }}</td>
+                <td id="generic_column">{{ stats.away_pens }}</td>
+                <td id="generic_column">{{ stats.away_freekicks }}</td>
             </tr>
 
         </table>
@@ -69,7 +67,7 @@
 
     <div id="other_prediction">
         <h2> Your Prediction </h2>
-        <h2> [] </h2>
+        <h2> [Week's Prediction] </h2>
         <table id=""generic_table>
             <tr>
                 <th id="generic_header">Possessions</th>
@@ -81,33 +79,29 @@
                 <th id="generic_header">Goals</th>
                 <th id="generic_header">Pens</th>
                 <th id="generic_header">Free Kicks</th>
-                <th id="generic_header">Pass Total</th>
-                <th id="generic_header">Completed Passes</th>
             </tr>
             <tr>
-                <th id="generic_column">{{ home_team_name }}</th>
-                <th id="generic_column">{{ userpred.home_possession }}</th>
-                <th id="generic_column">{{ userpred.home_shots }}</th>
-                <th id="generic_column">{{ userpred.home_shots_on_target }}</th>
-                <th id="generic_column">{{ userpred.home_yellow_cards }}</th>
-                <th id="generic_column">{{ userpred.home_goals }}</th>
-                <th id="generic_column">{{ userpred.home_pens }}</th>
-                <th id="generic_column">{{ userpred.home_freekicks }}</th>
-                <th id="generic_column">{{ userpred.home_pass_total }}</th>
-                <th id="generic_column">{{ userpred.home_complete_passes}}</th>
+                <td id="generic_column">{{ userpred.home_possession }}</td>
+                <td id="generic_column">{{ userpred.home_shots }}</td>
+                <td id="generic_column">{{ userpred.home_shots_on_target }}</td>
+                <td id="generic_column">{{ userpred.home_yellow_cards }}</td>
+                <td id="generic_column">{{ userpred.home_red_cards }}</td>
+                <td id="generic_column">{{ userpred.home_corners }}</td>
+                <td id="generic_column">{{ userpred.home_goals }}</td>
+                <td id="generic_column">{{ userpred.home_pens }}</td>
+                <td id="generic_column">{{ userpred.home_freekicks }}</td>
             </tr>
 
             <tr>
-                <th id="generic_column">{{ away_team_name }}</th>
-                <th id="generic_column">{{ userpred.away_possession }}</th>
-                <th id="generic_column">{{ userpred.away_shots }}</th>
-                <th id="generic_column">{{ userpred.away_shots_on_target }}</th>
-                <th id="generic_column">{{ userpred.away_yellow_cards }}</th>
-                <th id="generic_column">{{ userpred.away_goals }}</th>
-                <th id="generic_column">{{ userpred.away_pens }}</th>
-                <th id="generic_column">{{ userpred.away_freekicks }}</th>
-                <th id="generic_column">{{ userpred.away_pass_total }}</th>
-                <th id="generic_column">{{ userpred.away_complete_passes}}</th>
+                <td id="generic_column">{{ userpred.away_possession }}</td>
+                <td id="generic_column">{{ userpred.away_shots }}</td>
+                <td id="generic_column">{{ userpred.away_shots_on_target }}</td>
+                <td id="generic_column">{{ userpred.away_yellow_cards }}</td>
+                <td id="generic_column">{{ userpred.away_red_cards }}</td>
+                <td id="generic_column">{{ userpred.away_corners }}</td>
+                <td id="generic_column">{{ userpred.away_goals }}</td>
+                <td id="generic_column">{{ userpred.away_pens }}</td>
+                <td id="generic_column">{{ userpred.away_freekicks }}</td>
             </tr>
         </table>
     </div>

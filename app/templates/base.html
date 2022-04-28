@@ -6,6 +6,25 @@
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}">
 </head>
 <body>
+    <div class="topnav">
+        <a class="active" href="/">Home</a>
+        <a href="/table">View Our Season Table</a>
+
+        <!-- Update this with personal prediction displays once routing is finished -->
+        <a href="#">Create Your Own Predictions</a>
+
+        <!-- Update this with Eliel's prediction comparison -->
+        <a href="#">Compare Predictions</a>
+
+        <!-- Update this with Viet's ML prediction routing. -->
+        <a href="#">Generate Predictions</a>
+
+        <a href="/watchlist">Player Watchlist</a>
+        <a href="/search_matches">Match Search</a>
+        <a href="/history">View Match History</a>
+        <a href="/logout">Logout</a>
+    </div>
+
     {% block content %}
     {% endblock %}
 </body>

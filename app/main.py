@@ -4,14 +4,17 @@ from flask import Flask, send_file, Blueprint, session
 from flask import render_template, request, redirect
 from flask_login import LoginManager, current_user, UserMixin, login_user
 from flask_sqlalchemy import SQLAlchemy
+from app import db
 from werkzeug.security import generate_password_hash, check_password_hash
 
-from app.models import GamePredictions, SeasonTable, Teams, Games, Stats, TablePredictions
+from app import create_app
+from app.models import GamePredictions, SeasonTable, Teams, Games, Stats, TablePredictions, User, \
+    PlayerRatings, Player, Watchlist
 from user import user_utils
 from data_files import database
 
 from predictions import table_predictions, booking_predictions, match_predictions, stats_predictions, \
-    app_generated_predictions
+    app_generated_predictions, player_rating
 
 main = Blueprint('main', __name__)
 
@@ -54,8 +57,6 @@ def user_table_predictions(username):
         # Need to implement error checks
         user = user_utils.find_by_username(username)
         predictions = table_predictions.find_public_predictions(user[0])
-        print(user)
-        print(predictions)
 
         return render_template('table_predictions.html', username=username, predictions=predictions)
 
@@ -328,3 +329,127 @@ def download_app_table_compare(prediction_name):
         return redirect('/table')
     path = app_generated_predictions.export_with_compare(prediction_name)
     return send_file(path, as_attachment=True)
+
+
+@main.route('/player_prediction', methods=["POST", "GET"])
+def player_prediction():
+    if request.method == "GET":
+        return render_template('search_player_rating.html')
+    else:
+        data = request.form
+        # print(data)
+
+        player = Player.query.filter_by(playername=data['player_name'], teamid=data['home_team']).first()
+        team = Teams.query.filter_by(team_id=data['home_team']).first()
+
+        # print(team.team_name)
+
+        if player is not None:
+            return render_template('player_rating_pred.html', playername=player.playername, team_name=team.team_name,
+                                   playerid=player.playerid, team_id=team.team_id)
+        else:
+            return redirect('/player_prediction')
+
+
+@main.route('/player_prediction/add-<playerid>-<team_id>', methods=["POST"])
+def add_prediction_rating(playerid, team_id):
+    if request.method == 'POST':
+        data = request.form
+        db.create_all()
+        prediction = PlayerRatings(playerid=playerid, userid=current_user.userid, team_id=team_id,
+                                   player_rating=data['player_rating'], visibility=data["visibility"],
+                                   sharability=data["sharable"])
+        db.session.add(prediction)
+        db.session.commit()
+        return redirect('/player_prediction')
+
+
+@main.route('/my_player_predictions')
+def user_rating_prediction():
+    predictions = PlayerRatings.query.filter_by(userid=current_user.userid).all()
+    return render_template("tester.html", predictions=predictions)
+
+
+@main.route(('/edit_rating-<player_rating_id>'))
+def edit_rating(player_rating_id):
+    player = PlayerRatings.query.filter_by(player_rating_id=player_rating_id).first()
+    player_name = Player.query.filter_by(playerid=player.playerid).first()
+    return render_template("edit_prediction.html", playername=player_name.playername,
+                           player_rating=player.player_rating, player_rating_id=player_rating_id)
+
+
+@main.route('/edit_rating-<player_rating_id>/edit', methods=["POST"])
+def edit(player_rating_id):
+    data = request.form
+    player_rating.edit(player_rating_id, data['player_rating'], data['visibility'], data['sharable'])
+    return redirect('/my_player_predictions')
+
+
+@main.route('/search_user_ratings')
+def follower_rating_predictions():
+    return render_template("search_user_predcitions.html")
+
+
+@main.route('/find_user_ratings', methods=["POST"])
+def find_user_ratings():
+    data = request.form
+    user = User.query.filter_by(username=data['username']).first()
+
+    if user is None:
+        return render_template("match_does_not_exist.html")
+
+    ratings = PlayerRatings.query.filter_by(userid=user.userid).all()
+    visible = [rating for rating in ratings if rating.visibility == 1]
+    return render_template("list_user_predictions.html", predictions=visible)
+
+
+@main.route('/download_rating-<player_rating_id>')
+def download_rating(player_rating_id):
+    return render_template("download_predictions.html", player_rating_id=player_rating_id)
+
+
+@main.route('/download-<player_rating_id>')
+def download(player_rating_id):
+    player_rating_prediction = PlayerRatings.query.filter_by(player_rating_id=player_rating_id).first()
+    player_rating.download(player_rating_prediction)
+    return redirect('/search_user_ratings')
+
+
+@main.route('/watchlist', methods=["GET", "POST"])
+def watchlist():
+    if request.method == 'GET':
+        playerlist = player_rating.get_player_list(current_user.userid)
+        return render_template("list_watchlist.html", playerlist=playerlist)
+    else:
+        data = request.form
+        success = player_rating.add_player_to_watchlist(current_user.userid, data['playername'])
+        return redirect('/watchlist')
+
+
+@main.route('/change_visibility', methods=["POST"])
+def change_visibility():
+    data = request.form
+    player_rating.change_visibility(data['visibility'], current_user.userid)
+    return redirect('/watchlist')
+
+
+@main.route('/search_user_watchlist')
+def follower_watchlist():
+    return render_template("search_user_watchlist.html")
+
+
+@main.route('/find_user_watchlist', methods=["POST"])
+def find_user_watchlist():
+    data = request.form
+    visible = player_rating.find_user_watchlist(data['username'])
+
+    if visible is None:
+        return render_template("list_user_watchlist.html")
+    for element in visible:
+        print(element.playername)
+    return render_template("list_user_watchlist.html", playerlist=visible)
+
+
+if __name__ == '__main__':
+    app = create_app()
+    app.run(debug=True)

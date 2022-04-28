@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{playername}}'s Page</title>
+</head>
+<body>
+<div>Player: {{playername}}</div>
+<div></div>
+<form action="/edit_rating-{{ player_rating_id }}/edit" method="post">
+  <table>
+    <tbody>
+    <tr>Player Rating Prediction Form</tr>
+    </tbody>
+      <td>Player Rating:
+        <input type="number" min="0" max="10" name="player_rating" placeholder="{{ player_rating }}">
+      </td>
+    </tr>
+  </table>
+      <select name="visibility">
+                <option value="1">Public</option>
+                <option value="0">Private</option>
+        </select>
+        <select name="sharable">
+                <option value="1">Allow Sharing</option>
+                <option value="0">Do not Allow</option>
+        </select>
+  <input type="submit" name="submit" value="Edit Player Rating">
+
+</form>
+
+<a href="/my_player_predictions">
+    <button type="button">Back</button>
+</a>
+
+
+</body>
+</html>

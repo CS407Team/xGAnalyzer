@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <ul>
+        {% for item in predictions %}
+        <li> <a href="/edit_rating-{{ item.player_rating_id }}"> player rating : {{item.player_rating_id}} </a></li>
+            {% endfor %}
+    </ul>
+
+
+</body>
+</html>
+
+

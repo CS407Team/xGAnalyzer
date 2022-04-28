@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{playername}}'s Page</title>
+</head>
+<body>
+<div>Player: {{playername}}</div>
+<div>Team: {{team_name}}</div>
+<div></div>
+<form action="/player_prediction/add-{{ playerid }}-{{ team_id }}" method="post">
+  <table>
+    <tbody>
+    <tr>Player Rating Prediction Form</tr>
+    </tbody>
+      <td>Player Rating:
+        <input type="number" min="0" max="10" name="player_rating">
+      </td>
+    </tr>
+  </table>
+      <select name="visibility">
+                <option value="1">Public</option>
+                <option value="0">Private</option>
+        </select>
+        <select name="sharable">
+                <option value="1">Allow Sharing</option>
+                <option value="0">Do not Allow</option>
+        </select>
+  <input type="submit" name="submit" value="Submit">
+
+</form>
+
+
+</body>
+</html>

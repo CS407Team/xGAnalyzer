@@ -507,3 +507,18 @@ def find_user_watchlist():
     return render_template("list_user_watchlist.html", playerlist=visible)
 
 
+# New Routing to link old routing
+@main.route('/table_predictions')
+def table_prediction_link():
+    if current_user.is_authenticated:
+        return redirect(f'/profile/{current_user.username}/table_predictions')
+    else:
+        return redirect('/')
+
+
+@main.route('/match_predictions')
+def match_prediction_link():
+    if current_user.is_authenticated:
+        return redirect(f'/profile/{current_user.username}/table_predictions')
+    else:
+        return redirect('/')

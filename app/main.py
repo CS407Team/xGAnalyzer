@@ -322,7 +322,7 @@ def add_prediction_rating(playerid, team_id):
                                    sharability=data["sharable"])
         db.session.add(prediction)
         db.session.commit()
-        return render_template("tester.html")
+        return redirect('/player_prediction')
 
 
 @main.route('/my_player_predictions')

@@ -52,6 +52,7 @@ def change_visibility(visibility, userid):
     db.session.query(Watchlist).filter_by(userid=userid).update({'visible': visibility})
     db.session.commit()
 
+
 def find_user_watchlist(username):
     user = User.query.filter_by(username=username).first()
 
@@ -69,4 +70,3 @@ def find_user_watchlist(username):
         return playerlist
     else:
         return None
-

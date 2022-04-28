@@ -9,7 +9,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 from app import create_app
 from app.models import GamePredictions, SeasonTable, Teams, Games, Stats, TablePredictions, User, \
-    PlayerRatings, Player, Watchlist
+    PlayerRatings, Player, Watchlist, StatsPredictions
 from user import user_utils
 from data_files import database
 
@@ -236,6 +236,63 @@ def match_page(home_team, away_team, round_number):
 
     return render_template('matchpage.html', home_team_name=home_team_name, away_team_name=away_team_name, game=game,
                            stats=stats, winner=winner, predictions=predictions, current_user=current_user, orig_home=orig_home, orig_away=orig_away)
+
+
+@main.route('/match/<home_team>-v-<away_team>-<round_number>/compare-<prediction_name>')
+def compare_match(home_team, away_team, round_number, prediction_name):
+    home_team_name = home_team.replace('-', ' ')
+    away_team_name = away_team.replace('-', ' ')
+    orig_home = home_team
+    orig_away = away_team
+    home_team = Teams.query.filter(Teams.team_name.ilike(home_team_name)).first()
+    away_team = Teams.query.filter(Teams.team_name.ilike(away_team_name)).first()
+
+    if home_team is None:
+        return render_template('match_does_not_exist.html')
+    if away_team is None:
+        return render_template('match_does_not_exist.html')
+
+    game = Games.query.filter_by(hometeam_id=home_team.team_id, awayteam_id=away_team.team_id,
+                                 round_number=round_number).first()
+    if game is None:
+        return render_template('match_does_not_exist.html')
+
+
+    orig_pred_name = prediction_name
+    prediction_name = prediction_name.replace('-', ' ')
+    pred = GamePredictions.query.filter_by(userid=current_user.userid, name=prediction_name).first()
+    if pred is None:
+        return redirect(f'/match/{home_team}-v-{away_team}-{round_number}')
+
+    print(pred.stats_predictions_id)
+    userpred = StatsPredictions.query.filter_by(statsid=pred.stats_predictions_id).first()
+
+    #stats = Stats.query.filter_by(home_team_id=home_team.team_id, away_team_id=away_team.team_id, round=round_number).first()
+    stats = Stats.query.filter_by(statsid=game.stats_id).first()
+    # return f'{home_team} vs {away_team} on {round_number}'
+
+    if current_user.is_authenticated:
+        if request.url not in session['urls']:
+            session['urls'].append(request.url)
+            if (len(session['urls'])) > 10:
+                session['urls'].pop(0)
+            session.modified = True
+    if home_team.team_id == game.winner_id:
+        winner = home_team_name
+    elif away_team.team_id == game.winner_id:
+        winner = away_team_name
+    else:
+        winner = "Neither"
+
+    if current_user.is_authenticated:
+        predictions = GamePredictions.query.filter_by(userid=current_user.userid, home_team_id=home_team.team_id,
+                                                      away_team_id=away_team.team_id, round_number=round_number).all()
+    else:
+        predictions = None
+    return render_template('matchpage.html', home_team_name=home_team_name, away_team_name=away_team_name, game=game,
+                           stats=stats, winner=winner, predictions=predictions, current_user=current_user,
+                           orig_home=orig_home, orig_away=orig_away, userpred=userpred)
+
 
 
 @main.route('/match/<home_team>-v-<away_team>-<round_number>/download')

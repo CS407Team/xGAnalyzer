@@ -17,6 +17,106 @@
 <div> Status: Played</div>
 <div> Winner: </div>
 {% endif %}
+
+{% if userpred and stats %}
+<div class="container">
+    <div id="user_prediction">
+        <h2>Application's Prediction</h2>
+        <h2>[Week's Predictions]</h2>
+        <table id="generic_table">
+            <tr>
+                <th id="generic_header">Team</th>
+                <th id="generic_header">Possessions</th>
+                <th id="generic_header">Shots</th>
+                <th id="generic_header">Shots on Target</th>
+                <th id="generic_header">Yellow Cards</th>
+                <th id="generic_header">Red Cards</th>
+                <th id="generic_header">Corners</th>
+                <th id="generic_header">Goals</th>
+                <th id="generic_header">Pens</th>
+                <th id="generic_header">Free Kicks</th>
+                <th id="generic_header">Pass Total</th>
+                <th id="generic_header">Completed Passes</th>
+            </tr>
+            <tr>
+                <th id="generic_column">{{ home_team_name }}</th>
+                <th id="generic_column">{{ stats.home_possession }}</th>
+                <th id="generic_column">{{ stats.home_shots }}</th>
+                <th id="generic_column">{{ stats.home_shots_on_target }}</th>
+                <th id="generic_column">{{ stats.home_yellow_cards }}</th>
+                <th id="generic_column">{{ stats.home_goals }}</th>
+                <th id="generic_column">{{ stats.home_pens }}</th>
+                <th id="generic_column">{{ stats.home_freekicks }}</th>
+                <th id="generic_column">{{ stats.home_pass_total }}</th>
+                <th id="generic_column">{{ stats.home_complete_passes}}</th>
+            </tr>
+
+            <tr>
+                <th id="generic_column">{{ away_team_name }}</th>
+                <th id="generic_column">{{ stats.away_possession }}</th>
+                <th id="generic_column">{{ stats.away_shots }}</th>
+                <th id="generic_column">{{ stats.away_shots_on_target }}</th>
+                <th id="generic_column">{{ stats.away_yellow_cards }}</th>
+                <th id="generic_column">{{ stats.away_goals }}</th>
+                <th id="generic_column">{{ stats.away_pens }}</th>
+                <th id="generic_column">{{ stats.away_freekicks }}</th>
+                <th id="generic_column">{{ stats.away_pass_total }}</th>
+                <th id="generic_column">{{ stats.away_complete_passes}}</th>
+            </tr>
+
+        </table>
+    </div>
+
+    <div id="other_prediction">
+        <h2> Your Prediction </h2>
+        <h2> [] </h2>
+        <table id=""generic_table>
+            <tr>
+                <th id="generic_header">Possessions</th>
+                <th id="generic_header">Shots</th>
+                <th id="generic_header">Shots on Target</th>
+                <th id="generic_header">Yellow Cards</th>
+                <th id="generic_header">Red Cards</th>
+                <th id="generic_header">Corners</th>
+                <th id="generic_header">Goals</th>
+                <th id="generic_header">Pens</th>
+                <th id="generic_header">Free Kicks</th>
+                <th id="generic_header">Pass Total</th>
+                <th id="generic_header">Completed Passes</th>
+            </tr>
+            <tr>
+                <th id="generic_column">{{ home_team_name }}</th>
+                <th id="generic_column">{{ userpred.home_possession }}</th>
+                <th id="generic_column">{{ userpred.home_shots }}</th>
+                <th id="generic_column">{{ userpred.home_shots_on_target }}</th>
+                <th id="generic_column">{{ userpred.home_yellow_cards }}</th>
+                <th id="generic_column">{{ userpred.home_goals }}</th>
+                <th id="generic_column">{{ userpred.home_pens }}</th>
+                <th id="generic_column">{{ userpred.home_freekicks }}</th>
+                <th id="generic_column">{{ userpred.home_pass_total }}</th>
+                <th id="generic_column">{{ userpred.home_complete_passes}}</th>
+            </tr>
+
+            <tr>
+                <th id="generic_column">{{ away_team_name }}</th>
+                <th id="generic_column">{{ userpred.away_possession }}</th>
+                <th id="generic_column">{{ userpred.away_shots }}</th>
+                <th id="generic_column">{{ userpred.away_shots_on_target }}</th>
+                <th id="generic_column">{{ userpred.away_yellow_cards }}</th>
+                <th id="generic_column">{{ userpred.away_goals }}</th>
+                <th id="generic_column">{{ userpred.away_pens }}</th>
+                <th id="generic_column">{{ userpred.away_freekicks }}</th>
+                <th id="generic_column">{{ userpred.away_pass_total }}</th>
+                <th id="generic_column">{{ userpred.away_complete_passes}}</th>
+            </tr>
+        </table>
+    </div>
+
+
+</div>
+
+{% endif %}
+
 <a href="/match/{{orig_home}}-v-{{orig_away}}-{{game.round_number}}/download">
     <button type="button">Download Match Details</button>
 </a>
@@ -40,5 +140,10 @@
 {% endif %}
 
 {% endif %}
+
+
+
+
+
 
 {% endblock %}

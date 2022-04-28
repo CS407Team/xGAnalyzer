@@ -42,17 +42,17 @@ def player_page(playername):
         year = f'{i}'
         db_cursor.execute(f'select {year}rating, yellow, yellowred, red from {year}ratings where playerid={player.playerid}')
         data = db_cursor.fetchone()
-        if data is None:
-            ratings[year] = "N/A"
-        else:
+        if data is not None:
             ratings[year] = data[0]
 
             # Temporary Implementation, may change if we have spare time.
             yellow[year] = data[1]
             yellowred[year] = data[2]
             red[year] = data[3]
+            print(data)
 
-    for item in ratings:
-        print(ratings[item])
+    if len(ratings) == 0:
+        ratings = None
+
     team = Teams.query.filter_by(team_id=player.teamid).first()
     return render_template("playerpage.html", player=player, ratings=ratings, team=team, yellow=yellow, red=red, yellowred=yellowred)

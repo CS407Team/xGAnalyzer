@@ -1,16 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{player.playername}}'s Page</title>
-</head>
+{% extends 'base.html'%}
+
+{% block title %}
+    Temp Title
+{% endblock %}
+{% block content %}
 <body>
-<div>Player: {{player.playername}}</div>
-<div>Team: {{team.team_name}}</div>
-{% for year in ratings %}
-<div> {{year}}: Rating: {{ratings[year]}} Yellow: {{yellow[year]}} Yellow-Red: {{yellowred[year]}} Red: {{red[year]}}</div>
-{% endfor %}
+<h1>Player: {{player.playername}}</h1>
+<h2>Team: {{team.team_name}}</h2>
 
-
+{% if ratings %}
+<table id="generic_table">
+    <tr>
+        <th id="generic_header">Year</th>
+        <th id="generic_header">Rating</th>
+        <th id="generic_header">Yellow Cards</th>
+        <th id="generic_header">Double Yellow Cards</th>
+        <th id="generic_header">Red Cards</th>
+    </tr>
+    {% for year in ratings %}
+    <tr>
+            <td id="generic_column">{{year}}</td>
+            <td id="generic_column">{{ratings[year]}}</td>
+            <td id="generic_column">{{yellow[year]}}</td>
+            <td id="generic_column">{{yellowred[year]}}</td>
+            <td id="generic_column">{{red[year]}}</td>
+    </tr>
+    {% endfor %}
+</table>
 </body>
-</html>
+{% else %}
+Previous Seasons' Data Unavailable
+{% endif %}
+
+{% endblock %}

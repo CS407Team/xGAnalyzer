@@ -1,0 +1,129 @@
+<?php
+ echo "Connected successfully";
+?>
+
+<html>
+<head>
+    <style>
+        .container0 {
+          width: calc((100% - 130px)/5.5*2.35);
+          padding: 0px 20px;
+          height: 100px;
+          background-color: #80e6e6;
+          border: 1px solid black;
+          float: left;
+          display: block;
+          font-size: xx-large;
+        }
+        .container1 {
+          width: calc((100% - 130px)/5.5);
+          padding: 0px 20px;
+          height: 100px;
+          background-color: #1691d3;
+          border: 1px solid black;
+          float: left;
+          display: block;
+          font-size: medium;
+        }
+        .container2 {
+          width: calc((100% - 130px)/5.5);
+          padding: 0px 20px;
+          height: 100px;
+          background-color: #80e6e6;
+          border: 1px solid black;
+          float: left;
+          display: block;
+          font-size: medium;
+        }
+        .container3 {
+          width: calc((100% - 130px)/5.495);
+          padding: 0px 20px;
+          height: 100px;
+          background-color: #1691d3;
+          border: 1px solid black;
+          float: left;
+          display: block;
+          font-size: medium;
+        }
+        .container5 {
+            padding-top: 25px;
+            background-color: #0096FF;
+            color: #0096FF;
+            height: 700px;
+        }
+        .container6 {
+            margin-left: 100px;
+            margin-right: 80px;
+            padding-top: 25px;
+            margin-top: 15px;
+            position: relative;
+            background-color: lightblue;
+            color: whitesmoke;
+            height: 600px;
+            font-size: x-large;
+        }
+        h1 {
+        position: relative;
+        color: grey;
+        }
+        h2 {
+            font-size: medium;
+            color: lightgray;
+        }
+        a {
+            color: black;
+        }
+        .header{
+            padding-left: 100px;
+        }
+        .header img {
+            float: left;
+            width: 370px;
+            height: 210px;
+        }
+        Body {
+            font-family: Calibri, Helvetica, sans-serif;
+            background-color: darkblue;
+            font-size: x-large;
+        }
+        button {
+            color: white;
+            font-size: x-large;
+            background-color: #80e6e6;
+        }
+    </style>
+</head>
+<body>
+<script></script>
+    <div class="header">
+    <img src="https://i.ibb.co/K7K5D49/xgGraph.png" alt="logo" />
+    <h1>&ensp;xG Analyzer</h1>
+    </div>
+      <h2>&emsp; We analyze, you decide </h2>
+    <br><br><br>
+    <div class="container">
+        <div class="container0"><br>&emsp;&emsp;  Welcome back {{ username }}</div>
+        <div class="container1"><br><br>
+        <a href="{{ url_for('userpage',userid=userid,username=username,leagueid=1,leagueid2=1,season=2021,pos=pos)}}">
+            Back to user page</a></div>
+        <div class="container2"><br><br>
+            <a href="{{ url_for('upload_page',userid=userid,username=username,leagueid2=1,leagueid=leagueid) }}">
+            Find game result based on xG graph</a></div>
+        <div class="container3"><br><br>
+            <a href="{{ url_for('upload_page',userid=userid,username=username,leagueid2=1,leagueid=leagueid) }}">
+                Generate xG graph for soccer match</a></div>
+    </div>
+    <br><br><br>
+    <div>
+        <div class="container5">
+            <div class="container6"><br><br><br>
+                &emsp;&emsp;&emsp;&emsp;{{ homename }}: {{ prediction[0] }} - {{ prediction[1] }} :{{ awayname }}<br>
+                <div class="container7">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Analysis:<br>
+                {% for analyze in analysis: %}
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;{{ analyze }}<br>
+                {% endfor %}</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

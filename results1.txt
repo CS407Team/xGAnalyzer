@@ -1,0 +1,64 @@
+{
+ "selection1": [
+  {
+   "name": "Manchester City"
+  },
+  {
+   "name": "Manchester Utd"
+  },
+  {
+   "name": "Liverpool"
+  },
+  {
+   "name": "Chelsea"
+  },
+  {
+   "name": "Leicester City"
+  },
+  {
+   "name": "West Ham"
+  },
+  {
+   "name": "Tottenham"
+  },
+  {
+   "name": "Arsenal"
+  },
+  {
+   "name": "Leeds United"
+  },
+  {
+   "name": "Everton"
+  },
+  {
+   "name": "Aston Villa"
+  },
+  {
+   "name": "Newcastle Utd"
+  },
+  {
+   "name": "Wolves"
+  },
+  {
+   "name": "Crystal Palace"
+  },
+  {
+   "name": "Southampton"
+  },
+  {
+   "name": "Brighton"
+  },
+  {
+   "name": "Burnley"
+  },
+  {
+   "name": "Fulham"
+  },
+  {
+   "name": "West Brom"
+  },
+  {
+   "name": "Sheffield Utd"
+  }
+ ]
+}

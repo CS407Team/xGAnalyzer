@@ -1,0 +1,96 @@
+body {
+    background: #B0B0B0;
+}
+
+input {
+    width: 200px;
+    height: 30px;
+    border: 0;
+    border-radius: 3px;
+    margin-top: 5px;
+    font-size: 15px;
+    font: "Helvetica";
+    text-align: center;
+}
+
+select {
+    width: 200px;
+    height: 30px;
+    border: 0;
+    border-radius: 3px;
+    margin-top: 5px;
+    font-size: 15px;
+    font: "Helvetica";
+    text-align: center;
+}
+
+#button {
+    background: #6AD457;
+    border: 0;
+    width: 200px;
+    height: 30px;
+    font-size: 15px;
+}
+
+#generic_table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#generic_header,
+#generic_column {
+    border: 2px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+#score {
+    font-size: 40px;
+}
+
+#team_display_name {
+    font-family: "Sans Serif";
+    text-align: center;
+}
+
+#badge {
+    text-align: center;
+}
+
+#table_badge {
+    width: 50px;
+    height: 50px;
+}
+
+#home_lineup {
+    position: fixed;
+    left: 0;
+    width: 45%;
+}
+
+#away_lineup {
+    position: fixed;
+    right: 0;
+    width: 45%;
+    text-align: right;
+}
+
+#user_prediction {
+    position: fixed;
+    left: 0;
+    margin-left: 2%;
+    width: 45%;
+}
+
+#other_prediction {
+    position: fixed;
+    right: 0;
+    margin-right: 2%;
+    width: 45%;
+    text-align: right;
+}
+
+a:link {
+    text-decoration: none;
+}

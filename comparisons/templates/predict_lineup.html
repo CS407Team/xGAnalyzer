@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body>
+    <form action="" method="POST">
+        <h2>Privacy </h2>
+        <input type="checkbox" id="vehicle1" name="visibility" value="1"><label>Public</label><br>
+        <h2>{{home}}</h2>
+        <div id="home_lineup">
+        {% for home_player in home_players %}
+            <input type="checkbox" id="vehicle1" name={{loop.index}} value={{home_player[0]}}><label> {{home_player[1]}}</label><br>
+        {% endfor %}
+        </div>
+
+        <h2>{{away}}</h2>
+        <div id="away_lineup">
+            {% for away_player in away_players %}
+                <input type="checkbox" id="vehicle1" name={{loop.index}} value={{away_player[0]}}><label> {{away_player[1]}}</label><br>
+            {% endfor %}
+        </div>
+
+    </form>
+</body>
+</html>

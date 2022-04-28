@@ -200,7 +200,7 @@ for team in teams:
                     avg_complete = math.ceil(complete/games)
                     
                 if(yellow_cards != None):
-                    avg_yellow = math.floor(yellow_cards/games)
+                    avg_yellow = math.ceil(yellow_cards/games)
                     
                 if red_cards != None:
                     avg_red = math.floor(red_cards/games)

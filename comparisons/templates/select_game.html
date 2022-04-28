@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body>
+    <form action="" method="POST">
+        <select name="match_id">
+        {% for match in game_set %}
+            <option value={{match[0]}}>{{match[1]}} vs {{match[2]}}</option>
+        {%  endfor %}
+        </select>
+
+        <input type="submit" name="start_prediction" id="button" value="Make Prediction"/>
+    </form>
+</body>
+</html>

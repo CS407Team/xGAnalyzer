@@ -85,11 +85,11 @@ def get_stats(round):
 				cursor.commit()
 
 			except mysql.Error as err:
-		            print("Something went wrong: {}".format(err))
+				print("Something went wrong: {}".format(err))
 			else:
-		            db_connection.commit()
-		            print("Done");
-		            db_connection.close()
+				db_connection.commit()
+				print("Done");
+				db_connection.close()
 
 get_stats(29)
 

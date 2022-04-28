@@ -1,3 +1,5 @@
+import json
+
 from flask import Flask, send_file, Blueprint, session
 from flask import render_template, request, redirect
 from flask_login import LoginManager, current_user, UserMixin, login_user
@@ -195,7 +197,8 @@ def search_matches():
 def match_page(home_team, away_team, round_number):
     home_team_name = home_team.replace('-', ' ')
     away_team_name = away_team.replace('-', ' ')
-
+    orig_home = home_team
+    orig_away = away_team
     home_team = Teams.query.filter(Teams.team_name.ilike(home_team_name)).first()
     away_team = Teams.query.filter(Teams.team_name.ilike(away_team_name)).first()
 
@@ -227,11 +230,45 @@ def match_page(home_team, away_team, round_number):
         winner = "Neither"
 
     if current_user.is_authenticated:
-        predictions = GamePredictions.query.filter_by(userid=current_user.userid, home_team_id=home_team.team_id,
-                                                      away_team_id=away_team.team_id, round_number=round_number).all()
+        predictions = GamePredictions.query.filter_by(userid=current_user.userid, home_team_id=home_team.team_id, away_team_id=away_team.team_id, round_number=round_number).all()
+    else:
+        predictions = None
 
     return render_template('matchpage.html', home_team_name=home_team_name, away_team_name=away_team_name, game=game,
-                           stats=stats, winner=winner, predictions=predictions, current_user=current_user)
+                           stats=stats, winner=winner, predictions=predictions, current_user=current_user, orig_home=orig_home, orig_away=orig_away)
+
+
+@main.route('/match/<home_team>-v-<away_team>-<round_number>/download')
+def download_match(home_team, away_team, round_number):
+    orig_home = home_team
+    orig_away = away_team
+    home_team_name = home_team.replace('-', ' ')
+    away_team_name = away_team.replace('-', ' ')
+    home_team = Teams.query.filter(Teams.team_name.ilike(home_team_name)).first()
+    away_team = Teams.query.filter(Teams.team_name.ilike(away_team_name)).first()
+
+    game = Games.query.filter_by(hometeam_id=home_team.team_id, awayteam_id=away_team.team_id,
+                                 round_number=round_number).first()
+
+    if home_team.team_id == game.winner_id:
+        winner = home_team_name
+    elif away_team.team_id == game.winner_id:
+        winner = away_team_name
+    else:
+        winner = "Neither"
+
+    predictionary = {
+        "Home Team": home_team_name,
+        "Away Team": away_team_name,
+        "Round Number": round_number,
+        "Predicted Winner": winner
+    }
+
+
+    filepath = f'exports\\game\\{orig_home}-v-{orig_away}-{round_number}.json'
+    with open(f'app/exports/game/{orig_home}-v-{orig_away}-{round_number}.json', "w") as outfile:
+        json.dump(predictionary, outfile, indent=2)
+    return send_file(filepath, as_attachment=True)
 
 
 @main.route('/table')
@@ -267,6 +304,8 @@ def application_table_compare(prediction_name):
 
     if current_user.is_authenticated:
         predictions = table_predictions.find_all_predictions_by_userid(current_user.userid)
+    else:
+        predictions = None
 
     return render_template('application_table_pred.html', team_data=data, current_user=current_user,
                            team_names=team_names, predictions=predictions, prediction=pred,

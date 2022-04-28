@@ -24,22 +24,35 @@ def player_page(playername):
     playername = playername.replace('-', ' ')
     player = Player.query.filter_by(playername=playername).first()
     if player is None:
-        return 'Player not found'
+        player = Player.query.filter_by(updated_name=playername).first()
+
+        # Check Updated Name
+        if player is None:
+            return 'Player not found'
     ratings = {}
+    yellow = {}
+    yellowred = {}
+    red = {}
+
 
     db_connection = database.connect()
     db_cursor = db_connection.cursor()
 
     for i in range(2016, 2021):
         year = f'{i}'
-        db_cursor.execute(f'select {year}rating from {year}ratings where playerid={player.playerid}')
+        db_cursor.execute(f'select {year}rating, yellow, yellowred, red from {year}ratings where playerid={player.playerid}')
         data = db_cursor.fetchone()
         if data is None:
             ratings[year] = "N/A"
         else:
             ratings[year] = data[0]
 
+            # Temporary Implementation, may change if we have spare time.
+            yellow[year] = data[1]
+            yellowred[year] = data[2]
+            red[year] = data[3]
+
     for item in ratings:
         print(ratings[item])
     team = Teams.query.filter_by(team_id=player.teamid).first()
-    return render_template("playerpage.html", player=player, ratings=ratings, team=team)
+    return render_template("playerpage.html", player=player, ratings=ratings, team=team, yellow=yellow, red=red, yellowred=yellowred)

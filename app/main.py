@@ -7,7 +7,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 from app import create_app
 from app.models import GamePredictions, SeasonTable, Teams, Games, Stats, TablePredictions, User, \
-    PlayerRatings, Player
+    PlayerRatings, Player, Watchlist
 from user import user_utils
 from data_files import database
 
@@ -55,8 +55,6 @@ def user_table_predictions(username):
         # Need to implement error checks
         user = user_utils.find_by_username(username)
         predictions = table_predictions.find_public_predictions(user[0])
-        print(user)
-        print(predictions)
 
         return render_template('table_predictions.html', username=username, predictions=predictions)
 
@@ -361,7 +359,7 @@ def find_user_ratings():
     if user is None:
         return render_template("match_does_not_exist.html")
 
-    ratings = PlayerRatings.query.filter_by(userid=user.userid)
+    ratings = PlayerRatings.query.filter_by(userid=user.userid).all()
     visible = [rating for rating in ratings if rating.visibility == 1]
     return render_template("list_user_predictions.html", predictions=visible)
 
@@ -376,6 +374,41 @@ def download(player_rating_id):
     player_rating_prediction = PlayerRatings.query.filter_by(player_rating_id=player_rating_id).first()
     player_rating.download(player_rating_prediction)
     return redirect('/search_user_ratings')
+
+
+@main.route('/watchlist', methods=["GET", "POST"])
+def watchlist():
+    if request.method == 'GET':
+        playerlist = player_rating.get_player_list(current_user.userid)
+        return render_template("list_watchlist.html", playerlist=playerlist)
+    else:
+        data = request.form
+        success = player_rating.add_player_to_watchlist(current_user.userid, data['playername'])
+        return redirect('/watchlist')
+
+
+@main.route('/change_visibility', methods=["POST"])
+def change_visibility():
+    data = request.form
+    player_rating.change_visibility(data['visibility'], current_user.userid)
+    return redirect('/watchlist')
+
+
+@main.route('/search_user_watchlist')
+def follower_watchlist():
+    return render_template("search_user_watchlist.html")
+
+
+@main.route('/find_user_watchlist', methods=["POST"])
+def find_user_watchlist():
+    data = request.form
+    visible = player_rating.find_user_watchlist(data['username'])
+
+    if visible is None:
+        return render_template("list_user_watchlist.html")
+    for element in visible:
+        print(element.playername)
+    return render_template("list_user_watchlist.html", playerlist=visible)
 
 
 if __name__ == '__main__':

@@ -138,7 +138,6 @@ class TablePredictions(db.Model):
 
 
 class PlayerRatings(db.Model):
-
     player_rating_id = db.Column(db.Integer, primary_key=True)
     playerid = db.Column(db.Integer)
     userid = db.Column(db.Integer)
@@ -146,3 +145,15 @@ class PlayerRatings(db.Model):
     player_rating = db.Column(db.Integer)
     visibility = db.Column(db.Integer)
     sharability = db.Column(db.Integer)
+
+
+class WatchlistElements(db.Model):
+    userid = db.Column(db.Integer)
+    playerid = db.Column(db.Integer)
+    id = db.Column(db.Integer, primary_key=True)
+
+
+class Watchlist(db.Model):
+    watchlistid = db.Column(db.Integer,primary_key=True)
+    userid = db.Column(db.Integer)
+    visible = db.Column(db.Integer)

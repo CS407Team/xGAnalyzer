@@ -42,6 +42,7 @@ class Player(db.Model):
     playername = db.Column(db.String(50))
     position = db.Column(db.String(20))
     player_age = db.Column(db.Integer)
+    updated_name = db.Column(db.String(255))
 
 
 class GamePredictions(db.Model):

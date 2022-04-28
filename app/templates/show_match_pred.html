@@ -1,37 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+{% extends 'base.html'%}
+
+{% block title %}
+    Temp Title
+{% endblock %}
+{% block content %}
 <body>
-{{prediction[0]}}: {{prediction[1]}} (Home) vs {{prediction[2]}} (Away)
-<table border = 1>
+<h2>{{prediction[0]}}: {{prediction[1]}} (Home) vs {{prediction[2]}} (Away)</h2>
+<table id="generic_table">
     <tr>
-        <th>Team</th>
-        <th>Possessions</th>
-        <th>Shots</th>
-        <th>Shots on Target</th>
-        <th>Yellow Cards</th>
-        <th>Red Cards</th>
-        <th>Subs</th>
-        <th>Corners</th>
-        <th>Goals</th>
-        <th>Pens</th>
-        <th>Free Kicks</th>
-        <th>Pass Total</th>
-        <th>Completed Passes</th>
+        <th id="generic_header">Team</th>
+        <th id="generic_header">Possessions</th>
+        <th id="generic_header">Shots</th>
+        <th id="generic_header">Shots on Target</th>
+        <th id="generic_header">Yellow Cards</th>
+        <th id="generic_header">Red Cards</th>
+        <th id="generic_header">Subs</th>
+        <th id="generic_header">Corners</th>
+        <th id="generic_header">Goals</th>
+        <th id="generic_header">Pens</th>
+        <th id="generic_header">Free Kicks</th>
+        <th id="generic_header">Pass Total</th>
+        <th id="generic_header">Completed Passes</th>
     </tr>
     <tr>
-        <td>{{prediction[1]}}</td>
+        <td id="generic_column">{{prediction[1]}}</td>
         {% for item in stats[5:29:2] %}
-        <td> {{item}} </td>
+        <td id="generic_column"> {{item}} </td>
         {% endfor %}
     </tr>
     <tr>
-        <td>{{prediction[2]}}</td>
+        <td id="generic_column">{{prediction[2]}}</td>
         {% for item in stats[6:29:2] %}
-        <td> {{item}} </td>
+        <td id="generic_column"> {{item}} </td>
         {% endfor %}
     </tr>
 </table>
@@ -43,4 +43,5 @@
     <button type="button">Back</button>
 </a>
 </body>
-</html>
+
+{% endblock %}

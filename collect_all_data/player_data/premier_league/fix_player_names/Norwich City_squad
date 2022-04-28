@@ -1,0 +1,1373 @@
+{
+  "squad": [
+    {
+      "height": "1,90",
+      "foot": "rechts",
+      "injury": null,
+      "suspension": null,
+      "joined": 1468879200,
+      "contractUntil": 1688076000,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "29391",
+      "name": "Michael McGovern",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/29391-1464948438.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "33",
+      "age": 37,
+      "dateOfBirth": 458431200,
+      "heroImage": null,
+      "isGoalkeeper": true,
+      "positions": {
+        "first": {
+          "id": "1",
+          "name": "Torwart",
+          "shortName": "TW",
+          "group": "Torwart"
+        },
+        "second": null,
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 192,
+          "name": "Nordirland",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/192.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 250000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,93",
+      "foot": "links",
+      "injury": null,
+      "suspension": null,
+      "joined": 1532383200,
+      "contractUntil": 1719698400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "33027",
+      "name": "Tim Krul",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/s_33027_762_2013_08_07_1.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "Getty Images",
+      "shirtNumber": "1",
+      "age": 34,
+      "dateOfBirth": 576021600,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/tim-krul-norwich-city-1583656707-33324.jpg?lm=1583656728",
+      "isGoalkeeper": true,
+      "positions": {
+        "first": {
+          "id": "1",
+          "name": "Torwart",
+          "shortName": "TW",
+          "group": "Torwart"
+        },
+        "second": null,
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 122,
+          "name": "Niederlande",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/122.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 2000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,80",
+      "foot": "rechts",
+      "injury": null,
+      "suspension": null,
+      "joined": 1530396000,
+      "contractUntil": 1688076000,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "46972",
+      "name": "Teemu Pukki",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/46972-1528815465.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "22",
+      "age": 32,
+      "dateOfBirth": 638661600,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/teemu-pukki-finnland-2021-1634053368-72676.jpg?lm=1634053392",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "14",
+          "name": "Mittelst\u00fcrmer",
+          "shortName": "MS",
+          "group": "Sturm"
+        },
+        "second": {
+          "id": "13",
+          "name": "H\u00e4ngende Spitze",
+          "shortName": "HS",
+          "group": "Sturm"
+        },
+        "third": {
+          "id": "11",
+          "name": "Linksau\u00dfen",
+          "shortName": "LA",
+          "group": "Sturm"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 49,
+          "name": "Finnland",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/49.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 5000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,94",
+      "foot": "rechts",
+      "injury": null,
+      "suspension": null,
+      "joined": 1498860000,
+      "contractUntil": 1688076000,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "77812",
+      "name": "Christoph Zimmermann",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/77812-1650631066.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "6",
+      "age": 29,
+      "dateOfBirth": 726793200,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/daniel-farke-bvb-ii-mit-christoph-zimmermann-beim-bvb-ii-2017-1645361390-80534.jpg?lm=1645361418",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "3",
+          "name": "Innenverteidiger",
+          "shortName": "IV",
+          "group": "Abwehr"
+        },
+        "second": null,
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 40,
+          "name": "Deutschland",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/40.png?lm=1520612525"
+        }
+      ],
+      "marketValue": {
+        "value": 1500000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,78",
+      "foot": "rechts",
+      "injury": null,
+      "suspension": null,
+      "joined": 1578870000,
+      "contractUntil": 1656540000,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "82863",
+      "name": "Lukas Rupp",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/82863-1532693458.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "7",
+      "age": 31,
+      "dateOfBirth": 663289200,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/lukas-rupp-norwich-city-1618584482-60985.jpg?lm=1618584495",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "7",
+          "name": "Zentrales Mittelfeld",
+          "shortName": "ZM",
+          "group": "Mittelfeld"
+        },
+        "second": {
+          "id": "10",
+          "name": "Offensives Mittelfeld",
+          "shortName": "OM",
+          "group": "Mittelfeld"
+        },
+        "third": {
+          "id": "8",
+          "name": "Rechtes Mittelfeld",
+          "shortName": "RM",
+          "group": "Mittelfeld"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 40,
+          "name": "Deutschland",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/40.png?lm=1520612525"
+        }
+      ],
+      "marketValue": {
+        "value": 1800000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,88",
+      "foot": "rechts",
+      "injury": null,
+      "suspension": null,
+      "joined": 1504044000,
+      "contractUntil": 1751234400,
+      "captain": true,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "121385",
+      "name": "Grant Hanley",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/s_121385_164_2013_03_05_1.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "Getty Images",
+      "shirtNumber": "5",
+      "age": 30,
+      "dateOfBirth": 690591600,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/grant-hanley-1585655116-35419.jpg?lm=1585655134",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "3",
+          "name": "Innenverteidiger",
+          "shortName": "IV",
+          "group": "Abwehr"
+        },
+        "second": null,
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 190,
+          "name": "Schottland",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/190.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 4000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,80",
+      "foot": "links",
+      "injury": null,
+      "suspension": null,
+      "joined": 1516575600,
+      "contractUntil": 1688076000,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "126600",
+      "name": "Kenny McLean",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/126600-1551178922.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "23",
+      "age": 30,
+      "dateOfBirth": 694825200,
+      "heroImage": null,
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "7",
+          "name": "Zentrales Mittelfeld",
+          "shortName": "ZM",
+          "group": "Mittelfeld"
+        },
+        "second": {
+          "id": "10",
+          "name": "Offensives Mittelfeld",
+          "shortName": "OM",
+          "group": "Mittelfeld"
+        },
+        "third": {
+          "id": "6",
+          "name": "Defensives Mittelfeld",
+          "shortName": "DM",
+          "group": "Mittelfeld"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 190,
+          "name": "Schottland",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/190.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 3000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,85",
+      "foot": "links",
+      "injury": null,
+      "suspension": null,
+      "joined": 1625090400,
+      "contractUntil": 1719698400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "128904",
+      "name": "Ben Gibson",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/128904-1434443733.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "4",
+      "age": 29,
+      "dateOfBirth": 727052400,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/ben-gibson-norwich-city-1621422103-62775.jpg?lm=1621422129",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "3",
+          "name": "Innenverteidiger",
+          "shortName": "IV",
+          "group": "Abwehr"
+        },
+        "second": {
+          "id": "4",
+          "name": "Linker Verteidiger",
+          "shortName": "LV",
+          "group": "Abwehr"
+        },
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 189,
+          "name": "England",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/189.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 7000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,96",
+      "foot": "rechts",
+      "injury": null,
+      "suspension": null,
+      "joined": 1625090400,
+      "contractUntil": 1751234400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "201574",
+      "name": "Angus Gunn",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/201574-1543493507.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "28",
+      "age": 26,
+      "dateOfBirth": 822265200,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/angus-gunn-fc-southampton-1539596463-18239.jpg?lm=1539596474",
+      "isGoalkeeper": true,
+      "positions": {
+        "first": {
+          "id": "1",
+          "name": "Torwart",
+          "shortName": "TW",
+          "group": "Torwart"
+        },
+        "second": null,
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 189,
+          "name": "England",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/189.png?lm=1520611569"
+        },
+        {
+          "id": 190,
+          "name": "Schottland",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/190.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 3000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,83",
+      "foot": "rechts",
+      "injury": null,
+      "suspension": null,
+      "joined": 1563228000,
+      "contractUntil": 1688076000,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "236953",
+      "name": "Sam Byram",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/s_236953_399_2013_11_07_1.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "Getty Images",
+      "shirtNumber": "3",
+      "age": 28,
+      "dateOfBirth": 748130400,
+      "heroImage": null,
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "5",
+          "name": "Rechter Verteidiger",
+          "shortName": "RV",
+          "group": "Abwehr"
+        },
+        "second": {
+          "id": "8",
+          "name": "Rechtes Mittelfeld",
+          "shortName": "RM",
+          "group": "Mittelfeld"
+        },
+        "third": {
+          "id": "4",
+          "name": "Linker Verteidiger",
+          "shortName": "LV",
+          "group": "Abwehr"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 189,
+          "name": "England",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/189.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 2000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,79",
+      "foot": "rechts",
+      "injury": null,
+      "suspension": null,
+      "joined": 1630188000,
+      "contractUntil": 1656540000,
+      "captain": false,
+      "lastClub": {
+        "id": "1083",
+        "name": "FK Rostov",
+        "fullName": "FK Rostov",
+        "image": "https://tmssl.akamaized.net/images/wappen/medium/1083.png?lm=1604130993",
+        "nationalTeam": "",
+        "flag": null,
+        "marketValue": null,
+        "mainCompetition": null
+      },
+      "isLoan": true,
+      "wasLoan": null,
+      "id": "257805",
+      "name": "Mathias Normann",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/257805-1606809475.png?lm=1",
+      "imageLarge": null,
+      "imageSource": "www.fc-rostov.ru",
+      "shirtNumber": "16",
+      "age": 25,
+      "dateOfBirth": 833234400,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/mathias-normann-rostov-1618305157-60713.jpg?lm=1618305174",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "6",
+          "name": "Defensives Mittelfeld",
+          "shortName": "DM",
+          "group": "Mittelfeld"
+        },
+        "second": {
+          "id": "7",
+          "name": "Zentrales Mittelfeld",
+          "shortName": "ZM",
+          "group": "Mittelfeld"
+        },
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 125,
+          "name": "Norwegen",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/125.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 11000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,83",
+      "foot": "links",
+      "injury": null,
+      "suspension": null,
+      "joined": 1596060000,
+      "contractUntil": 1688076000,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "258916",
+      "name": "Kieran Dowell",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/258916-1520418638.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "10",
+      "age": 24,
+      "dateOfBirth": 876434400,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/kieran-dowell-wigan-athletic-1596109015-44532.jpg?lm=1596109041",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "10",
+          "name": "Offensives Mittelfeld",
+          "shortName": "OM",
+          "group": "Mittelfeld"
+        },
+        "second": {
+          "id": "8",
+          "name": "Rechtes Mittelfeld",
+          "shortName": "RM",
+          "group": "Mittelfeld"
+        },
+        "third": {
+          "id": "9",
+          "name": "Linkes Mittelfeld",
+          "shortName": "LM",
+          "group": "Mittelfeld"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 189,
+          "name": "England",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/189.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 3000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,77",
+      "foot": "rechts",
+      "injury": null,
+      "suspension": null,
+      "joined": 1625090400,
+      "contractUntil": 1751234400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "291739",
+      "name": "Milot Rashica",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/291739-1535124288.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "17",
+      "age": 25,
+      "dateOfBirth": 835912800,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/milot-rashica-norwich-city-2021-22-1636059869-74146.jpg?lm=1636059879",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "12",
+          "name": "Rechtsau\u00dfen",
+          "shortName": "RA",
+          "group": "Sturm"
+        },
+        "second": {
+          "id": "11",
+          "name": "Linksau\u00dfen",
+          "shortName": "LA",
+          "group": "Sturm"
+        },
+        "third": {
+          "id": "13",
+          "name": "H\u00e4ngende Spitze",
+          "shortName": "HS",
+          "group": "Sturm"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 244,
+          "name": "Kosovo",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/244.png?lm=1520611569"
+        },
+        {
+          "id": 3,
+          "name": "Albanien",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/3.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 8000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,78",
+      "foot": "links",
+      "injury": null,
+      "suspension": null,
+      "joined": 1625090400,
+      "contractUntil": 1719698400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "295630",
+      "name": "Dimitrios Giannoulis",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/295630-1576695395.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "30",
+      "age": 26,
+      "dateOfBirth": 813884400,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/dimitrios-giannoulis-norwich-city-1620038091-61896.jpg?lm=1620038105",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "4",
+          "name": "Linker Verteidiger",
+          "shortName": "LV",
+          "group": "Abwehr"
+        },
+        "second": {
+          "id": "9",
+          "name": "Linkes Mittelfeld",
+          "shortName": "LM",
+          "group": "Mittelfeld"
+        },
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 56,
+          "name": "Griechenland",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/56.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 7000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,87",
+      "foot": "rechts",
+      "injury": {
+        "id": "299",
+        "description": "Oberschenkelverletzung",
+        "until": null,
+        "category": "Unbekannt",
+        "rehabilitation": "",
+        "clubIdStart": null,
+        "clubIdEnd": null
+      },
+      "suspension": null,
+      "joined": 1630274400,
+      "contractUntil": 1656540000,
+      "captain": false,
+      "lastClub": {
+        "id": "33",
+        "name": "FC Schalke 04",
+        "fullName": "FC Schalke 04",
+        "image": "https://tmssl.akamaized.net/images/wappen/medium/33.png?lm=1433588238",
+        "nationalTeam": "",
+        "flag": null,
+        "marketValue": null,
+        "mainCompetition": null
+      },
+      "isLoan": true,
+      "wasLoan": null,
+      "id": "361260",
+      "name": "Ozan Kabak",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/361260-1547655969.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "15",
+      "age": 22,
+      "dateOfBirth": 953938800,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/ozan-kabak-norwich-city-2022-1649407539-83393.jpg?lm=1649407547",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "3",
+          "name": "Innenverteidiger",
+          "shortName": "IV",
+          "group": "Abwehr"
+        },
+        "second": null,
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 174,
+          "name": "T\u00fcrkei",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/174.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 13000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,85",
+      "foot": "rechts",
+      "injury": null,
+      "suspension": null,
+      "joined": 1626127200,
+      "contractUntil": 1719698400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "377393",
+      "name": "Pierre Lees-Melou",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/377393-1497619111.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "20",
+      "age": 28,
+      "dateOfBirth": 738280800,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/pierre-lees-melou-ogc-nizza-1584516887-34126.jpg?lm=1584516898",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "7",
+          "name": "Zentrales Mittelfeld",
+          "shortName": "ZM",
+          "group": "Mittelfeld"
+        },
+        "second": {
+          "id": "8",
+          "name": "Rechtes Mittelfeld",
+          "shortName": "RM",
+          "group": "Mittelfeld"
+        },
+        "third": {
+          "id": "10",
+          "name": "Offensives Mittelfeld",
+          "shortName": "OM",
+          "group": "Mittelfeld"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 50,
+          "name": "Frankreich",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/50.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 6000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,78",
+      "foot": "links",
+      "injury": null,
+      "suspension": null,
+      "joined": 1595800800,
+      "contractUntil": 1719698400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "383109",
+      "name": "Przemyslaw Placheta",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/383109-1580401569.png?lm=1",
+      "imageLarge": null,
+      "imageSource": "www.slaskwroclaw.pl",
+      "shirtNumber": "11",
+      "age": 24,
+      "dateOfBirth": 890607600,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/przemyslaw-placheta-norwich-city-1618586287-60994.jpg?lm=1618586304",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "11",
+          "name": "Linksau\u00dfen",
+          "shortName": "LA",
+          "group": "Sturm"
+        },
+        "second": {
+          "id": "12",
+          "name": "Rechtsau\u00dfen",
+          "shortName": "RA",
+          "group": "Sturm"
+        },
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 135,
+          "name": "Polen",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/135.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 2000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,84",
+      "foot": "rechts",
+      "injury": null,
+      "suspension": null,
+      "joined": 1595800800,
+      "contractUntil": 1719698400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "390664",
+      "name": "Jacob Lungi S\u00f6rensen",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/390664-1559901410.png?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "19",
+      "age": 24,
+      "dateOfBirth": 888879600,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/jakob-lungi-sorensen-esbjerg-fb-1595320458-43845.jpg?lm=1595320452",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "6",
+          "name": "Defensives Mittelfeld",
+          "shortName": "DM",
+          "group": "Mittelfeld"
+        },
+        "second": {
+          "id": "3",
+          "name": "Innenverteidiger",
+          "shortName": "IV",
+          "group": "Abwehr"
+        },
+        "third": {
+          "id": "4",
+          "name": "Linker Verteidiger",
+          "shortName": "LV",
+          "group": "Abwehr"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 39,
+          "name": "D\u00e4nemark",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/39.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 1800000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,85",
+      "foot": "rechts",
+      "injury": {
+        "id": "122",
+        "description": "Sprunggelenksverletzung",
+        "until": null,
+        "category": "Unbekannt",
+        "rehabilitation": "",
+        "clubIdStart": null,
+        "clubIdEnd": null
+      },
+      "suspension": null,
+      "joined": 1628460000,
+      "contractUntil": 1751234400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "393325",
+      "name": "Josh Sargent",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/393325-1637942184.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "24",
+      "age": 22,
+      "dateOfBirth": 951001200,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/josh-sargent-norwich-city-2022-1642844313-78985.jpg?lm=1642844322",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "14",
+          "name": "Mittelst\u00fcrmer",
+          "shortName": "MS",
+          "group": "Sturm"
+        },
+        "second": {
+          "id": "12",
+          "name": "Rechtsau\u00dfen",
+          "shortName": "RA",
+          "group": "Sturm"
+        },
+        "third": {
+          "id": "11",
+          "name": "Linksau\u00dfen",
+          "shortName": "LA",
+          "group": "Sturm"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 184,
+          "name": "Vereinigte Staaten",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/184.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 8000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,70",
+      "foot": "rechts",
+      "injury": null,
+      "suspension": null,
+      "joined": 1625176800,
+      "contractUntil": 1653948000,
+      "captain": false,
+      "lastClub": {
+        "id": "631",
+        "name": "FC Chelsea",
+        "fullName": "FC Chelsea",
+        "image": "https://tmssl.akamaized.net/images/wappen/medium/631.png?lm=1628160548",
+        "nationalTeam": "",
+        "flag": null,
+        "marketValue": null,
+        "mainCompetition": null
+      },
+      "isLoan": true,
+      "wasLoan": null,
+      "id": "423744",
+      "name": "Billy Gilmour",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/423744-1572887213.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "8",
+      "age": 20,
+      "dateOfBirth": 992210400,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/billy-gilmour-norwich-city-2021-22-1635802379-73954.jpg?lm=1635802390",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "7",
+          "name": "Zentrales Mittelfeld",
+          "shortName": "ZM",
+          "group": "Mittelfeld"
+        },
+        "second": {
+          "id": "6",
+          "name": "Defensives Mittelfeld",
+          "shortName": "DM",
+          "group": "Mittelfeld"
+        },
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 190,
+          "name": "Schottland",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/190.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 12000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,90",
+      "foot": "rechts",
+      "injury": {
+        "id": "195",
+        "description": "Knieverletzung",
+        "until": 1659391200,
+        "category": "Unbekannt",
+        "rehabilitation": "",
+        "clubIdStart": null,
+        "clubIdEnd": null
+      },
+      "suspension": null,
+      "joined": 1561932000,
+      "contractUntil": 1719698400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "434223",
+      "name": "Adam Idah",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/434223-1494428335.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "35",
+      "age": 21,
+      "dateOfBirth": 981846000,
+      "heroImage": null,
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "14",
+          "name": "Mittelst\u00fcrmer",
+          "shortName": "MS",
+          "group": "Sturm"
+        },
+        "second": null,
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 72,
+          "name": "Irland",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/72.png?lm=1520611569"
+        },
+        {
+          "id": 124,
+          "name": "Nigeria",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/124.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 3000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,79",
+      "foot": "rechts",
+      "injury": null,
+      "suspension": null,
+      "joined": 1628719200,
+      "contractUntil": 1782770400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "451677",
+      "name": "Christos Tzolis",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/451677-1613847730.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "PAOK Saloniki",
+      "shirtNumber": "18",
+      "age": 20,
+      "dateOfBirth": 1012345200,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/christos-tzolis-norwich-1640786420-77736.jpg?lm=1640786451",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "11",
+          "name": "Linksau\u00dfen",
+          "shortName": "LA",
+          "group": "Sturm"
+        },
+        "second": {
+          "id": "14",
+          "name": "Mittelst\u00fcrmer",
+          "shortName": "MS",
+          "group": "Sturm"
+        },
+        "third": {
+          "id": "12",
+          "name": "Rechtsau\u00dfen",
+          "shortName": "RA",
+          "group": "Sturm"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 56,
+          "name": "Griechenland",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/56.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 9000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,71",
+      "foot": "rechts",
+      "injury": null,
+      "suspension": null,
+      "joined": 1530396000,
+      "contractUntil": 1719698400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "471690",
+      "name": "Max Aarons",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/471690-1543494081.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "2",
+      "age": 22,
+      "dateOfBirth": 946940400,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/max-aarons-von-norwich-city-1578587433-29470.jpg?lm=1578587442",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "5",
+          "name": "Rechter Verteidiger",
+          "shortName": "RV",
+          "group": "Abwehr"
+        },
+        "second": null,
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 189,
+          "name": "England",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/189.png?lm=1520611569"
+        },
+        {
+          "id": 76,
+          "name": "Jamaika",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/76.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 22000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,80",
+      "foot": "rechts",
+      "injury": null,
+      "suspension": null,
+      "joined": 1629669600,
+      "contractUntil": 1653948000,
+      "captain": false,
+      "lastClub": {
+        "id": "985",
+        "name": "Manchester Utd.",
+        "fullName": "Manchester United",
+        "image": "https://tmssl.akamaized.net/images/wappen/medium/985.png?lm=1457975903",
+        "nationalTeam": "",
+        "flag": null,
+        "marketValue": null,
+        "mainCompetition": null
+      },
+      "isLoan": true,
+      "wasLoan": null,
+      "id": "507700",
+      "name": "Brandon Williams",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/507700-1570788670.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "21",
+      "age": 21,
+      "dateOfBirth": 967932000,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/brandon-williams-norwich-city-2021-1634217883-72835.jpg?lm=1634217896",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "4",
+          "name": "Linker Verteidiger",
+          "shortName": "LV",
+          "group": "Abwehr"
+        },
+        "second": {
+          "id": "5",
+          "name": "Rechter Verteidiger",
+          "shortName": "RV",
+          "group": "Abwehr"
+        },
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 189,
+          "name": "England",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/189.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 10000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,88",
+      "foot": "rechts",
+      "injury": null,
+      "suspension": null,
+      "joined": 1609455600,
+      "contractUntil": 1719698400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "621993",
+      "name": "Andrew Omobamidele",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/621993-1557483098.png?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "44",
+      "age": 19,
+      "dateOfBirth": 1024783200,
+      "heroImage": null,
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "3",
+          "name": "Innenverteidiger",
+          "shortName": "IV",
+          "group": "Abwehr"
+        },
+        "second": null,
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 72,
+          "name": "Irland",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/72.png?lm=1520611569"
+        },
+        {
+          "id": 124,
+          "name": "Nigeria",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/124.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 1200000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,73",
+      "foot": "links",
+      "injury": null,
+      "suspension": null,
+      "joined": 1640991600,
+      "contractUntil": 1751234400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "672381",
+      "name": "Jonathan Rowe",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/672381-1648481837.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "46",
+      "age": 18,
+      "dateOfBirth": 1051653600,
+      "heroImage": null,
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "11",
+          "name": "Linksau\u00dfen",
+          "shortName": "LA",
+          "group": "Sturm"
+        },
+        "second": {
+          "id": "10",
+          "name": "Offensives Mittelfeld",
+          "shortName": "OM",
+          "group": "Mittelfeld"
+        },
+        "third": {
+          "id": "12",
+          "name": "Rechtsau\u00dfen",
+          "shortName": "RA",
+          "group": "Sturm"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 189,
+          "name": "England",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/189.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 0,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    }
+  ]
+}

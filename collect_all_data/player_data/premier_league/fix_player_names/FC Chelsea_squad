@@ -1,0 +1,1457 @@
+{
+  "squad": [
+    {
+      "height": "1,81",
+      "foot": "rechts",
+      "injury": null,
+      "suspension": null,
+      "joined": 1598565600,
+      "contractUntil": 1688076000,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "29241",
+      "name": "Thiago Silva",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/29241-1462893880.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "Getty Images",
+      "shirtNumber": "6",
+      "age": 37,
+      "dateOfBirth": 464652000,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/thiago-silva-chelsea-1606401233-52095.jpg?lm=1606401255",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "3",
+          "name": "Innenverteidiger",
+          "shortName": "IV",
+          "group": "Abwehr"
+        },
+        "second": null,
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 26,
+          "name": "Brasilien",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/26.png?lm=1520611569"
+        },
+        {
+          "id": 50,
+          "name": "Frankreich",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/50.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 2500000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,76",
+      "foot": "rechts",
+      "injury": {
+        "id": "99",
+        "description": "Kn\u00f6chelverletzung",
+        "until": 1651269600,
+        "category": "Unbekannt",
+        "rehabilitation": "",
+        "clubIdStart": null,
+        "clubIdEnd": null
+      },
+      "suspension": null,
+      "joined": 1561932000,
+      "contractUntil": 1719698400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "51471",
+      "name": "Mateo Kovacic",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/51471-1624351322.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "8",
+      "age": 27,
+      "dateOfBirth": 768175200,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/mateo-kovacic-kroatien-1622735205-64112.jpg?lm=1622735216",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "7",
+          "name": "Zentrales Mittelfeld",
+          "shortName": "ZM",
+          "group": "Mittelfeld"
+        },
+        "second": {
+          "id": "10",
+          "name": "Offensives Mittelfeld",
+          "shortName": "OM",
+          "group": "Mittelfeld"
+        },
+        "third": {
+          "id": "6",
+          "name": "Defensives Mittelfeld",
+          "shortName": "DM",
+          "group": "Mittelfeld"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 37,
+          "name": "Kroatien",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/37.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 45000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,78",
+      "foot": "rechts",
+      "injury": null,
+      "suspension": null,
+      "joined": 1345759200,
+      "contractUntil": 1688076000,
+      "captain": true,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "57500",
+      "name": "C\u00e9sar Azpilicueta",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/57500-1518795311.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "28",
+      "age": 32,
+      "dateOfBirth": 620258400,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/cesar-azpilicueta-spain-1636712994-74620.jpg?lm=1636713024",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "5",
+          "name": "Rechter Verteidiger",
+          "shortName": "RV",
+          "group": "Abwehr"
+        },
+        "second": {
+          "id": "4",
+          "name": "Linker Verteidiger",
+          "shortName": "LV",
+          "group": "Abwehr"
+        },
+        "third": {
+          "id": "3",
+          "name": "Innenverteidiger",
+          "shortName": "IV",
+          "group": "Abwehr"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 157,
+          "name": "Spanien",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/157.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 11000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,90",
+      "foot": "rechts",
+      "injury": null,
+      "suspension": null,
+      "joined": 1499551200,
+      "contractUntil": 1656540000,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "86202",
+      "name": "Antonio R\u00fcdiger",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/86202-1624448001.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "2",
+      "age": 29,
+      "dateOfBirth": 731113200,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/antonio-rudiger-fc-chelsea-2022-1650875014-84203.jpg?lm=1650875029",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "3",
+          "name": "Innenverteidiger",
+          "shortName": "IV",
+          "group": "Abwehr"
+        },
+        "second": {
+          "id": "5",
+          "name": "Rechter Verteidiger",
+          "shortName": "RV",
+          "group": "Abwehr"
+        },
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 40,
+          "name": "Deutschland",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/40.png?lm=1520612525"
+        },
+        {
+          "id": 152,
+          "name": "Sierra Leone",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/152.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 35000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,91",
+      "foot": "links",
+      "injury": null,
+      "suspension": null,
+      "joined": 1628719200,
+      "contractUntil": 1782770400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "96341",
+      "name": "Romelu Lukaku",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/96341-1596033546.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "9",
+      "age": 28,
+      "dateOfBirth": 737244000,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/romelu-lukaku-fc-chelsea-2021-1629656042-69476.jpg?lm=1629656057",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "14",
+          "name": "Mittelst\u00fcrmer",
+          "shortName": "MS",
+          "group": "Sturm"
+        },
+        "second": null,
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 19,
+          "name": "Belgien",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/19.png?lm=1520611569"
+        },
+        {
+          "id": 193,
+          "name": "DR Kongo",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/193.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 85000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,80",
+      "foot": "rechts",
+      "injury": null,
+      "suspension": null,
+      "joined": 1531519200,
+      "contractUntil": 1688076000,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "102017",
+      "name": "Jorginho",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/102017-1599988179.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "5",
+      "age": 30,
+      "dateOfBirth": 693183600,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/jorginho-fc-chelsea-2021-1630049986-69820.jpg?lm=1630050018",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "6",
+          "name": "Defensives Mittelfeld",
+          "shortName": "DM",
+          "group": "Mittelfeld"
+        },
+        "second": {
+          "id": "7",
+          "name": "Zentrales Mittelfeld",
+          "shortName": "ZM",
+          "group": "Mittelfeld"
+        },
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 75,
+          "name": "Italien",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/75.png?lm=1520611569"
+        },
+        {
+          "id": 26,
+          "name": "Brasilien",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/26.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 45000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,89",
+      "foot": "links",
+      "injury": null,
+      "suspension": null,
+      "joined": 1472594400,
+      "contractUntil": 1688076000,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "112515",
+      "name": "Marcos Alonso",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/112515-1620650716.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "3",
+      "age": 31,
+      "dateOfBirth": 662338800,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/marcos-alonso-1489045832-8848.jpg?lm=1489045862",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "4",
+          "name": "Linker Verteidiger",
+          "shortName": "LV",
+          "group": "Abwehr"
+        },
+        "second": {
+          "id": "9",
+          "name": "Linkes Mittelfeld",
+          "shortName": "LM",
+          "group": "Mittelfeld"
+        },
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 157,
+          "name": "Spanien",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/157.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 15000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,93",
+      "foot": "rechts",
+      "injury": null,
+      "suspension": null,
+      "joined": 1627423200,
+      "contractUntil": 1688076000,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "116648",
+      "name": "Marcus Bettinelli",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/116648-1473151222.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "13",
+      "age": 29,
+      "dateOfBirth": 706658400,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/torwart-marcus-bettinelli-fc-fulham-1538663944-18087.jpg?lm=1538663957",
+      "isGoalkeeper": true,
+      "positions": {
+        "first": {
+          "id": "1",
+          "name": "Torwart",
+          "shortName": "TW",
+          "group": "Torwart"
+        },
+        "second": null,
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 189,
+          "name": "England",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/189.png?lm=1520611569"
+        },
+        {
+          "id": 75,
+          "name": "Italien",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/75.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 2500000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,85",
+      "foot": "rechts",
+      "injury": null,
+      "suspension": null,
+      "joined": 1515106800,
+      "contractUntil": 1688076000,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "131978",
+      "name": "Ross Barkley",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/131978-1544607087.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "18",
+      "age": 28,
+      "dateOfBirth": 755046000,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/ross-barkley-chelsea-fc-1601459688-48104.jpg?lm=1601459707",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "7",
+          "name": "Zentrales Mittelfeld",
+          "shortName": "ZM",
+          "group": "Mittelfeld"
+        },
+        "second": {
+          "id": "10",
+          "name": "Offensives Mittelfeld",
+          "shortName": "OM",
+          "group": "Mittelfeld"
+        },
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 189,
+          "name": "England",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/189.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 13000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,84",
+      "foot": "links",
+      "injury": null,
+      "suspension": null,
+      "joined": 1630360800,
+      "contractUntil": 1656540000,
+      "captain": false,
+      "lastClub": {
+        "id": "13",
+        "name": "Atl\u00e9tico Madrid",
+        "fullName": "Atl\u00e9tico Madrid",
+        "image": "https://tmssl.akamaized.net/images/wappen/medium/13.png?lm=1519120744",
+        "nationalTeam": "",
+        "flag": null,
+        "marketValue": null,
+        "mainCompetition": null
+      },
+      "isLoan": true,
+      "wasLoan": null,
+      "id": "148928",
+      "name": "Sa\u00fal \u00d1\u00edguez",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/148928-1648555027.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "17",
+      "age": 27,
+      "dateOfBirth": 785372400,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/saul-niguez-chelsea-1632235646-71484.jpg?lm=1632235663",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "7",
+          "name": "Zentrales Mittelfeld",
+          "shortName": "ZM",
+          "group": "Mittelfeld"
+        },
+        "second": {
+          "id": "9",
+          "name": "Linkes Mittelfeld",
+          "shortName": "LM",
+          "group": "Mittelfeld"
+        },
+        "third": {
+          "id": "6",
+          "name": "Defensives Mittelfeld",
+          "shortName": "DM",
+          "group": "Mittelfeld"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 157,
+          "name": "Spanien",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/157.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 28000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,80",
+      "foot": "rechts",
+      "injury": null,
+      "suspension": null,
+      "joined": 1593554400,
+      "contractUntil": 1751234400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "170527",
+      "name": "Timo Werner",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/170527-1648480995.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "11",
+      "age": 26,
+      "dateOfBirth": 826066800,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/timo-werner-fc-chelsea-2021-1638992505-76370.jpg?lm=1638992517",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "14",
+          "name": "Mittelst\u00fcrmer",
+          "shortName": "MS",
+          "group": "Sturm"
+        },
+        "second": {
+          "id": "11",
+          "name": "Linksau\u00dfen",
+          "shortName": "LA",
+          "group": "Sturm"
+        },
+        "third": {
+          "id": "12",
+          "name": "Rechtsau\u00dfen",
+          "shortName": "RA",
+          "group": "Sturm"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 40,
+          "name": "Deutschland",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/40.png?lm=1520612525"
+        }
+      ],
+      "marketValue": {
+        "value": 42000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,73",
+      "foot": "rechts",
+      "injury": null,
+      "suspension": null,
+      "joined": 1498860000,
+      "contractUntil": 1656540000,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "177862",
+      "name": "Charly Musonda Jr.",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/177862-1453990790.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": null,
+      "age": 25,
+      "dateOfBirth": 845330400,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/charly-musonda-jr-fc-chelsea-2021-1632660751-71706.jpg?lm=1632660762",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "10",
+          "name": "Offensives Mittelfeld",
+          "shortName": "OM",
+          "group": "Mittelfeld"
+        },
+        "second": {
+          "id": "11",
+          "name": "Linksau\u00dfen",
+          "shortName": "LA",
+          "group": "Sturm"
+        },
+        "third": {
+          "id": "12",
+          "name": "Rechtsau\u00dfen",
+          "shortName": "RA",
+          "group": "Sturm"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 19,
+          "name": "Belgien",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/19.png?lm=1520611569"
+        },
+        {
+          "id": 142,
+          "name": "Sambia",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/142.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 1000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,86",
+      "foot": "rechts",
+      "injury": null,
+      "suspension": null,
+      "joined": 1533679200,
+      "contractUntil": 1751234400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "192279",
+      "name": "Kepa Arrizabalaga",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/192279-1447152155.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "1",
+      "age": 27,
+      "dateOfBirth": 781138800,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/kepa-arrizabalaga-fc-chelsea-2021-1641732276-78221.jpg?lm=1641732285",
+      "isGoalkeeper": true,
+      "positions": {
+        "first": {
+          "id": "1",
+          "name": "Torwart",
+          "shortName": "TW",
+          "group": "Torwart"
+        },
+        "second": null,
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 157,
+          "name": "Spanien",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/157.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 10000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,88",
+      "foot": "rechts",
+      "injury": null,
+      "suspension": null,
+      "joined": 1435701600,
+      "contractUntil": 1656540000,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "196948",
+      "name": "Andreas Christensen",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/196948-1620650859.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "4",
+      "age": 26,
+      "dateOfBirth": 829087200,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/andreas-christensen-chelsea-1646218997-81264.jpg?lm=1646219017",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "3",
+          "name": "Innenverteidiger",
+          "shortName": "IV",
+          "group": "Abwehr"
+        },
+        "second": null,
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 39,
+          "name": "D\u00e4nemark",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/39.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 35000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,90",
+      "foot": "rechts",
+      "injury": null,
+      "suspension": null,
+      "joined": 1420066800,
+      "contractUntil": 1719698400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "202886",
+      "name": "Ruben Loftus-Cheek",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/202886-1518793502.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "12",
+      "age": 26,
+      "dateOfBirth": 822351600,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/ruben-loftus-cheek-chelsea-fc-1601381284-48046.jpg?lm=1601381302",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "7",
+          "name": "Zentrales Mittelfeld",
+          "shortName": "ZM",
+          "group": "Mittelfeld"
+        },
+        "second": {
+          "id": "10",
+          "name": "Offensives Mittelfeld",
+          "shortName": "OM",
+          "group": "Mittelfeld"
+        },
+        "third": {
+          "id": "6",
+          "name": "Defensives Mittelfeld",
+          "shortName": "DM",
+          "group": "Mittelfeld"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 189,
+          "name": "England",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/189.png?lm=1520611569"
+        },
+        {
+          "id": 61,
+          "name": "Guyana",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/61.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 20000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,81",
+      "foot": "links",
+      "injury": null,
+      "suspension": null,
+      "joined": 1593554400,
+      "contractUntil": 1751234400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "217111",
+      "name": "Hakim Ziyech",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/217111-1497885283.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "22",
+      "age": 29,
+      "dateOfBirth": 732495600,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/hakim-zyiech-chelsea-1602593909-49057.jpg?lm=1602593923",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "10",
+          "name": "Offensives Mittelfeld",
+          "shortName": "OM",
+          "group": "Mittelfeld"
+        },
+        "second": {
+          "id": "12",
+          "name": "Rechtsau\u00dfen",
+          "shortName": "RA",
+          "group": "Sturm"
+        },
+        "third": {
+          "id": "7",
+          "name": "Zentrales Mittelfeld",
+          "shortName": "ZM",
+          "group": "Mittelfeld"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 107,
+          "name": "Marokko",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/107.png?lm=1520611569"
+        },
+        {
+          "id": 122,
+          "name": "Niederlande",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/122.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 32000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,68",
+      "foot": "rechts",
+      "injury": null,
+      "suspension": null,
+      "joined": 1468620000,
+      "contractUntil": 1688076000,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "225083",
+      "name": "N'Golo Kant\u00e9",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/225083-1598302373.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "7",
+      "age": 31,
+      "dateOfBirth": 670201200,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/ngolo-kante-france-1622734629-64107.jpg?lm=1622734638",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "6",
+          "name": "Defensives Mittelfeld",
+          "shortName": "DM",
+          "group": "Mittelfeld"
+        },
+        "second": {
+          "id": "7",
+          "name": "Zentrales Mittelfeld",
+          "shortName": "ZM",
+          "group": "Mittelfeld"
+        },
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 50,
+          "name": "Frankreich",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/50.png?lm=1520611569"
+        },
+        {
+          "id": 105,
+          "name": "Mali",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/105.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 50000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,82",
+      "foot": "links",
+      "injury": null,
+      "suspension": null,
+      "joined": 1440194400,
+      "contractUntil": 1688076000,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "281404",
+      "name": "Kenedy",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/281404-1455120897.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "23",
+      "age": 26,
+      "dateOfBirth": 823734000,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/kenedy-flamengo-2021-1639719887-77051.jpg?lm=1639719907",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "9",
+          "name": "Linkes Mittelfeld",
+          "shortName": "LM",
+          "group": "Mittelfeld"
+        },
+        "second": {
+          "id": "4",
+          "name": "Linker Verteidiger",
+          "shortName": "LV",
+          "group": "Abwehr"
+        },
+        "third": {
+          "id": "11",
+          "name": "Linksau\u00dfen",
+          "shortName": "LA",
+          "group": "Sturm"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 26,
+          "name": "Brasilien",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/26.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 7000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,90",
+      "foot": "links",
+      "injury": null,
+      "suspension": null,
+      "joined": 1599170400,
+      "contractUntil": 1751234400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "309400",
+      "name": "Kai Havertz",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/309400-1620646226.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "29",
+      "age": 22,
+      "dateOfBirth": 929052000,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/kai-havertz-deutschland-1622733125-64099.jpg?lm=1622733139",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "10",
+          "name": "Offensives Mittelfeld",
+          "shortName": "OM",
+          "group": "Mittelfeld"
+        },
+        "second": {
+          "id": "12",
+          "name": "Rechtsau\u00dfen",
+          "shortName": "RA",
+          "group": "Sturm"
+        },
+        "third": {
+          "id": "14",
+          "name": "Mittelst\u00fcrmer",
+          "shortName": "MS",
+          "group": "Sturm"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 40,
+          "name": "Deutschland",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/40.png?lm=1520612525"
+        }
+      ],
+      "marketValue": {
+        "value": 70000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,77",
+      "foot": "rechts",
+      "injury": null,
+      "suspension": null,
+      "joined": 1546383600,
+      "contractUntil": 1719698400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "315779",
+      "name": "Christian Pulisic",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/315779-1638811757.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "10",
+      "age": 23,
+      "dateOfBirth": 906069600,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/chelseas-christian-pulisic-trifft-gegen-real-madrid-1619556538-61604.jpg?lm=1619556573",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "12",
+          "name": "Rechtsau\u00dfen",
+          "shortName": "RA",
+          "group": "Sturm"
+        },
+        "second": {
+          "id": "11",
+          "name": "Linksau\u00dfen",
+          "shortName": "LA",
+          "group": "Sturm"
+        },
+        "third": {
+          "id": "10",
+          "name": "Offensives Mittelfeld",
+          "shortName": "OM",
+          "group": "Mittelfeld"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 184,
+          "name": "Vereinigte Staaten",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/184.png?lm=1520611569"
+        },
+        {
+          "id": 37,
+          "name": "Kroatien",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/37.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 45000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,80",
+      "foot": "links",
+      "injury": {
+        "id": "355",
+        "description": "Trainingsr\u00fcckstand",
+        "until": 1653948000,
+        "category": "Unbekannt",
+        "rehabilitation": "",
+        "clubIdStart": null,
+        "clubIdEnd": null
+      },
+      "suspension": null,
+      "joined": 1598392800,
+      "contractUntil": 1751234400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "316125",
+      "name": "Ben Chilwell",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/316125-1620647738.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "21",
+      "age": 25,
+      "dateOfBirth": 851122800,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/bin-chilwell-fc-chelsea-1633418809-72151.jpg?lm=1633418819",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "4",
+          "name": "Linker Verteidiger",
+          "shortName": "LV",
+          "group": "Abwehr"
+        },
+        "second": {
+          "id": "9",
+          "name": "Linkes Mittelfeld",
+          "shortName": "LM",
+          "group": "Mittelfeld"
+        },
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 189,
+          "name": "England",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/189.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 38000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,82",
+      "foot": "links",
+      "injury": null,
+      "suspension": null,
+      "joined": 1598479200,
+      "contractUntil": 1751234400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "344596",
+      "name": "Malang Sarr",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/344596-1606395203.png?lm=1",
+      "imageLarge": null,
+      "imageSource": "FC Porto",
+      "shirtNumber": "31",
+      "age": 23,
+      "dateOfBirth": 917046000,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/malang-sarr-ogc-nizza-1561116252-23117.jpg?lm=1561116278",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "3",
+          "name": "Innenverteidiger",
+          "shortName": "IV",
+          "group": "Abwehr"
+        },
+        "second": {
+          "id": "4",
+          "name": "Linker Verteidiger",
+          "shortName": "LV",
+          "group": "Abwehr"
+        },
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 50,
+          "name": "Frankreich",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/50.png?lm=1520611569"
+        },
+        {
+          "id": 149,
+          "name": "Senegal",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/149.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 8000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,90",
+      "foot": "rechts",
+      "injury": null,
+      "suspension": null,
+      "joined": 1625090400,
+      "contractUntil": 1782770400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "346314",
+      "name": "Trevoh Chalobah",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/346314-1520605508.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "14",
+      "age": 22,
+      "dateOfBirth": 931125600,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/trevoh-chalobah-fc-chelsea-2021-1640170783-77343.jpg?lm=1640170794",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "3",
+          "name": "Innenverteidiger",
+          "shortName": "IV",
+          "group": "Abwehr"
+        },
+        "second": {
+          "id": "6",
+          "name": "Defensives Mittelfeld",
+          "shortName": "DM",
+          "group": "Mittelfeld"
+        },
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 189,
+          "name": "England",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/189.png?lm=1520611569"
+        },
+        {
+          "id": 152,
+          "name": "Sierra Leone",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/152.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 20000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,80",
+      "foot": "rechts",
+      "injury": null,
+      "suspension": null,
+      "joined": 1561932000,
+      "contractUntil": 1719698400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "346483",
+      "name": "Mason Mount",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/346483-1642175298.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "19",
+      "age": 23,
+      "dateOfBirth": 915922800,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/mason-mount-england-1622732500-64097.jpg?lm=1622732508",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "10",
+          "name": "Offensives Mittelfeld",
+          "shortName": "OM",
+          "group": "Mittelfeld"
+        },
+        "second": {
+          "id": "7",
+          "name": "Zentrales Mittelfeld",
+          "shortName": "ZM",
+          "group": "Mittelfeld"
+        },
+        "third": {
+          "id": "9",
+          "name": "Linkes Mittelfeld",
+          "shortName": "LM",
+          "group": "Mittelfeld"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 189,
+          "name": "England",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/189.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 75000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,77",
+      "foot": "rechts",
+      "injury": null,
+      "suspension": null,
+      "joined": 1546297200,
+      "contractUntil": 1719698400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "392768",
+      "name": "Callum Hudson-Odoi",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/392768-1546589840.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "20",
+      "age": 21,
+      "dateOfBirth": 973551600,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/callum-hudson-odoi-fc-chelsea-2020-1601735775-48329.jpg?lm=1601735783",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "12",
+          "name": "Rechtsau\u00dfen",
+          "shortName": "RA",
+          "group": "Sturm"
+        },
+        "second": {
+          "id": "11",
+          "name": "Linksau\u00dfen",
+          "shortName": "LA",
+          "group": "Sturm"
+        },
+        "third": {
+          "id": "10",
+          "name": "Offensives Mittelfeld",
+          "shortName": "OM",
+          "group": "Mittelfeld"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 189,
+          "name": "England",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/189.png?lm=1520611569"
+        },
+        {
+          "id": 54,
+          "name": "Ghana",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/54.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 30000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,95",
+      "foot": "rechts",
+      "injury": null,
+      "suspension": null,
+      "joined": 1600898400,
+      "contractUntil": 1751234400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "442531",
+      "name": "Edouard Mendy",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/442531-1600951863.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "16",
+      "age": 30,
+      "dateOfBirth": 699404400,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/edouard-mendy-fc-chelsea-1633362647-72129.jpg?lm=1633362657",
+      "isGoalkeeper": true,
+      "positions": {
+        "first": {
+          "id": "1",
+          "name": "Torwart",
+          "shortName": "TW",
+          "group": "Torwart"
+        },
+        "second": null,
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 149,
+          "name": "Senegal",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/149.png?lm=1520611569"
+        },
+        {
+          "id": 60,
+          "name": "Guinea-Bissau",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/60.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 32000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,80",
+      "foot": "rechts",
+      "injury": null,
+      "suspension": null,
+      "joined": 1561932000,
+      "contractUntil": 1751234400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "472423",
+      "name": "Reece James",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/472423-1636537984.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": "24",
+      "age": 22,
+      "dateOfBirth": 944607600,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/reece-james-chelsea-2021-1635311786-73605.jpg?lm=1635311796",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "5",
+          "name": "Rechter Verteidiger",
+          "shortName": "RV",
+          "group": "Abwehr"
+        },
+        "second": {
+          "id": "3",
+          "name": "Innenverteidiger",
+          "shortName": "IV",
+          "group": "Abwehr"
+        },
+        "third": {
+          "id": "8",
+          "name": "Rechtes Mittelfeld",
+          "shortName": "RM",
+          "group": "Mittelfeld"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 189,
+          "name": "England",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/189.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 55000000,
+        "currency": "\u20ac",
+        "progression": null
+      }
+    }
+  ]
+}

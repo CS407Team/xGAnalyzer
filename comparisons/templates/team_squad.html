@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body>
+
+    <h3>Squad</h3>
+
+    <table id="generic_table">
+         
+        <tr id="generic_row">
+            <th id="generic_header">Player Name</th>
+            <th id="generic_header">Position</th>
+            <th id="generic_header">Choice</th>
+        </tr>
+    {% for player in players %}
+
+        <tr id="generic_row">
+            <td id="generic_column"> {{player[0]}} - {{player[3]}}</td>
+            <td id="generic_column">{{player[2]}}</td>
+            <td id="generic_column"><button id="button"><a href="/make_prediction">Make Prediction</a></button></td>
+        </tr>
+    {% endfor %}
+    </table>
+           
+</body>
+
+</html>

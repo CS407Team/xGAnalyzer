@@ -8,25 +8,47 @@
 <body>
     <div class="topnav">
         <a class="active" href="/">Home</a>
-        <a href="/table">View Our Season Table</a>
+        <a href="/table">Season Table</a>
 
-        <a href="/table_predictions">Table Predictions</a>
-        <a href="/match_predictions">Match Predictions</a>
+        <div class="navbar-dropdown">
+            <button class="navbar-dropbtn"> Predictions
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="navbar-dropdown-content">
+                <a href="/table_predictions">Table Predictions</a>
+                <a href="/match_predictions">Match Predictions</a>
 
-        <!-- Update with Ajay's player rating predictions -->
-        <a href="/rating_predictions">Player Rating Predictions</a>
+                <!-- Update with Ajay's player rating predictions -->
+                <a href="/rating_predictions">Player Rating Predictions</a>
 
-        <!-- Update this with Eliel's prediction comparison -->
-        <a href="#">Compare Predictions</a>
+                <!-- Update this with Eliel's prediction comparison -->
+                <a href="#">Compare Predictions</a>
 
-        <!-- Update this with Viet's ML prediction routing. -->
-        <a href="#">Generate Predictions</a>
+                <!-- Update this with Viet's ML prediction routing. -->
+                <a href="#">Generate Predictions</a>
+
+            </div>
+        </div>
+
+        <div class="navbar-dropdown">
+            <button class="navbar-dropbtn"> Search
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="navbar-dropdown-content">
+                <a href="/search_matches">Match Search</a>
+                <a href="/search_players">Player Search</a>
+
+                <!-- update this to following users later -->
+                <a href="#">User Search</a>
+            </div>
+        </div>
+
 
         <a href="/watchlist">Player Watchlist</a>
-        <a href="/search_matches">Match Search</a>
-        <a href="#">Player Search</a>
-        <a href="/history">View Match History</a>
+        <a href="/history">Match History</a>
         <a href="/logout">Logout</a>
+
+
     </div>
 
     {% block content %}

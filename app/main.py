@@ -522,3 +522,17 @@ def match_prediction_link():
         return redirect(f'/profile/{current_user.username}/table_predictions')
     else:
         return redirect('/')
+
+
+@main.route('/search_players', methods=["GET", "POST"])
+def search_players():
+    if request.method == "GET":
+        return render_template('search_players.html')
+    else:
+        data = request.form
+        for item in data:
+            print(item)
+        form_name = data['player_name']
+        print(form_name)
+
+        return redirect(f'/player/{form_name}')

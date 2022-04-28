@@ -1,0 +1,21 @@
+{% extends 'base.html'%}
+
+{% block title %}
+    Temp Title
+{% endblock %}
+{% block content %}
+<form action="/search_players" method="post">
+  <table>
+    <tbody>
+    <tr>User Search Form</tr>
+    </tbody>
+    <tr>
+      <td>Player Name:
+        <input name="player_name" required>
+      </td>
+    </tr>
+  </table>
+  <input type="submit" name="submit" value="Search for Player">
+</form>
+
+{% endblock %}

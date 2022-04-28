@@ -450,6 +450,3 @@ def find_user_watchlist():
     return render_template("list_user_watchlist.html", playerlist=visible)
 
 
-if __name__ == '__main__':
-    app = create_app()
-    app.run(debug=True)

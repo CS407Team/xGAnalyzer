@@ -522,6 +522,14 @@ def match_prediction_link():
         return redirect('/')
 
 
+@main.route('/player_rating_predictions')
+def player_rating_link():
+    if current_user.is_authenticated:
+        return render_template('player_rating_predictions.html')
+    else:
+        return redirect('/')
+
+
 @main.route('/search_players', methods=["GET", "POST"])
 def search_players():
     if request.method == "GET":

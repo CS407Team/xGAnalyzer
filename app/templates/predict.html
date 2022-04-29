@@ -104,11 +104,11 @@
     <div class="container">
         <div class="container0"><br>&emsp;&emsp;  Welcome back {{ username }}</div>
         <div class="container1"><br><br>
-            <a href="{{ url_for('main.guess',userid=userid,username=username,leagueid=leagueid,leagueid2=leagueid2) }}">
-            Predict a  match based on xG graph</a></div>
+        <a href="{{ url_for('main.userpage',userid=userid,username=username,leagueid=1,leagueid2=1,season=2021,pos=pos) }}">
+            Back to user page</a></div>
         <div class="container2"><br><br>
             <a href="{{ url_for('main.upload_page',userid=userid,username=username,leagueid=leagueid,leagueid2=leagueid2) }}">
-            Find game result based on xG graph</a></div>
+                Find game result based on xG graph</a></div>
         <div class="container3"><br><br>
             <a href="{{ url_for('main.upload_page',userid=userid,username=username,leagueid=leagueid,leagueid2=leagueid2) }}">
                 Generate xG graph for soccer match</a></div>
@@ -123,42 +123,33 @@
                     {% for league in leagues %}
                         <option value="{{ league.leagueid }}">{{ league.name }}</option>
                     {% endfor %}
-                    </select><br><br><br><br><br><br>
-                    Select Favorite Team:
-                    <select name="team">
-                    {% for team in teams %}
-                        <option value="{{ team.teamid }}">{{ team.name }}</option>
-                    {% endfor %}
                     </select><br>
-                    <select name="season">
-                         <option value="2017">2017-18</option>
-                        <option value="2018">2018-19</option>
-                        <option value="2019">2019-20</option>
-                        <option value="2020">2020-21</option>
-                        <option value="2021">2021-22</option>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;<select name="league2">
+                    {% for league2 in leagues2 %}
+                        <option value="{{ league2.leagueid }}">{{ league2.name }}</option>
+                    {% endfor %}
+                    </select>
+                    <br><button type="submit">
+                        Submit
+                    </button>
+                </form><br><br><br><br>
+                <form method="post">
+                    Select Home Team:
+                    <select name="hometeam" id="hometeam">
+                    {% for team in teams %}
+                        <option value="{{ team.teamid ~ "," ~ team.name }}">{{ team.name }}</option>
+                    {% endfor %}
+                    </select>&emsp;&emsp;&emsp;&emsp;
+                    Select Away Team:
+                    <select name="awayteam" id="awayteam">
+                    {% for team in teams2 %}
+                        <option value="{{ team.teamid ~ "," ~ team.name }}">{{ team.name }}</option>
+                    {% endfor %}
                     </select><br>
                     <button type="submit">
                         Submit
                     </button>
-                </form><br><div class="container7">
-                Favorite teams positions:<br>
-                {% set j = 0 %}
-                {% for j in range(favs|length) %}
-                {{ favs[j] }} : {{ fav_team_pos[j] }}
-                &ensp;&ensp;&ensp;
-                {% endfor %}<br>
-                Favorite teams results:<br>
-                {% set i = 0 %}
-                {% for i in range(fav_team_res|length) %}
-                {% set fav = fav_team_res[i] %}
-                {{ fav[0] }} {{ fav[2] }} - {{ fav[3] }} {{ fav[1] }} (Season: {{ fav[4] }})
-                &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-                {% if i % 3 == 2 %}
-                <br>
-                {% elif i % 10 == 9 %}
-                <br>
-                {% endif %}
-                {% endfor %}</div>
+                </form>
             </div>
         </div>
     </div>

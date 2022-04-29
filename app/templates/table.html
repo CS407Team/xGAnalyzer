@@ -63,8 +63,8 @@
             font-size: x-large;
         }
         h1 {
-            position: relative;
-            color: grey;
+        position: relative;
+        color: grey;
         }
         h2 {
             font-size: medium;
@@ -104,60 +104,25 @@
     <div class="container">
         <div class="container0"><br>&emsp;&emsp;  Welcome back {{ username }}</div>
         <div class="container1"><br><br>
-            <a href="{{ url_for('main.guess',userid=userid,username=username,leagueid=leagueid,leagueid2=leagueid2) }}">
+            <a href="{{ url_for('guess',userid=userid,username=username,leagueid=leagueid) }}">
             Predict a  match based on xG graph</a></div>
         <div class="container2"><br><br>
-            <a href="{{ url_for('main.upload_page',userid=userid,username=username,leagueid=leagueid,leagueid2=leagueid2) }}">
+            <a href="{{ url_for('upload_page',userid=userid,username=username,leagueid=leagueid) }}">
             Find game result based on xG graph</a></div>
         <div class="container3"><br><br>
-            <a href="{{ url_for('main.upload_page',userid=userid,username=username,leagueid=leagueid,leagueid2=leagueid2) }}">
+            <a href="{{ url_for('upload_page',userid=userid,username=username,leagueid=leagueid) }}">
                 Generate xG graph for soccer match</a></div>
     </div>
     <br><br><br>
     <div>
         <div class="container5">
             <div class="container6">
-                <form method="post">
-                    Select Favorite League:
-                    <select name="league">
-                    {% for league in leagues %}
-                        <option value="{{ league.leagueid }}">{{ league.name }}</option>
-                    {% endfor %}
-                    </select><br><br><br><br><br><br>
-                    Select Favorite Team:
-                    <select name="team">
-                    {% for team in teams %}
-                        <option value="{{ team.teamid }}">{{ team.name }}</option>
-                    {% endfor %}
-                    </select><br>
-                    <select name="season">
-                         <option value="2017">2017-18</option>
-                        <option value="2018">2018-19</option>
-                        <option value="2019">2019-20</option>
-                        <option value="2020">2020-21</option>
-                        <option value="2021">2021-22</option>
-                    </select><br>
-                    <button type="submit">
-                        Submit
-                    </button>
-                </form><br><div class="container7">
-                Favorite teams positions:<br>
-                {% set j = 0 %}
-                {% for j in range(favs|length) %}
-                {{ favs[j] }} : {{ fav_team_pos[j] }}
+                <div class="container7">
+                Table predictions for next season:<br>
+                {% set k = 0 %}
+                {% for k in range(pos|length) %}
+                {{ k + 1 }} : &ensp;&ensp;&ensp; {{ pos[k] }}
                 &ensp;&ensp;&ensp;
-                {% endfor %}<br>
-                Favorite teams results:<br>
-                {% set i = 0 %}
-                {% for i in range(fav_team_res|length) %}
-                {% set fav = fav_team_res[i] %}
-                {{ fav[0] }} {{ fav[2] }} - {{ fav[3] }} {{ fav[1] }} (Season: {{ fav[4] }})
-                &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-                {% if i % 3 == 2 %}
-                <br>
-                {% elif i % 10 == 9 %}
-                <br>
-                {% endif %}
                 {% endfor %}</div>
             </div>
         </div>

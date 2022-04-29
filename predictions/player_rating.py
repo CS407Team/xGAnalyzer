@@ -57,6 +57,7 @@ def find_user_watchlist(username):
     user = User.query.filter_by(username=username).first()
 
     if user is None:
+        print("error2")
         return None
 
     check = Watchlist.query.filter_by(userid=user.userid).first()
@@ -69,4 +70,5 @@ def find_user_watchlist(username):
             playerlist.append(newplayer)
         return playerlist
     else:
+        print("error3")
         return None

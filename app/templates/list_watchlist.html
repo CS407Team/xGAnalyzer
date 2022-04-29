@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
 </head>
 <body>
-    <ul>
+    <table id="generic_table">
         {% for item in playerlist %}
-        <li> <a href="/get_prediction-{{ item.playername }}"> {{ item.playername }} </a></li>
+            <td id="generic_column"> <a href="/get_prediction-{{ item.playername }}"> {{ item.playername }} </a></td>>
+            <tr id="generic_row"></tr>
             {% endfor %}
-    </ul>
+    </table>>
 
 <form action="/watchlist" method="post">
-  <table>
-      <td>Player Name:
+  <table id="generic_table">
+      <td id="generic_column">Player Name:
         <input type="text" name="playername">
       </td>
     </tr>
@@ -20,8 +22,7 @@
   <input type="submit" name="submit" value="Search for Player">
 
 </form>
-
-
+    <n></n>>
 <form action="/change_visibility" method="post">
     <select name="visibility" >
                 <option value="1">Public</option>

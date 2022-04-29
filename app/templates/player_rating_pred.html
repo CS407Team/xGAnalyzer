@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
     <title>{{playername}}'s Page</title>
 </head>
 <body>
@@ -9,11 +9,11 @@
 <div>Team: {{team_name}}</div>
 <div></div>
 <form action="/player_prediction/add-{{ playerid }}-{{ team_id }}" method="post">
-  <table>
+  <table id="generic_table">
     <tbody>
-    <tr>Player Rating Prediction Form</tr>
+    <tr id="generic_row">Player Rating Prediction Form</tr>
     </tbody>
-      <td>Player Rating:
+      <td id="generic_column">Player Rating:
         <input type="number" min="0" max="10" name="player_rating">
       </td>
     </tr>

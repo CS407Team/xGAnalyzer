@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
     <title></title>
 </head>
 <body>
-    <ul>
+    <table id="generic_table">
         {% for item in playerlist %}
-        <li> <a href="/get_prediction-{{ item.playername }}"> {{ item.playername }} </a></li>
+            <td id="generic_column"> <a href="/get_prediction-{{ item.playername }}"> {{ item.playername }} </a></td>>
+            <tr id="generic_row"></tr>
             {% endfor %}
-    </ul>
+    </table>>
 
 <a href="/search_user_watchlist">
     <button type="button">Back</button>

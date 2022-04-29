@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
     <title></title>
 </head>
 <body>
-    <ul>
+    <table id="generic_table">
         {% for item in predictions %}
-        <li> <a href="/download_rating-{{ item.player_rating_id }}"> player rating : {{item.player_rating_id}} </a></li>
+        <td id="generic_column"> <a href="/download_rating-{{ item.player_rating_id }}"> player rating : {{item.player_rating_id}} </a></td>
+            <tr id="generic_row"></tr>
             {% endfor %}
-    </ul>
+    </table>
 
 
 </body>

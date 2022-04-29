@@ -22,7 +22,6 @@
 <div class="container">
     <div id="user_prediction">
         <h2>Application's Prediction</h2>
-        <h2>[Week's Predictions]</h2>
         <table id="generic_table">
             <tr>
                 <th id="generic_header">Team</th>
@@ -31,10 +30,10 @@
                 <th id="generic_header">Shots on Target</th>
                 <th id="generic_header">Yellow Cards</th>
                 <th id="generic_header">Red Cards</th>
-                <th id="generic_header">Corners</th>
                 <th id="generic_header">Goals</th>
                 <th id="generic_header">Pens</th>
                 <th id="generic_header">Free Kicks</th>
+                <th id="generic_header">Complete Passes</th>
             </tr>
             <tr>
                 <td id="generic_column">{{ home_team_name }}</td>
@@ -43,10 +42,10 @@
                 <td id="generic_column">{{ stats.home_shots_on_target }}</td>
                 <td id="generic_column">{{ stats.home_yellow_cards }}</td>
                 <td id="generic_column">{{ stats.home_red_cards }}</td>
-                <td id="generic_column">{{ stats.home_corners }}</td>
                 <td id="generic_column">{{ stats.home_goals }}</td>
                 <td id="generic_column">{{ stats.home_pens }}</td>
                 <td id="generic_column">{{ stats.home_freekicks }}</td>
+                <td id="generic_column">{{ stats.home_complete_passes }}</td>
             </tr>
 
             <tr>
@@ -56,10 +55,10 @@
                 <td id="generic_column">{{ stats.away_shots_on_target }}</td>
                 <td id="generic_column">{{ stats.away_yellow_cards }}</td>
                 <td id="generic_column">{{ stats.away_red_cards }}</td>
-                <td id="generic_column">{{ stats.away_corners }}</td>
                 <td id="generic_column">{{ stats.away_goals }}</td>
                 <td id="generic_column">{{ stats.away_pens }}</td>
                 <td id="generic_column">{{ stats.away_freekicks }}</td>
+                <td id="generic_column">{{ stats.away_complete_passes }}</td>
             </tr>
 
         </table>
@@ -67,7 +66,6 @@
 
     <div id="other_prediction">
         <h2> Your Prediction </h2>
-        <h2> [Week's Prediction] </h2>
         <table id=""generic_table>
             <tr>
                 <th id="generic_header">Possessions</th>
@@ -75,10 +73,11 @@
                 <th id="generic_header">Shots on Target</th>
                 <th id="generic_header">Yellow Cards</th>
                 <th id="generic_header">Red Cards</th>
-                <th id="generic_header">Corners</th>
                 <th id="generic_header">Goals</th>
                 <th id="generic_header">Pens</th>
                 <th id="generic_header">Free Kicks</th>
+                <th id="generic_header">Complete Passes</th>
+
             </tr>
             <tr>
                 <td id="generic_column">{{ userpred.home_possession }}</td>
@@ -86,10 +85,10 @@
                 <td id="generic_column">{{ userpred.home_shots_on_target }}</td>
                 <td id="generic_column">{{ userpred.home_yellow_cards }}</td>
                 <td id="generic_column">{{ userpred.home_red_cards }}</td>
-                <td id="generic_column">{{ userpred.home_corners }}</td>
                 <td id="generic_column">{{ userpred.home_goals }}</td>
                 <td id="generic_column">{{ userpred.home_pens }}</td>
                 <td id="generic_column">{{ userpred.home_freekicks }}</td>
+                <td id="generic_column">{{ userpred.home_complete_passes }}</td>
             </tr>
 
             <tr>
@@ -98,10 +97,10 @@
                 <td id="generic_column">{{ userpred.away_shots_on_target }}</td>
                 <td id="generic_column">{{ userpred.away_yellow_cards }}</td>
                 <td id="generic_column">{{ userpred.away_red_cards }}</td>
-                <td id="generic_column">{{ userpred.away_corners }}</td>
                 <td id="generic_column">{{ userpred.away_goals }}</td>
                 <td id="generic_column">{{ userpred.away_pens }}</td>
                 <td id="generic_column">{{ userpred.away_freekicks }}</td>
+                <td id="generic_column">{{ userpred.away_complete_passes }}</td>
             </tr>
         </table>
     </div>

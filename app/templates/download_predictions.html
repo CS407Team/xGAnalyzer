@@ -5,6 +5,16 @@
 {% endblock %}
 {% block content %}
 <body>
+<table>
+    <tbody>
+    <tr id="generic_row">Player Rating for {{ player_name }}</tr>
+    </tbody>
+      <td id="generic_column">Player Rating: </td>
+      <td id="generic_column">{{ player_rating }} </td>
+
+
+    </tr>
+</table>>
 <form action="/download-{{ player_rating_id }}">
     <input type="submit" value="Download player rating prediction" />
 </form>

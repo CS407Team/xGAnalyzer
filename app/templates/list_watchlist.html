@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="style.css">
-    <meta charset="UTF-8">
-</head>
+{% extends 'base.html'%}
+
+{% block title %}
+    My Watchlist
+{% endblock %}
+{% block content %}
 <body>
     <table id="generic_table">
         {% for item in playerlist %}
@@ -33,4 +33,4 @@
 </form>
 
 </body>
-</html>
+{% endblock %}

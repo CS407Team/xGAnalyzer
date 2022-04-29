@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="style.css">
-    <title>Search For a User</title>
-</head>
+{% extends 'base.html'%}
+
+{% block title %}
+    Search for a User
+{% endblock %}
+{% block content %}
 <body>
 <form action="/find_user_watchlist" method="post">
         <div class="container">
@@ -18,4 +18,4 @@
 </a>
 
 </body>
-</html>
+{% endblock %}

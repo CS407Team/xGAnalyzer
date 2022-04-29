@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="style.css">
-    <title></title>
-</head>
+{% extends 'base.html'%}
+
+{% block title %}
+{% endblock %}
+{% block content %}
 <body>
     <table id="generic_table">
         {% for item in predictions %}
@@ -14,6 +13,6 @@
 
 
 </body>
-</html>
+{% endblock %}
 
 

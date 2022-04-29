@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="style.css">
-    <title>{{playername}}'s Page</title>
-</head>
+{% extends 'base.html'%}
+
+{% block title %}
+    {{playername}}'s Page
+{% endblock %}
+{% block content %}
 <body>
 <div>Player: {{playername}}</div>
 <div>Team: {{team_name}}</div>
@@ -32,4 +32,5 @@
 
 
 </body>
-</html>
+
+{% endblock %}

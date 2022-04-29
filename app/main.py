@@ -453,7 +453,7 @@ def find_user_ratings():
     user = User.query.filter_by(username=data['username']).first()
 
     if user is None:
-        return render_template("match_does_not_exist.html")
+        return render_template("user_does_not_exist.html")
 
     ratings = PlayerRatings.query.filter_by(userid=user.userid).all()
     visible = [rating for rating in ratings if rating.visibility == 1]
@@ -501,7 +501,7 @@ def find_user_watchlist():
     visible = player_rating.find_user_watchlist(data['username'])
 
     if visible is None:
-        return render_template("list_user_watchlist.html")
+        return render_template("watchlist_not_found.html")
     return render_template("list_user_watchlist.html", playerlist=visible)
 
 

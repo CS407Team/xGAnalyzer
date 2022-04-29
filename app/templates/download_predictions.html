@@ -1,14 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="style.css">
-    <title>Download Predictions</title>
-</head>
-<body>
+{% extends 'base.html'%}
 
+{% block title %}
+    Download Predictions
+{% endblock %}
+{% block content %}
+<body>
 <form action="/download-{{ player_rating_id }}">
     <input type="submit" value="Download player rating prediction" />
 </form>
 
 </body>
-</html>
+
+{% endblock %}

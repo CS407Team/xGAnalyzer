@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="style.css">
-    <title>Search for a Player</title>
-</head>
+{% extends 'base.html'%}
+
+{% block title %}
+    Search For a Player
+{% endblock %}
+{% block content %}
 <body>
 
 <form action="/player_prediction" method="post">
@@ -33,4 +33,5 @@
 </form>
 
 </body>
-</html>
+
+{% endblock %}

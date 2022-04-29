@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+{% extends 'base.html'%}
+
+{% block title %}
+    Temp Title
+{% endblock %}
+{% block content %}
 <body>
     <form action="/add_table_prediction" method="post">
     <table>
@@ -49,4 +49,4 @@
         <input type="submit" name="submit" value="Save Prediction">
         </form>
 </body>
-</html>
+{% endblock %}

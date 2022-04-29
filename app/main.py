@@ -268,6 +268,7 @@ def compare_match(home_team, away_team, round_number, prediction_name):
     userpred = StatsPredictions.query.filter_by(statsid=pred.stats_predictions_id).first()
 
     #stats = Stats.query.filter_by(home_team_id=home_team.team_id, away_team_id=away_team.team_id, round=round_number).first()
+    print(f"game.stats_id: {game.stats_id}")
     stats = Stats.query.filter_by(statsid=game.stats_id).first()
     # return f'{home_team} vs {away_team} on {round_number}'
 
@@ -292,7 +293,6 @@ def compare_match(home_team, away_team, round_number, prediction_name):
     return render_template('matchpage.html', home_team_name=home_team_name, away_team_name=away_team_name, game=game,
                            stats=stats, winner=winner, predictions=predictions, current_user=current_user,
                            orig_home=orig_home, orig_away=orig_away, userpred=userpred)
-
 
 
 @main.route('/match/<home_team>-v-<away_team>-<round_number>/download')
@@ -519,7 +519,15 @@ def table_prediction_link():
 @main.route('/match_predictions')
 def match_prediction_link():
     if current_user.is_authenticated:
-        return redirect(f'/profile/{current_user.username}/table_predictions')
+        return redirect(f'/profile/{current_user.username}/match_predictions')
+    else:
+        return redirect('/')
+
+
+@main.route('/player_rating_predictions')
+def player_rating_prediction_link():
+    if current_user.is_authenticated:
+        return render_template('player_rating_predictions.html')
     else:
         return redirect('/')
 

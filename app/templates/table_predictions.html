@@ -6,20 +6,15 @@
 {% block content %}
 </head>
 <body>
-<div class="dropdown">
-  <button onclick="myFunction()" class="dropbtn">Show Tables</button>
-  <div id="myDropdown" class="dropdown-content">
-    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-
-      {% for prediction in predictions %}
+    <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Select a Table Prediction</button>
+        <div id="myDropdown" class="dropdown-content">
+        <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+            {% for prediction in predictions %}
             <a href="/profile/{{username}}/table_predictions/{{prediction[10]}}">{{prediction[10]}}</a>
             {% endfor %}
-  </div>
-</div>
-    <a href="/profile/{{username}}">
-    <button type="button">Back</button>
-</a>
-
+    </div>
+        <a href="/add_match_prediction" style="text-decoration:none"; class="dropbtn">Add new Prediction </a>
 </body>
 
 {% endblock %}

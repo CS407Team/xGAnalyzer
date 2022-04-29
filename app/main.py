@@ -462,7 +462,9 @@ def find_user_ratings():
 
 @main.route('/download_rating-<player_rating_id>')
 def download_rating(player_rating_id):
-    return render_template("download_predictions.html", player_rating_id=player_rating_id)
+    rating = PlayerRatings.query.filter_by(player_rating_id=player_rating_id).first()
+    player = Player.query.filter_by(playerid=rating.playerid).first()
+    return render_template("download_predictions.html", player_rating_id=player_rating_id, player_rating=rating.player_rating, player_name=player.playername)
 
 
 @main.route('/download-<player_rating_id>')

@@ -28,7 +28,7 @@ def player_page(playername):
 
         # Check Updated Name
         if player is None:
-            return 'Player not found'
+            return render_template('player_not_found.html')
     ratings = {}
     yellow = {}
     yellowred = {}

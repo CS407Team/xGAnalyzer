@@ -499,9 +499,8 @@ def follower_watchlist():
 def find_user_watchlist():
     data = request.form
     visible = player_rating.find_user_watchlist(data['username'])
-
     if visible is None:
-        return render_template("list_user_watchlist.html")
+        return render_template("watchlist_not_found.html")
     for element in visible:
         print(element.playername)
     return render_template("list_user_watchlist.html", playerlist=visible)
